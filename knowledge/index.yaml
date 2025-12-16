@@ -8,20 +8,19 @@ metadata:
   version: "1.0.0"
   last_updated: "2025-12-16"
   maintainer: "knowledge-curator"
-  total_entries: 0
+  total_entries: 1
 
 # Architektur-Entscheidungen (ADR)
 decisions:
-  # Beispiel für architecture:
-  # - id: "ADR-001"
-  #   title: "Repository Structure"
-  #   file: "decisions/ADR-001-repository-structure.md"
-  #   status: "accepted"
-  #   date: "2025-12-16"
-  #   category: "architecture"
-  #   tags: ["architecture", "structure", "governance"]
-  #   summary: "Defines the directory structure for the docs repository"
-  architecture: []
+  architecture:
+    - id: "ADR-001"
+      title: "Documentation-Only Repository"
+      file: "decisions/ADR-001-documentation-only-repository.md"
+      status: "accepted"
+      date: "2025-12-16"
+      category: "architecture"
+      tags: ["repository", "governance", "structure", "documentation"]
+      summary: "Defines this repository as documentation and governance only, with no executable code"
   
   # Beispiel für governance:
   # - id: "GDR-001"
@@ -94,19 +93,19 @@ status_definitions:
 # Tag-Cloud (für Navigation)
 tags:
   - name: "architecture"
-    count: 0
+    count: 1
     
   - name: "governance"
-    count: 0
+    count: 1
     
-  - name: "agents"
-    count: 0
+  - name: "repository"
+    count: 1
     
   - name: "documentation"
-    count: 0
+    count: 1
     
   - name: "structure"
-    count: 0
+    count: 1
 
 # Beziehungen zwischen Entscheidungen
 # Beispiel:
@@ -121,12 +120,10 @@ tags:
 relationships: []
 
 # Zeitlicher Index (chronologisch)
-# Beispiel:
-# - date: "2025-12-16"
-#   entries:
-#     - "ADR-001"
-#     - "GDR-001"
-timeline: []
+timeline:
+  - date: "2025-12-16"
+    entries:
+      - "ADR-001"
 
 # Such-Hinweise
 search_hints:

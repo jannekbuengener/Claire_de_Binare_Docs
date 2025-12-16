@@ -1,0 +1,139 @@
+# Agenten-Charter Template
+# Version: 1.0.0
+# Letzte Änderung: 2025-12-16
+
+agent:
+  # Eindeutiger Name des Agenten (kebab-case)
+  name: "beispiel-agent"
+  
+  # Anzeigename (für Dokumentation)
+  display_name: "Beispiel Agent"
+  
+  # Version der Charter
+  version: "1.0.0"
+  
+  # Status: proposed | active | deprecated
+  status: "proposed"
+  
+  # Charter Owner (verantwortlich für Pflege)
+  owner: "governance-board"
+
+role:
+  # Kurze Beschreibung der Rolle (1-2 Sätze)
+  summary: |
+    Kurze Zusammenfassung der Agenten-Rolle und ihres Zwecks.
+  
+  # Detaillierte Rollenbeschreibung
+  description: |
+    Ausführliche Beschreibung was dieser Agent tut,
+    warum er existiert und welche Probleme er löst.
+  
+  # Primäre Kategorie: governance | knowledge | documentation | coordination
+  category: "governance"
+
+responsibilities:
+  # Liste der Hauptverantwortlichkeiten
+  primary:
+    - "Verantwortlichkeit 1"
+    - "Verantwortlichkeit 2"
+    - "Verantwortlichkeit 3"
+  
+  # Sekundäre oder unterstützende Verantwortlichkeiten
+  secondary:
+    - "Unterstützende Aufgabe 1"
+    - "Unterstützende Aufgabe 2"
+
+authorities:
+  # Befugnisse: Was darf der Agent tun?
+  can:
+    - "Dokumente im Bereich X lesen"
+    - "Vorschläge für Y erstellen"
+    - "Z reviewen"
+  
+  # Beschränkungen: Was darf der Agent NICHT tun?
+  cannot:
+    - "Governance ohne Approval ändern"
+    - "Code schreiben oder ausführen"
+    - "Andere Agenten überstimmen"
+  
+  # Erforderliche Genehmigungen
+  requires_approval_for:
+    - "Governance-Änderungen"
+    - "Neue Agenten-Rollen"
+
+interfaces:
+  # Schnittstellen zu anderen Agenten
+  collaborates_with:
+    - agent: "anderer-agent"
+      purpose: "Gemeinsame Aufgabe X"
+      interaction: "Wöchentliche Synchronisation"
+  
+  # Input: Was erhält der Agent?
+  inputs:
+    - source: "knowledge-base"
+      type: "decisions"
+      frequency: "on-demand"
+  
+  # Output: Was produziert der Agent?
+  outputs:
+    - target: "governance-docs"
+      type: "policies"
+      frequency: "as-needed"
+
+governance:
+  # Wer kontrolliert diesen Agenten?
+  oversight: "governance-board"
+  
+  # Review-Frequenz der Charter
+  review_frequency: "quarterly"
+  
+  # Nächstes geplantes Review
+  next_review: "2026-03-16"
+  
+  # Änderungsprozess
+  change_process: |
+    Änderungen an dieser Charter erfordern:
+    1. Proposal mit Begründung
+    2. Review durch Governance-Board
+    3. Approval durch Owner
+    4. Update der Version
+
+compliance:
+  # Referenzen zu relevanten Governance-Dokumenten
+  must_comply_with:
+    - "governance/CONSTITUTION.md"
+    - "governance/REPOSITORY_POLICY.md"
+    - "governance/CONTRIBUTION_RULES.md"
+  
+  # Spezifische Compliance-Anforderungen
+  requirements:
+    - "Alle Aktionen müssen dokumentiert werden"
+    - "Keine Ausführung von Code"
+    - "Governance-Regeln respektieren"
+
+metadata:
+  # Erstellungsdatum
+  created: "2025-12-16"
+  
+  # Letztes Update
+  last_updated: "2025-12-16"
+  
+  # Update-Historie (nur Major Changes)
+  history:
+    - version: "1.0.0"
+      date: "2025-12-16"
+      change: "Initial charter creation"
+      approver: "governance-board"
+  
+  # Zusätzliche Dokumentation
+  documentation:
+    - type: "detailed"
+      location: "agents/beispiel-agent.md"
+    - type: "examples"
+      location: "docs/examples/beispiel-agent-examples.md"
+  
+  # Tags für Kategorisierung
+  tags:
+    - "governance"
+    - "template"
+    - "example"

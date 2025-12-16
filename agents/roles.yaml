@@ -1,0 +1,122 @@
+# Agenten-Rollen im Claire de Binare System
+# Version: 1.0.0
+# Letzte Änderung: 2025-12-16
+
+roles:
+  # Governance-Agenten
+  governance:
+    - name: "governance-guardian"
+      display_name: "Governance Guardian"
+      category: "governance"
+      status: "proposed"
+      summary: "Überwacht Einhaltung der Governance-Regeln und Repository-Policy"
+      charter: "governance-guardian.yaml"
+      
+    - name: "constitution-keeper"
+      display_name: "Constitution Keeper"
+      category: "governance"
+      status: "proposed"
+      summary: "Verwaltet und schützt die System-Verfassung"
+      charter: "constitution-keeper.yaml"
+
+  # Wissens-Agenten
+  knowledge:
+    - name: "knowledge-curator"
+      display_name: "Knowledge Curator"
+      category: "knowledge"
+      status: "proposed"
+      summary: "Kuratiert und strukturiert die Wissensbasis"
+      charter: "knowledge-curator.yaml"
+      
+    - name: "decision-recorder"
+      display_name: "Decision Recorder"
+      category: "knowledge"
+      status: "proposed"
+      summary: "Dokumentiert Architektur- und Governance-Entscheidungen"
+      charter: "decision-recorder.yaml"
+
+  # Dokumentations-Agenten
+  documentation:
+    - name: "documentation-architect"
+      display_name: "Documentation Architect"
+      category: "documentation"
+      status: "proposed"
+      summary: "Pflegt Dokumentationsstruktur und -qualität"
+      charter: "documentation-architect.yaml"
+      
+    - name: "index-maintainer"
+      display_name: "Index Maintainer"
+      category: "documentation"
+      status: "proposed"
+      summary: "Verwaltet Dokumentations-Indizes und Navigation"
+      charter: "index-maintainer.yaml"
+
+  # Koordinations-Agenten
+  coordination:
+    - name: "agent-coordinator"
+      display_name: "Agent Coordinator"
+      category: "coordination"
+      status: "proposed"
+      summary: "Koordiniert Aktivitäten zwischen Agenten"
+      charter: "agent-coordinator.yaml"
+
+# Rollen-Kategorien
+categories:
+  governance:
+    description: "Agenten die Governance-Regeln überwachen und durchsetzen"
+    priority: "high"
+    
+  knowledge:
+    description: "Agenten die Wissen verwalten und strukturieren"
+    priority: "high"
+    
+  documentation:
+    description: "Agenten die Dokumentation pflegen"
+    priority: "medium"
+    
+  coordination:
+    description: "Agenten die andere Agenten koordinieren"
+    priority: "medium"
+
+# Status-Definitionen
+status_definitions:
+  proposed:
+    description: "Rolle ist vorgeschlagen, Charter in Review"
+    next_step: "Governance-Approval erforderlich"
+    
+  active:
+    description: "Rolle ist aktiv, Agent operativ"
+    maintenance: "Regelmäßige Charter-Reviews"
+    
+  deprecated:
+    description: "Rolle wird nicht mehr verwendet"
+    note: "Charter bleibt zur historischen Referenz"
+
+# Charter-Anforderungen
+charter_requirements:
+  mandatory_fields:
+    - "agent.name"
+    - "agent.display_name"
+    - "agent.version"
+    - "agent.status"
+    - "role.summary"
+    - "role.description"
+    - "role.category"
+    - "responsibilities.primary"
+    - "authorities.can"
+    - "authorities.cannot"
+    - "governance.oversight"
+    - "compliance.must_comply_with"
+    
+  optional_fields:
+    - "responsibilities.secondary"
+    - "authorities.requires_approval_for"
+    - "interfaces.collaborates_with"
+    - "interfaces.inputs"
+    - "interfaces.outputs"
+
+# Governance
+governance:
+  charter_approval_required_by: "governance-board"
+  review_frequency: "quarterly"
+  next_global_review: "2026-03-16"

@@ -40,7 +40,7 @@ Dieses Dokument definiert die strikten Richtlinien für das `Claire_de_Binare_Do
 Alle anderen Dateitypen sind grundsätzlich verboten, insbesondere:
 - `.js`, `.ts`, `.py`, `.go`, `.java`, `.rb`, etc.
 - `.sh`, `.bash`, `.ps1`, `.bat`
-- `.tf`, `.yaml` (für Kubernetes/Terraform)
+- `.tf`, Infrastruktur-`.yaml` (für Kubernetes/Terraform)
 - `.json` (außer in Dokumentationsbeispielen)
 - Binärdateien jeglicher Art
 

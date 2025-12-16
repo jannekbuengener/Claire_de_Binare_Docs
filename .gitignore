@@ -264,9 +264,15 @@ credentials/
 # SPEZIELLE REGELN
 # ============================================
 
-# Deny JSON (except if explicitly needed for docs)
-*.json
-# Allow specific config files if needed
+# Deny JSON config and package files (examples in markdown are OK)
+package.json
+package-lock.json
+tsconfig.json
+jsconfig.json
+composer.json
+*.config.json
+*.settings.json
+# Allow specific GitHub config files if needed
 !.github/**/*.json
 
 # Cache directories

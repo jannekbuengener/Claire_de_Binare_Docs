@@ -98,7 +98,7 @@ Verwende diese Templates für konsistente Dokumentation:
 - Kebab-case: `mein-dokument.md`
 - ADRs: `ADR-NNN-titel.md` (z.B. `ADR-001-repository-structure.md`)
 - Charters: `agent-name.yaml`
-- Descriptive aber kurz
+- Beschreibend aber kurz
 
 ## Navigation
 

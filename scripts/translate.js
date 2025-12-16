@@ -28,7 +28,7 @@ async function translateWithDeepL(text, target) {
   params.append('text', text);
   params.append('target_lang', target);
   const res = await fetch(url, { method: 'POST', body: params });
-  if (!res.ok) throw new Error(`DeepL Fehlerr: ${res.status} ${res.statusText}`);
+  if (!res.ok) throw new Error(`DeepL Fehler: ${res.status} ${res.statusText}`);
   const j = await res.json();
   return { text: j.translations?.[0]?.text || '', detected: j.translations?.[0]?.detected_source_language || '' };
 }
@@ -40,7 +40,7 @@ async function translateWithLibre(text, target) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ q: text, source: 'auto', target: target.toLowerCase(), format: 'text' })
   });
-  if (!res.ok) throw new Error(`LibreTranslate Fehlerr: ${res.status} ${res.statusText}`);
+  if (!res.ok) throw new Error(`LibreTranslate Fehler: ${res.status} ${res.statusText}`);
   const j = await res.json();
   return { text: j.translatedText || '', detected: j.detectedLanguage || '' };
 }

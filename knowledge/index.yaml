@@ -12,48 +12,48 @@ metadata:
 
 # Architektur-Entscheidungen (ADR)
 decisions:
+  # Beispiel für architecture:
+  # - id: "ADR-001"
+  #   title: "Repository Structure"
+  #   file: "decisions/ADR-001-repository-structure.md"
+  #   status: "accepted"
+  #   date: "2025-12-16"
+  #   category: "structure"
+  #   tags: ["architecture", "governance"]
+  #   summary: "Defines the directory structure for the docs repository"
   architecture: []
-    # Beispiel:
-    # - id: "ADR-001"
-    #   title: "Repository Structure"
-    #   file: "decisions/ADR-001-repository-structure.md"
-    #   status: "accepted"
-    #   date: "2025-12-16"
-    #   category: "structure"
-    #   tags: ["architecture", "governance"]
-    #   summary: "Defines the directory structure for the docs repository"
   
+  # Beispiel für governance:
+  # - id: "GDR-001"
+  #   title: "Agent Governance Model"
+  #   file: "decisions/GDR-001-agent-governance.md"
+  #   status: "accepted"
+  #   date: "2025-12-16"
+  #   category: "governance"
+  #   tags: ["agents", "governance"]
+  #   summary: "Establishes governance model for agent system"
   governance: []
-    # Beispiel:
-    # - id: "GDR-001"
-    #   title: "Agent Governance Model"
-    #   file: "decisions/GDR-001-agent-governance.md"
-    #   status: "accepted"
-    #   date: "2025-12-16"
-    #   category: "governance"
-    #   tags: ["agents", "governance"]
-    #   summary: "Establishes governance model for agent system"
 
 # Best Practices
+# Beispiel:
+# - id: "BP-001"
+#   title: "Documentation Writing Guidelines"
+#   file: "best-practices/documentation-guidelines.md"
+#   category: "documentation"
+#   tags: ["documentation", "quality"]
+#   summary: "Guidelines for writing clear and effective documentation"
 best_practices: []
-  # Beispiel:
-  # - id: "BP-001"
-  #   title: "Documentation Writing Guidelines"
-  #   file: "best-practices/documentation-guidelines.md"
-  #   category: "documentation"
-  #   tags: ["documentation", "quality"]
-  #   summary: "Guidelines for writing clear and effective documentation"
 
 # Lessons Learned
+# Beispiel:
+# - id: "LL-001"
+#   title: "Initial Setup Challenges"
+#   file: "lessons-learned/initial-setup.md"
+#   date: "2025-12-16"
+#   category: "setup"
+#   tags: ["setup", "infrastructure"]
+#   summary: "Lessons from setting up the governance repository"
 lessons_learned: []
-  # Beispiel:
-  # - id: "LL-001"
-  #   title: "Initial Setup Challenges"
-  #   file: "lessons-learned/initial-setup.md"
-  #   date: "2025-12-16"
-  #   category: "setup"
-  #   tags: ["setup", "infrastructure"]
-  #   summary: "Lessons from setting up the governance repository"
 
 # Kategorien-Definitionen
 categories:
@@ -109,25 +109,24 @@ tags:
     count: 0
 
 # Beziehungen zwischen Entscheidungen
-relationships:
-  # Beispiel:
-  # - from: "ADR-001"
-  #   to: "ADR-002"
-  #   type: "depends_on"
-  #   description: "ADR-002 builds on structure defined in ADR-001"
-  
-  # - from: "ADR-003"
-  #   to: "ADR-001"
-  #   type: "supersedes"
-  #   description: "ADR-003 replaces approach from ADR-001"
+# Beispiel:
+# - from: "ADR-001"
+#   to: "ADR-002"
+#   type: "depends_on"
+#   description: "ADR-002 builds on structure defined in ADR-001"
+# - from: "ADR-003"
+#   to: "ADR-001"
+#   type: "supersedes"
+#   description: "ADR-003 replaces approach from ADR-001"
+relationships: []
 
 # Zeitlicher Index (chronologisch)
+# Beispiel:
+# - date: "2025-12-16"
+#   entries:
+#     - "ADR-001"
+#     - "GDR-001"
 timeline: []
-  # Beispiel:
-  # - date: "2025-12-16"
-  #   entries:
-  #     - "ADR-001"
-  #     - "GDR-001"
 
 # Such-Hinweise
 search_hints:

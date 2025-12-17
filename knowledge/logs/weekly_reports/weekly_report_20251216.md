@@ -11,19 +11,19 @@ generated: 2025-12-16
 # Weekly Report – 2025-12-16
 
 ## 1. Summary
-- Docs Hub prompt migration `.txt → .md` abgeschlossen; Originale mit Deprecation-Hinweis behalten.
-- Büro-Files Scan geliefert (Issue #119) – Canonical-Entscheidungen zu Agenten-Duplikaten offen.
-- Repo-Topologie und Agenten als Canon bestätigt; GitLab CI mit Guard-Rails aktiv.
+- Docs Hub prompt migration `.txt → .md` completed; originals kept with deprecation notice.
+- Bureau files scan delivered (Issue #119) – canonical decisions about agent-role duplicates pending.
+- Repo topology and agents confirmed as canon; GitLab CI guard rails active.
 
 ## 2. Highlights
-- `PROMPT_MIGRATION_REPORT.md` dokumentiert vollständige Migration der Agenten-Prompts.
-- `BUERO_FILES_REVIEW.md` listet neue Büro-Files und markiert Konfliktpotenziale (v. a. Agenten-Rollen).
-- Stable Infrastruktur-Baseline laut CDB_KNOWLEDGE_HUB Snapshot (Compose-Services mit Healthchecks).
+- `PROMPT_MIGRATION_REPORT.md` documents the completed migration of agent prompts.
+- `BUERO_FILES_REVIEW.md` lists new bureau files and flags conflict potentials (especially agent roles).
+- Stable infrastructure baseline per CDB_KNOWLEDGE_HUB snapshot (compose services with healthchecks).
 
 ## 3. Risks / Issues
-- Governance-Review durch Gemini noch offen; potenzielle Divergenzen bei Agenten-Rollen-Dateien.
-- Offene Handoffs: Claude → Services (`get_secret()`-Migration, P2).
-- Betriebsrisiko: Disk-Space Warnung aus Daily Check (86% belegt, 29 GB frei).
+- Governance review from Gemini still open; potential divergence on agent role files.
+- Open handoffs: Claude → Services (`get_secret()` migration, P2).
+- Operational risk: disk-space warning from daily check (86% used, 29 GB free).
 
 ## 4. Next Actions
 | Owner | Action | Due | Status |

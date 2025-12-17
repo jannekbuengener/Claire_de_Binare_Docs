@@ -201,3 +201,30 @@ relations:
 *   [CDB Knowledge Hub (knowledge/CDB_KNOWLEDGE_HUB.md)](knowledge/CDB_KNOWLEDGE_HUB.md)
 *   [Shared Working Memory (knowledge/SHARED.WORKING.MEMORY.md)](knowledge/SHARED.WORKING.MEMORY.md)
 *   [Review Reports (knowledge/reviews/)](knowledge/reviews/)
+
+# /knowledge — Working Knowledge & Session Context (NON-CANONICAL)
+
+## Zweck
+
+Der Ordner `/knowledge` ist der **zentrale Arbeits- und Denkraum**
+für Mensch und KI-Agenten im Projekt *Claire de Binare*.
+
+Er dient als:
+- temporärer Denkraum
+- Übergabe- und Koordinationsfläche
+- Ablage für Reviews, Logs und Session-Kontext
+
+**Wichtig:**  
+Inhalte in `/knowledge` besitzen **keine kanonische Autorität** und
+setzen **keine systemweiten Regeln**.
+
+---
+
+## Grundprinzip (verbindlich)
+
+> `/knowledge` ist **Arbeitsgedächtnis**, nicht Gesetz.  
+> Denken ist erlaubt. Autorität ist es nicht.
+
+---
+
+## Was gehört HIERHER

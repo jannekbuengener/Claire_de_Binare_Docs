@@ -1,6 +1,0 @@
-Nächster Prompt (nur falls du willst)
-Autopilot #2 – „Test → Issue“
-
-Mission: Erzeuge 5 neue Issues aus aktuellen Tests/Logs.
-Input: scripts/run_72h_test.py Outputs, Logs, neue Services.
-Output: 5 Issues mit Action Items + Implementation Brief + CLAUDE_READY.

@@ -17,7 +17,7 @@ generated: 2025-12-16
 
 ## 2. Highlights
 - `PROMPT_MIGRATION_REPORT.md` documents the completed migration of agent prompts.
-- `BUERO_FILES_REVIEW.md` lists new bureau files and flags conflict potentials (especially agent roles).
+- The bureau-files review (`BUERO_FILES_REVIEW.md`) lists new bureau files and flags conflict potentials (especially agent roles).
 - Stable infrastructure baseline per CDB_KNOWLEDGE_HUB snapshot (compose services with healthchecks).
 
 ## 3. Risks / Issues

@@ -28,6 +28,6 @@ generated: 2025-12-16
 ## 4. Next Actions
 | Owner | Action | Due | Status |
 | --- | --- | --- | --- |
-| Claude | Canonical Location für Agenten-Rollen definieren (Konfliktpotenziale schließen) | 2025-12-20 | Open |
-| Services | `get_secret()`-Migration abschließen (P2) | 2025-12-22 | Open |
-| Gemini | Governance-Review Feedback liefern | 2025-12-19 | Open |
+| Claude | Define canonical location for agent role files (resolve conflicts) | 2025-12-20 | Open |
+| Services | Complete `get_secret()` migration (P2) | 2025-12-22 | Open |
+| Gemini | Provide governance review feedback | 2025-12-19 | Open |

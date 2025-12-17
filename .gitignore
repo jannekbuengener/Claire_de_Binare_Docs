@@ -218,6 +218,11 @@ logs/
 npm-debug.log*
 yarn-debug.log*
 
+# Allow curated Markdown logs in knowledge/logs
+!knowledge/logs/
+!knowledge/logs/**/
+!knowledge/logs/**/*.md
+
 # Temporary files
 tmp/
 temp/

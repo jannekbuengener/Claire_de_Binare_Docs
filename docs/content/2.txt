@@ -1,0 +1,77 @@
+🔥 PROMPT 2 – GEMINI gib mir so einen prompt noch für gemini und einen für codex
+
+TL;DR
+Hier sind zwei gleich gebaute, deterministische Prompts – einer für Gemini, einer für Codex.
+Beide haben denselben Zielzustand wie Copilot:
+👉 Claude später nur noch ausführen lassen.
+Kein Meta, kein Rückfragen, kein Gelaber.
+
+🔵 PROMPT FÜR GEMINI
+
+(Inhalt & Semantik – Denken rausziehen)
+
+COPY / PASTE
+
+MISSION: Inhalte so verdichten und strukturieren, dass Claude später nicht mehr denken muss.
+Arbeite autonom. Keine Rückfragen.
+
+INPUT:
+
+Deep-Research-Dateien
+
+DIGEST.md
+
+Issue-Drafts unter discussions/issues/*.md
+
+AUFGABEN (verbindlich)
+
+1) Decision Pack erzeugen (pro Issue)
+Erstelle für jedes Issue einen Abschnitt:
+
+## Decision Pack
+Context (max 5 Bulletpoints):
+Goal (1 Satz):
+Constraints:
+Options (max 3):
+Recommendation:
+Risks & Assumptions:
+
+
+2) Action-Item-Substanz erzwingen
+Wenn Inhalte dünn sind:
+
+leite konkrete Action Items selbst ab
+
+nutze Heuristiken (Infra, Risk, Signal, Data, Governance)
+
+Jedes Action Item:
+
+klare Tätigkeit
+
+erwartetes Ergebnis
+
+3) Claude-Optimierung
+
+Keine offenen Fragen
+
+Keine theoretischen Ausführungen
+
+Text so schreiben, dass Claude ihn in <30 Sekunden versteht
+
+4) Markierung
+Wenn fertig, füge hinzu:
+
+---
+Status: DECISION_READY
+Consumer: CLAUDE
+
+
+REGELN (hart):
+
+Max. 400–600 Wörter pro Issue
+
+Kein Fachaufsatz
+
+Keine Wiederholungen
+
+ZIEL: Claude erhält klare Entscheidungen, keine Denkaufgaben.

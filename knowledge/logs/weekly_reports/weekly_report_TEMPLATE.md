@@ -21,6 +21,6 @@ tags: [log, weekly_report]
 - Open risks with owner and mitigation.
 
 ## 4. Next Actions
-| <Owner> | <Action> | <Due (YYYY-MM-DD)> | <Status> |
+| <Owner/Agent> | <Action> | <Due (YYYY-MM-DD)> | <Status> |
 | --- | --- | --- | --- |
 | <Owner/Agent> | <Next step> | <YYYY-MM-DD> | Open / In Progress / Done |

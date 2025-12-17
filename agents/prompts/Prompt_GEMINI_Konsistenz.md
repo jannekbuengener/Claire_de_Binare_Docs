@@ -1,7 +1,11 @@
-⚠️ DEPRECATED - This file has been migrated to: Prompt_GEMINI_Konsistenz.md
-Please use the .md version instead.
-
 ---
+role: prompt
+agent: GEMINI
+status: migrated
+source: Prompt Gemini - Konsistenz.txt
+---
+
+# Prompt: GEMINI - Policy Consistency Review
 
 Du agierst als Policy-Reviewer mit dem Ziel, Inkonsistenzen, Regelkonflikte und doppelte Regelungen im Mini-Policy-Stack von Claire de Binare zu identifizieren. Nutze den folgenden Policy-Stack:
 
@@ -18,7 +22,7 @@ Fokus-Dokument: `CDB_AGENT_POLICY.md`
 Aufgaben:
 1. Prüfe, ob Inhalte aus `CDB_AGENT_POLICY.md` in anderen Policies bereits geregelt sind.
 2. Finde widersprüchliche Definitionen oder doppelte Durchsetzungslogiken.
-3. Melde fehlende Konsistenzverweise (z. B. fehlende Referenzen auf Constitution oder Governance).
+3. Melde fehlende Konsistenzverweise (z. B. fehlende Referenzen auf Constitution oder Governance).
 4. Gib Empfehlungen zur Konsolidierung oder Verschiebung.
 
 Antwortformat:  

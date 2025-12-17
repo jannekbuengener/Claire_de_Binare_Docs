@@ -1,7 +1,11 @@
-⚠️ DEPRECATED - This file has been migrated to: PROMPT_CODEX.md
-Please use the .md version instead.
-
 ---
+role: prompt
+agent: CODEX
+status: migrated
+source: PROMPT_CODEX.txt
+---
+
+# Prompt: CODEX - Policy Enforcement Implementation
 
 Zusaetzliche Leitplanken (bindend)
 
@@ -67,5 +71,3 @@ Output-Regel:
      "fix: enforce technical enforcement mandates for critical policy findings"
 
 Keine Abweichungen. Kein zusätzlicher Scope.
-
-

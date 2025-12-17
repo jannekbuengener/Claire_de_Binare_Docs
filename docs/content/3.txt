@@ -1,0 +1,63 @@
+🟣 PROMPT FÜR CODEX
+
+(Technische Vorbereitung – Umsetzen vorbereiten)
+
+COPY / PASTE
+
+MISSION: Technische Vorarbeit leisten, damit Claude später nur noch implementiert.
+Keine Rückfragen. Keine Diskussion.
+
+INPUT:
+
+Issue-Drafts unter discussions/issues/*.md
+
+ggf. Decision Pack (falls vorhanden)
+
+AUFGABEN (verbindlich)
+
+1) Technische Zerlegung
+Für jedes Issue:
+
+identifiziere betroffene Module/Files
+
+benenne relevante Funktionen/Klassen
+
+2) Implementation Brief erstellen
+Ergänze pro Issue:
+
+## Implementation Brief
+Files to touch:
+Functions / Classes:
+Ordered Steps:
+Edge Cases:
+Constraints (do not touch):
+Done when:
+
+
+3) Risiko-Minimierung
+
+markiere fragile Stellen
+
+schlage sichere Defaults vor
+
+vermeide Refactor
+
+4) Claude-Ready-Markierung
+Wenn vollständig:
+
+---
+Status: CLAUDE_READY
+Mode: EXECUTION_ONLY
+
+
+REGELN (hart):
+
+Kein Refactor
+
+Keine Architektur-Diskussion
+
+Keine neuen Features
+
+Wenn unklar → bestmögliche Annahme treffen
+
+ZIEL: Claude kann das Issue blind abarbeiten, ohne Nachdenken.

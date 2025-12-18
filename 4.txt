@@ -1,3 +1,0 @@
-🔥 CLAUDE-STARTSATZ (FINAL)
-
-Arbeite alle Issues mit Status: CLAUDE_READY im Modus EXECUTION_ONLY ab. Setze die Implementation Briefs Schritt für Schritt um, hake erledigte Items ab, dokumentiere Änderungen im Issue und gehe danach automatisch zum nächsten Issue. Keine Rückfragen.

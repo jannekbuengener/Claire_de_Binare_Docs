@@ -1,3 +1,13 @@
+---
+role: navigation
+status: canonical
+domain: docs_hub
+type: index
+relations:
+  purpose: central_navigation
+  scope: docs_hub_repository
+---
+
 # DOCS_HUB_INDEX
 **Canonical Index — Claire de Binare Docs Hub**
 

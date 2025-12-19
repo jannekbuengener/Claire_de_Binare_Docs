@@ -1,3 +1,13 @@
+---
+role: navigation
+status: canonical
+domain: docs_hub
+type: index
+relations:
+  purpose: central_navigation
+  scope: docs_hub_repository
+---
+
 # DOCS_HUB_INDEX
 **Canonical Index — Claire de Binare Docs Hub**
 
@@ -107,8 +117,9 @@ Nichts hier ist aktiv oder kanonisch.
 ## 4. Deprecated / Migration
 
 Diese Dateien gelten als **deprecated** und dürfen nicht mehr verwendet werden:
-- `copilot.txt`
-- `gemini.txt`
+- `copilot.md`
+- `codex.md`
+- `claude.md`
 
 Ersatz:
 - Agenten-Dateien unter `/agents/`

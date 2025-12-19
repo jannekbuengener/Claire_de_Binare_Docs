@@ -40,9 +40,15 @@ async function translateWithLibre(text, target) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ q: text, source: 'auto', target: target.toLowerCase(), format: 'text' })
   });
-  if (!res.ok) throw new Error(`LibreTranslate Fehler: ${res.status} ${res.statusText}`);
-  const j = await res.json();
-  return { text: j.translatedText || '', detected: j.detectedLanguage || '' };
+  const raw = await res.text();
+  if (!res.ok) throw new Error(`LibreTranslate Fehler: ${res.status} ${res.statusText} - ${raw.slice(0, 200)}`);
+  let j;
+  try {
+    j = JSON.parse(raw);
+  } catch (e) {
+    throw new Error(`LibreTranslate Parse Fehler (${res.status}): ${raw.slice(0, 200)}`);
+  }
+  return { text: j.translatedText || '', detected: j.detectedLanguage || j.detectedSourceLanguage || '' };
 }
 
 async function githubRequest(pathSuffix, method = 'GET', body = null) {

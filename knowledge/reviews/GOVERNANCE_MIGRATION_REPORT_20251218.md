@@ -36,8 +36,8 @@
 - Obsolete Claude prompt → `_legacy_quarantine/sessions/CLAUDE_REHYDRATION_20251217.md` ✅
 
 #### Security & Configuration
-- `.env` → `.cdb_local/.secrets/.env` ✅
-- `.env.example` → `.cdb_local/.secrets/.env.example` ✅
+- `.env` → `Workspaces/.cdb_local/.secrets/.env` ✅
+- `.env.example` → `Workspaces/.cdb_local/.secrets/.env.example` ✅
 
 ### 🗑️ Files Removed from Working Repo
 
@@ -86,7 +86,7 @@ Claire_de_Binare_Docs/
 │       ├── CLAUDE_REHYDRATION_20251217.md
 │       ├── COPILOT_HANDOFF_20251216.md
 │       └── README.md
-└── .cdb_local/.secrets/
+└── Workspaces/.cdb_local/.secrets/
     ├── .env
     └── .env.example
 ```

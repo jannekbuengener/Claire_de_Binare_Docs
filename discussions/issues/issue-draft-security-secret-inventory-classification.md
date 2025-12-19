@@ -31,7 +31,7 @@ Ordered Steps:
 2. Inspect Docker compose files for env_file usage, secrets declarations, and any inline environment variables that reference secret material.
 3. Review service configs and core/domain/secrets.py to list every runtime secret name and its consumer service.
 4. Review CI definitions (.gitlab-ci.yml and .github/workflows/*) for required secret variable names and any secret-consuming jobs.
-5. Inspect local secret stores that may exist (.secrets/ in repo root and Claire_de_Binare_Docs/.cdb_local/.secrets) to classify location and scope.
+5. Inspect local secret stores that may exist (.secrets/ in repo root and Workspaces/.cdb_local/.secrets) to classify location and scope.
 6. Normalize naming: map all variants to a single canonical secret name and note source of truth and rotation owner.
 7. Produce secret-inventory.md describing the classification model (runtime vs CI vs local), owners, and allowed storage locations.
 8. Produce secret-inventory.yaml with a machine-readable list for tooling (name, scope, consumer, source, owner, rotation cadence).

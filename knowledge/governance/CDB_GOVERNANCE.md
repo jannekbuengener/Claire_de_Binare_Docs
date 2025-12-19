@@ -3,7 +3,7 @@ relations:
   role: policy
   domain: governance
   upstream:
-    - governance/CDB_CONSTITUTION.md
+    - knowledge/governance/CDB_CONSTITUTION.md
   downstream:
     - knowledge/CDB_KNOWLEDGE_HUB.md
     - agents/

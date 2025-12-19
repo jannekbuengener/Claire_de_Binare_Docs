@@ -178,7 +178,7 @@ pwsh tools/enforce-root-baseline.ps1
 
 ### Before Cleanup
 - 🔴 **CRITICAL** violations in both repositories
-- ❌ Working Repo contained governance/knowledge files
+- ❌ Working Repo contained knowledge/governance/knowledge files
 - ❌ Deprecated content active in multiple locations  
 - ❌ Canon vs. Execution separation violated
 - ❌ No enforcement mechanism
@@ -229,7 +229,7 @@ The system is now **governance-compliant**, **operationally ready**, and **prote
 ---
 
 **Total Migration Time:** ~4 hours  
-**Files Migrated:** 15+ governance/knowledge files  
+**Files Migrated:** 15+ knowledge/governance/knowledge files  
 **Violations Resolved:** 11 critical + 4 GitHub issues  
 **Enforcement Implemented:** Root baseline script + CI/CD integration ready
 

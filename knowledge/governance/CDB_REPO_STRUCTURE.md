@@ -1,4 +1,4 @@
-✅ FINALER TEXT – governance/CDB_REPO_STRUCTURE.md
+✅ FINALER TEXT – knowledge/governance/CDB_REPO_STRUCTURE.md
 
 (1:1 ersetzen, ANHANG bleibt – aber als klar markiertes Legacy)
 
@@ -7,8 +7,8 @@ relations:
   role: policy
   domain: governance
   upstream:
-    - governance/CDB_CONSTITUTION.md
-    - governance/CDB_GOVERNANCE.md
+    - knowledge/governance/CDB_CONSTITUTION.md
+    - knowledge/governance/CDB_GOVERNANCE.md
   downstream:
     - knowledge/CDB_KNOWLEDGE_HUB.md
     - DOCS_HUB_INDEX.md
@@ -111,7 +111,7 @@ Regel:
 
 | Bereich | Schreibrecht |
 |------|-------------|
-| governance/ | ❌ niemand (außer User) |
+| knowledge/governance/ | ❌ niemand (außer User) |
 | knowledge/ | ✅ Agenten + User |
 | agents/ | ❌ (nur explizit) |
 | logs/ | ✅ strukturiert |

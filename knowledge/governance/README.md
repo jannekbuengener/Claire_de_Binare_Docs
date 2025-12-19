@@ -4,9 +4,9 @@ relations:
   domain: governance
   upstream: []
   downstream:
-    - governance/CDB_CONSTITUTION.md
-    - governance/CDB_GOVERNANCE.md
-    - governance/CDB_AGENT_POLICY.md
+    - knowledge/governance/CDB_CONSTITUTION.md
+    - knowledge/governance/CDB_GOVERNANCE.md
+    - knowledge/governance/CDB_AGENT_POLICY.md
 ---
 # Canonical governance policies and rules.
 

@@ -35,7 +35,7 @@ git checkout -b <typ>/<beschreibung>
 ```
 
 Branch-Typen:
-- `governance/` - Governance-Änderungen
+- `knowledge/governance/` - Governance-Änderungen
 - `agents/` - Agenten-bezogene Änderungen
 - `knowledge/` - Wissensstrukturen
 - `docs/` - Dokumentation
@@ -83,7 +83,7 @@ governance: Update contribution rules
 Fügt Klarstellungen zu erlaubten Dateitypen hinzu
 und definiert den Review-Prozess genauer.
 
-Ref: governance/CONSTITUTION.md, Artikel II
+Ref: knowledge/governance/CONSTITUTION.md, Artikel II
 ```
 
 ### Schritt 5: Pull Request erstellen
@@ -183,7 +183,7 @@ Nach erfolgreicher Review wird der PR gemerged.
 ## Hilfe und Fragen
 
 Bei Unklarheiten:
-1. Lies die Governance-Dokumente: `governance/`
+1. Lies die Governance-Dokumente: `knowledge/governance/`
 2. Prüfe bestehende Beispiele im Repository
 3. Erstelle ein Issue mit Fragen
 4. Kontaktiere Governance-Verantwortliche

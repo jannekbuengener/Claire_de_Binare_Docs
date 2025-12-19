@@ -260,7 +260,7 @@ env:
 
 ✅ **Write-Gates eingehalten**
 - Nur `CDB_KNOWLEDGE_HUB.md` beschrieben (erlaubt)
-- Keine Änderungen an `/governance/*` (read-only)
+- Keine Änderungen an `/knowledge/governance/*` (read-only)
 - Keine Änderungen an `/core`, `/services`, `/infrastructure`, `/tests`
 
 ✅ **Autonomie-Zonen beachtet**
@@ -270,7 +270,7 @@ env:
 - Zone D (Verboten): Keine Tresor-, Limit- oder Policy-Änderungen
 
 ✅ **Session Start Protocol**
-- `governance/NEXUS.MEMORY.yaml` geladen
+- `knowledge/governance/NEXUS.MEMORY.yaml` geladen
 - `CDB_KNOWLEDGE_HUB.md` als SYSTEM_CONTEXT genutzt
 - Alle Governance-Dokumente respektiert
 

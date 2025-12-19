@@ -106,7 +106,7 @@ Gemäß `CDB_AGENT_POLICY.md`:
 
 ### ❌ Verboten
 - `/core`, `/services`, `/infrastructure`, `/tests`
-- `/governance/*`
+- `/knowledge/governance/*`
 - Tresor-Zone
 - Secrets, Keys, Custody
 
@@ -151,8 +151,8 @@ make agent-config-ci
 
 - 📖 **Vollständige Dokumentation**: `AGENT_SETUP.md`
 - 📋 **Agent-Definitionen**: `CLAUDE.md`, `CODEX.md`, `GEMINI.md`, `COPILOT.md`
-- 🔒 **Governance**: `governance/CDB_AGENT_POLICY.md`
-- 🧠 **Memory**: `governance/NEXUS.MEMORY.yaml`
+- 🔒 **Governance**: `knowledge/governance/CDB_AGENT_POLICY.md`
+- 🧠 **Memory**: `knowledge/governance/NEXUS.MEMORY.yaml`
 - 📝 **Knowledge Hub**: `CDB_KNOWLEDGE_HUB.md`
 
 ---

@@ -3,9 +3,9 @@ relations:
   role: doc
   domain: governance
   upstream:
-    - governance/CDB_REPO_STRUCTURE.md
-    - governance/CDB_AGENT_POLICY.md
-    - governance/CDB_PSM_POLICY.md
+    - knowledge/governance/CDB_REPO_STRUCTURE.md
+    - knowledge/governance/CDB_AGENT_POLICY.md
+    - knowledge/governance/CDB_PSM_POLICY.md
   downstream: []
   status: canonical
   tags: [repository, guidelines, working_repo]
@@ -14,7 +14,7 @@ relations:
 **Working Repo Guidelines (Canonical)**
 
 Gilt für: Working Repo (*Execution Only*)  
-Gilt nicht für: Docs Hub (Governance/Knowledge/Agents)
+Gilt nicht für: Docs Hub (knowledge/governance/Knowledge/Agents)
 
 ---
 

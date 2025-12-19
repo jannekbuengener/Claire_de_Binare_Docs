@@ -9,7 +9,7 @@
 Das Claire de Binare (CDB) System benötigt ein zentrales Repository für Governance, Wissen und Dokumentation. Es besteht die Gefahr, dass dieses Repository im Laufe der Zeit mit Code, Infrastruktur und anderen ausführbaren Artefakten vermischt wird, was die Klarheit und Wartbarkeit beeinträchtigen würde.
 
 Folgende Faktoren beeinflussen diese Entscheidung:
-- Klare Trennung von Governance/Dokumentation und ausführbarem Code
+- Klare Trennung von knowledge/governance/Dokumentation und ausführbarem Code
 - Langfristige Wartbarkeit der Wissensbasis
 - Einfacher Zugriff für alle Stakeholder (auch nicht-technische)
 - Versionskontrolle von Governance-Entscheidungen
@@ -106,7 +106,7 @@ Das `Claire_de_Binare_Docs` Repository wird als **reines Dokumentations- und Gov
 Diese Entscheidung wird umgesetzt durch:
 
 1. **Verzeichnisstruktur** erstellen:
-   - `governance/` - Governance-Dokumente
+   - `knowledge/governance/` - Governance-Dokumente
    - `agents/` - Agenten-Charter
    - `knowledge/` - Wissensbasis
    - `docs/` - Dokumentation
@@ -127,8 +127,8 @@ Diese Entscheidung wird umgesetzt durch:
 
 ## Referenzen
 
-- [CONSTITUTION.md](../../governance/CONSTITUTION.md) - Systemverfassung
-- [REPOSITORY_POLICY.md](../../governance/REPOSITORY_POLICY.md) - Repository-Richtlinien
+- [CONSTITUTION.md](../../knowledge/governance/CONSTITUTION.md) - Systemverfassung
+- [REPOSITORY_POLICY.md](../../knowledge/governance/REPOSITORY_POLICY.md) - Repository-Richtlinien
 - [Architecture Decision Records Pattern](https://adr.github.io/) - ADR-Methodik
 
 ## Metadaten

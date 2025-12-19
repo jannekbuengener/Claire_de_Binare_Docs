@@ -4,8 +4,8 @@ relations:
   domain: knowledge
   upstream:
     - agents/prompts/GEMINI_PROMPT.md
-    - governance/CDB_AGENT_POLICY.md
-    - governance/CDB_POLICY_STACK_MINI.md
+    - knowledge/governance/CDB_AGENT_POLICY.md
+    - knowledge/governance/CDB_POLICY_STACK_MINI.md
   downstream: []
   status: active
   tags: [review, agents, policy, consistency]

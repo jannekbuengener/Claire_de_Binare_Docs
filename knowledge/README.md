@@ -195,7 +195,7 @@ relations:
 
 ## Where to write / Where not to write
 *   **Write here:** Session summaries, decision logs, agent handoffs, review reports, operating rules.
-*   **Do NOT write here:** Canonical governance policies (use `governance/`), active code, ephemeral logs (use `knowledge/logs/`).
+*   **Do NOT write here:** Canonical governance policies (use `knowledge/governance/`), active code, ephemeral logs (use `knowledge/logs/`).
 
 ## Key entrypoints
 *   [CDB Knowledge Hub (knowledge/CDB_KNOWLEDGE_HUB.md)](knowledge/CDB_KNOWLEDGE_HUB.md)

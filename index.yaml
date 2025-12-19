@@ -142,9 +142,9 @@ Dieser Index bietet Zugang zu allen Dokumentations-Ressourcen im Claire de Binar
 ### Governance
 Zentrale Governance-Dokumente, die die Regeln und Strukturen des Systems definieren.
 
-- [System-Verfassung](../governance/CONSTITUTION.md) - Grundlegende Prinzipien und Strukturen
-- [Repository-Richtlinien](../governance/REPOSITORY_POLICY.md) - Strikte Regeln für dieses Repository
-- [Beitragsregeln](../governance/CONTRIBUTION_RULES.md) - Wie man zu diesem Repository beiträgt
+- [System-Verfassung](../knowledge/governance/CONSTITUTION.md) - Grundlegende Prinzipien und Strukturen
+- [Repository-Richtlinien](../knowledge/governance/REPOSITORY_POLICY.md) - Strikte Regeln für dieses Repository
+- [Beitragsregeln](../knowledge/governance/CONTRIBUTION_RULES.md) - Wie man zu diesem Repository beiträgt
 
 ### Agenten-System
 Dokumentation des Agenten-basierten Governance-Systems.
@@ -163,9 +163,9 @@ Langzeit-Wissen und Entscheidungen.
 ## Schnellstart
 
 ### Für neue Beitragende
-1. Lies die [System-Verfassung](../governance/CONSTITUTION.md)
-2. Verstehe die [Repository-Richtlinien](../governance/REPOSITORY_POLICY.md)
-3. Folge den [Beitragsregeln](../governance/CONTRIBUTION_RULES.md)
+1. Lies die [System-Verfassung](../knowledge/governance/CONSTITUTION.md)
+2. Verstehe die [Repository-Richtlinien](../knowledge/governance/REPOSITORY_POLICY.md)
+3. Folge den [Beitragsregeln](../knowledge/governance/CONTRIBUTION_RULES.md)
 4. Verwende [Templates](./templates/) für neue Dokumente
 
 ### Für Agenten-Entwicklung
@@ -185,7 +185,7 @@ Langzeit-Wissen und Entscheidungen.
 ```
 /
 ├── README.md                           # Repository-Hauptseite
-├── governance/                         # Governance-Dokumente
+├── knowledge/governance/                         # Governance-Dokumente
 │   ├── CONSTITUTION.md                # System-Verfassung
 │   ├── REPOSITORY_POLICY.md           # Repository-Richtlinien
 │   └── CONTRIBUTION_RULES.md          # Beitragsregeln
@@ -236,16 +236,16 @@ Verwende diese Templates für konsistente Dokumentation:
 ## Navigation
 
 ### Nach Thema
-- **Governance**: Start bei [Verfassung](../governance/CONSTITUTION.md)
+- **Governance**: Start bei [Verfassung](../knowledge/governance/CONSTITUTION.md)
 - **Agenten**: Start bei [Agenten-Übersicht](../agents/README.md)
 - **Wissen**: Start bei [Wissens-Übersicht](../knowledge/README.md)
-- **Beitragen**: Start bei [Beitragsregeln](../governance/CONTRIBUTION_RULES.md)
+- **Beitragen**: Start bei [Beitragsregeln](../knowledge/governance/CONTRIBUTION_RULES.md)
 
 ### Nach Rolle
-- **Governance-Verantwortliche**: [Governance](../governance/), [Verfassung](../governance/CONSTITUTION.md)
+- **Governance-Verantwortliche**: [Governance](../knowledge/governance/), [Verfassung](../knowledge/governance/CONSTITUTION.md)
 - **Agenten-Maintainer**: [Agenten](../agents/), [Rollen](../agents/roles.yaml)
 - **Wissens-Kuratoren**: [Wissen](../knowledge/), [Index](../knowledge/index.yaml)
-- **Beitragende**: [Contribution Rules](../governance/CONTRIBUTION_RULES.md), [Templates](./templates/)
+- **Beitragende**: [Contribution Rules](../knowledge/governance/CONTRIBUTION_RULES.md), [Templates](./templates/)
 
 ## Such-Tipps
 
@@ -261,7 +261,7 @@ grep -r "key:" . --include="*.yaml"
 ### Nach Kategorie
 ```bash
 # Alle Governance-Dokumente
-find governance/ -name "*.md"
+find knowledge/governance/ -name "*.md"
 
 # Alle Agent-Charters
 find agents/ -name "*.yaml"

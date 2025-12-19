@@ -3,11 +3,11 @@ relations:
   role: policy
   domain: governance
   upstream:
-    - governance/CDB_CONSTITUTION.md
-    - governance/CDB_GOVERNANCE.md
-    - governance/CDB_POLICY_STACK_MINI.md
+    - knowledge/governance/CDB_CONSTITUTION.md
+    - knowledge/governance/CDB_GOVERNANCE.md
+    - knowledge/governance/CDB_POLICY_STACK_MINI.md
   downstream:
-    - governance/DELIVERY_APPROVED.yaml
+    - knowledge/governance/DELIVERY_APPROVED.yaml
   status: canonical
   tags: [infrastructure, policy, iac, gitops, kubernetes]
 ---
@@ -157,7 +157,7 @@ KI-Container:
 Infrastrukturänderungen sind **nur** im Delivery Mode erlaubt.
 
 Voraussetzungen:
-- `governance/DELIVERY_APPROVED.yaml`
+- `knowledge/governance/DELIVERY_APPROVED.yaml`
   - `delivery.approved: true`
 
 Ablauf:

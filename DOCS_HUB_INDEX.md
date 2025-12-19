@@ -62,7 +62,7 @@ Der Docs Hub ist **autoritativer** als:
 
 ---
 
-### `/governance/`
+### `/knowledge/governance/`
 **Zweck:** Höchste Regel- und Autoritätsebene
 
 Wichtige Dateien:

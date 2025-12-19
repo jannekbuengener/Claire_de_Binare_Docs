@@ -168,7 +168,7 @@ Update README.md to reflect current structure:
 **Role:** Governance, Knowledge, Agent Definitions
 
 This is the **authoritative source** for:
-- Project governance (governance/)
+- Project governance (knowledge/governance/)
 - Shared knowledge (knowledge/)
 - Agent definitions (agents/)
 
@@ -224,7 +224,7 @@ git commit -m "docs: update README to reflect standalone Docs Hub structure"
 
 **Impact:**
 - Low (these are top-level navigation files)
-- Most governance/agent files have frontmatter
+- Most knowledge/governance/agent files have frontmatter
 
 **Fix (Optional):**
 Add minimal frontmatter:
@@ -264,7 +264,7 @@ domain: docs_hub
 ### Folder Structure — 90% Correct
 - ✅ `agents/roles/`, `agents/policies/`, `agents/charters/`, `agents/prompts/` exist
 - ✅ `knowledge/operating_rules/`, `knowledge/reviews/`, `knowledge/logs/` exist
-- ✅ `governance/` fully populated
+- ✅ `knowledge/governance/` fully populated
 - 🟡 Minor issues: tasklist vs tasklists, missing knowledge/tasklists, missing /logs
 
 ---
@@ -285,7 +285,7 @@ domain: docs_hub
 ### Link Integrity
 - **Internal links found:** 17
 - **Broken links:** 0 (all relative paths resolve)
-- **Cross-references:** Consistent (agents/ ↔ governance/ ↔ knowledge/)
+- **Cross-references:** Consistent (agents/ ↔ knowledge/governance/ ↔ knowledge/)
 
 ### Canonical Status
 - **Canonical files:** 15 (governance + key knowledge/agent files)
@@ -352,7 +352,7 @@ domain: docs_hub
 
 ### Agent Policy Compliance
 - ✅ Agents have clear charters
-- ✅ Write gates defined (governance/ read-only)
+- ✅ Write gates defined (knowledge/governance/ read-only)
 - ✅ Knowledge/ writable by session lead
 
 ### Repo Structure Compliance

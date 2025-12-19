@@ -50,7 +50,7 @@ Die CDB_AGENT_POLICY definiert klare konzeptuelle Grenzen für KI-Agents, hat je
   + ### 3.2 Protected Zones (Branch Protection + CODEOWNERS)
   + KI darf **nicht** persistent schreiben in:
   + - `/core`, `/services`, `/infrastructure`, `/tests`
-  + - `/governance/*`
+  + - `/knowledge/governance/*`
   + - irgendetwas in der Tresor-Zone
   + 
   + ### 3.3 Enforcement Mechanisms (REQUIRED)
@@ -240,7 +240,7 @@ Die CDB_AGENT_POLICY definiert klare konzeptuelle Grenzen für KI-Agents, hat je
   + ## 3. Write-Gates (hart)
   + KI darf **nicht** persistent schreiben in:
   + - `/core`, `/services`, `/infrastructure`, `/tests`
-  + - `/governance/*`
+  + - `/knowledge/governance/*`
   + - irgendetwas in der Tresor-Zone
   + 
   + ### 3.X Tresor-Zone Definition
@@ -336,7 +336,7 @@ Zur Umsetzung der Policy sind folgende technische Komponenten **zwingend erforde
 
 ### GitOps / CI/CD
 - [ ] Branch Protection Rules (main/master)
-- [x] CODEOWNERS File (`/governance/* @maintainers`, `/core/* @core-team`)
+- [x] CODEOWNERS File (`/knowledge/governance/* @maintainers`, `/core/* @core-team`)
 - [ ] GitHub Actions Workflows:
   - [ ] `validate_write_zones.yml`
   - [ ] `secrets_detection.yml`

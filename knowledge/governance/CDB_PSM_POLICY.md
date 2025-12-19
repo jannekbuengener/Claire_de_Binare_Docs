@@ -3,9 +3,9 @@ relations:
   role: policy
   domain: governance
   upstream:
-    - governance/CDB_POLICY_STACK_MINI.md
-    - governance/CDB_CONSTITUTION.md
-    - governance/CDB_GOVERNANCE.md
+    - knowledge/governance/CDB_POLICY_STACK_MINI.md
+    - knowledge/governance/CDB_CONSTITUTION.md
+    - knowledge/governance/CDB_GOVERNANCE.md
   downstream: []
   status: canonical
   tags: [psm, portfolio, state, event_sourcing, policy]

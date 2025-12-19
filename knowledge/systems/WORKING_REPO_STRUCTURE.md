@@ -24,7 +24,7 @@ This documents the technical structure of the Claire de Binare Working Repositor
 - `scripts/` → Automation and pipeline scripts
 
 ### Hard Rules
-- ❌ **No `governance/` content** in Working Repo
+- ❌ **No `knowledge/governance/` content** in Working Repo
 - ❌ **No `services/*/core`** directories  
 - ❌ **No agent definition files** in Working Repo root
 - ❌ **No knowledge/documentation files** in Working Repo root

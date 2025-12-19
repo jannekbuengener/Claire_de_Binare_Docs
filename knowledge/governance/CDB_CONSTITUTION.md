@@ -4,16 +4,16 @@ relations:
   domain: governance
   upstream: []
   downstream:
-    - governance/CDB_GOVERNANCE.md
-    - governance/CDB_AGENT_POLICY.md
-    - governance/CDB_INFRA_POLICY.md
-    - governance/CDB_POLICY_STACK_MINI.md
-    - governance/CDB_PSM_POLICY.md
-    - governance/CDB_REPO_GUIDELINES.md
-    - governance/CDB_REPO_STRUCTURE.md
-    - governance/CDB_RL_SAFETY_POLICY.md
-    - governance/CDB_TRESOR_POLICY.md
-    - governance/DELIVERY_APPROVED.yaml
+    - knowledge/governance/CDB_GOVERNANCE.md
+    - knowledge/governance/CDB_AGENT_POLICY.md
+    - knowledge/governance/CDB_INFRA_POLICY.md
+    - knowledge/governance/CDB_POLICY_STACK_MINI.md
+    - knowledge/governance/CDB_PSM_POLICY.md
+    - knowledge/governance/CDB_REPO_GUIDELINES.md
+    - knowledge/governance/CDB_REPO_STRUCTURE.md
+    - knowledge/governance/CDB_RL_SAFETY_POLICY.md
+    - knowledge/governance/CDB_TRESOR_POLICY.md
+    - knowledge/governance/DELIVERY_APPROVED.yaml
   status: canonical
   tags: [constitution, governance, core_principles]
 ---
@@ -109,7 +109,7 @@ Kein Dokument, kein Agent und kein Tool darf diese Rangordnung umgehen.
 
 Delivery Mode ist **nur** zulässig, wenn das explizite Gate gesetzt ist:
 
-- `governance/DELIVERY_APPROVED.yaml`  
+- `knowledge/governance/DELIVERY_APPROVED.yaml`  
   - `delivery.approved: true` bedeutet: Delivery Mode erlaubt  
   - `false` oder Datei fehlt bedeutet: Analysis Mode (Default)
 

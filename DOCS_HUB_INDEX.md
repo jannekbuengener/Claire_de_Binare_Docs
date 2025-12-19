@@ -117,8 +117,9 @@ Nichts hier ist aktiv oder kanonisch.
 ## 4. Deprecated / Migration
 
 Diese Dateien gelten als **deprecated** und dürfen nicht mehr verwendet werden:
-- `copilot.txt`
-- `gemini.txt`
+- `copilot.md`
+- `codex.md`
+- `claude.md`
 
 Ersatz:
 - Agenten-Dateien unter `/agents/`

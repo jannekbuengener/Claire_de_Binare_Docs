@@ -1,5 +1,10 @@
-DEPRECATED: This prompt has been migrated to copilot.md.
-See: copilot.md
+---
+role: prompt
+agent: COPILOT
+status: migrated
+source: copilot.txt
+---
+# PROMPT_COPILOT
 
 Hinweis: Bitte zuerst AGENTS.md im lokalen Pfad 
 C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\AGENTS.md lesen, um Rollen, Rechte und Kommunikationsregeln zu verstehen.

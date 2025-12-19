@@ -1,5 +1,10 @@
-DEPRECATED: This prompt has been migrated to claude.md.
-See: claude.md
+---
+role: prompt
+agent: CLAUDE
+status: migrated
+source: claude.txt
+---
+# PROMPT_CLAUDE
 
 Hinweis: Bitte zu Beginn AGENTS.md im lokalen Pfad 
 C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\AGENTS.md lesen, um Rollen, Rechte und Kommunikationsregeln zu verstehen.

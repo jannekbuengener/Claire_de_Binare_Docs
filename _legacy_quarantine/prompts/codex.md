@@ -1,5 +1,10 @@
-DEPRECATED: This prompt has been migrated to codex.md.
-See: codex.md
+---
+role: prompt
+agent: CODEX
+status: migrated
+source: codex.txt
+---
+# PROMPT_CODEX
 
 Hinweis: Bitte zunächst AGENTS.md im lokalen Pfad 
 C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\AGENTS.md lesen, um Rollen, Rechte und Kommunikationsregeln zu verstehen.

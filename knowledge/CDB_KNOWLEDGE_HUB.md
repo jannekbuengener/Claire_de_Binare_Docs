@@ -4,11 +4,11 @@ relations:
   role: knowledge_base
   domain: knowledge
   upstream:
-    - governance/CDB_CONSTITUTION.md
-    - governance/CDB_GOVERNANCE.md
-    - governance/CDB_AGENT_POLICY.md
-    - governance/NEXUS.MEMORY.yaml
-    - governance/CDB_REPO_STRUCTURE.md
+    - knowledge/governance/CDB_CONSTITUTION.md
+    - knowledge/governance/CDB_GOVERNANCE.md
+    - knowledge/governance/CDB_AGENT_POLICY.md
+    - knowledge/governance/NEXUS.MEMORY.yaml
+    - knowledge/governance/CDB_REPO_STRUCTURE.md
   downstream:
     - agents/
 ---
@@ -98,7 +98,7 @@ Erlaubt:
 
 Verboten:
 - knowledge/
-- governance/
+- knowledge/governance/
 - agents/
 - Logs oder Dokumentation
 
@@ -178,7 +178,30 @@ cdb-service-logs.ps1
 
 cdb-secrets-sync.ps1
 
+2025-12-19 – Agent Roles bleiben extern (external-only policy)
+
+Alle Agent-Definitionen außerhalb der Repositories
+
+.claude/agents/ aus Working Repo entfernt (20 Dateien)
+
+Externe Location: C:\Users\janne\Documents\GitHub\Workspaces\agents
+
+Referenz: GitHub Issue #133, Commit 8a417ee
+
 5. Session Summaries (verdichtet)
+
+2025-12-18/19 – Governance Hygiene Enforcement (COMPLETE)
+
+Ziel: Systematische Governance Compliance via Multi-Agent Koordination
+
+Ergebnis: 6 Issues abgeschlossen (#132 Meta, #133 .claude/agents/, #134 CODEOWNERS, #8 tasklists/, #9 .txt Migration, #10 PROMPT_CODEX.txt)
+
+Handoff: Issue #11 (MEGA-ISSUE) aufbrechen in Subtasks
+
+Status: Phase 1 komplett, External-Only Policy durchgesetzt, Working Repo & Docs Hub sauber
+
+Referenz: GitHub jannekbuengener/Claire_de_Binare #132 (Meta-Issue geschlossen)
+
 2025-12-13A – T1-Migration
 
 Ziel: Altstruktur entfernen

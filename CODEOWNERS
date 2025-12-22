@@ -15,15 +15,15 @@
 # Diese Dokumente erfordern explizite Governance-Approval
 
 # System-Verfassung und Repository-Policy
-/governance/CONSTITUTION.md                @governance-board
-/governance/REPOSITORY_POLICY.md          @governance-board
-/governance/CONTRIBUTION_RULES.md         @governance-board
+/knowledge/governance/CONSTITUTION.md                @governance-board
+/knowledge/governance/REPOSITORY_POLICY.md          @governance-board
+/knowledge/governance/CONTRIBUTION_RULES.md         @governance-board
 
 # Alle neuen Governance-Dokumente
-/governance/*.md                          @governance-board
-/governance/**/*.md                       @governance-board
-/governance/*.yaml                        @governance-board
-/governance/**/*.yaml                     @governance-board
+/knowledge/governance/*.md                          @governance-board
+/knowledge/governance/**/*.md                       @governance-board
+/knowledge/governance/*.yaml                        @governance-board
+/knowledge/governance/**/*.yaml                     @governance-board
 
 # ============================================
 # AGENTEN-GOVERNANCE
@@ -105,4 +105,4 @@
 # @docs-maintainers     - Dokumentations-Maintainer
 #
 # Alternativ können hier auch individuelle GitHub-User definiert werden
-# Beispiel: /governance/*.md @username1 @username2
+# Beispiel: /knowledge/governance/*.md @username1 @username2

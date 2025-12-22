@@ -160,7 +160,11 @@ export OPENAI_API_KEY="sk-..."
 
 **Check-List**:
 - [ ] Ist `CLAUDE.md` Session Start Protocol geladen?
+<<<<<<< HEAD
 - [ ] Sind `governance/NEXUS.MEMORY.yaml` und `CDB_KNOWLEDGE_HUB.md` verfügbar?
+=======
+- [ ] Sind `knowledge/governance/NEXUS.MEMORY.yaml` und `CDB_KNOWLEDGE_HUB.md` verfügbar?
+>>>>>>> copilot/improve-deep-issues-pipeline
 - [ ] Ist das Agent-Handshake-System konfiguriert?
 - [ ] Sind Write-Rechte korrekt (nur `CDB_KNOWLEDGE_HUB.md`)?
 
@@ -176,7 +180,11 @@ KI darf persistent schreiben **nur** in:
 
 KI darf **nicht** schreiben in:
 - `/core`, `/services`, `/infrastructure`, `/tests`
+<<<<<<< HEAD
 - `/governance/*`
+=======
+- `/knowledge/governance/*`
+>>>>>>> copilot/improve-deep-issues-pipeline
 - Tresor-Zone
 
 ### Autonomie-Zonen (CDB_AGENT_POLICY.md)
@@ -196,7 +204,11 @@ KI darf **nicht** schreiben in:
 - **COPILOT.md**: Copilot Assistenz-Modell Spezifikation
 - **CDB_AGENT_POLICY.md**: Governance-Regeln für Agenten
 - **CDB_KNOWLEDGE_HUB.md**: Zentrale Entscheidungs- und Handoff-Drehscheibe
+<<<<<<< HEAD
 - **governance/NEXUS.MEMORY.yaml**: Kanonisches System-Memory
+=======
+- **knowledge/governance/NEXUS.MEMORY.yaml**: Kanonisches System-Memory
+>>>>>>> copilot/improve-deep-issues-pipeline
 
 ---
 

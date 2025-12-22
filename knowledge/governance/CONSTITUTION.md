@@ -42,7 +42,7 @@ Erlaubte Dokumentationskategorien:
 
 ### §1 Hierarchie
 ```
-governance/          - Verfassung und Grundregeln
+knowledge/governance/          - Verfassung und Grundregeln
 agents/             - Agenten-Charter und Rollen
 knowledge/          - Wissensbasis und Entscheidungen
 docs/               - Dokumentationsindex und Templates

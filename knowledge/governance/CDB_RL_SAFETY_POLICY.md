@@ -1,5 +1,5 @@
 ---
-# ✅ FINALER TEXT – `governance/CDB_RL_SAFETY_POLICY.md`  
+# ✅ FINALER TEXT – `knowledge/governance/CDB_RL_SAFETY_POLICY.md`  
 *(vollständig ersetzen; konsistent mit Tresor & Governance)* :contentReference[oaicite:2]{index=2}
 
 ```md
@@ -8,10 +8,10 @@ relations:
   role: policy
   domain: governance
   upstream:
-    - governance/CDB_CONSTITUTION.md
-    - governance/CDB_GOVERNANCE.md
-    - governance/CDB_TRESOR_POLICY.md
-    - governance/CDB_PSM_POLICY.md
+    - knowledge/governance/CDB_CONSTITUTION.md
+    - knowledge/governance/CDB_GOVERNANCE.md
+    - knowledge/governance/CDB_TRESOR_POLICY.md
+    - knowledge/governance/CDB_PSM_POLICY.md
   downstream: []
   status: canonical
   tags: [rl, safety, policy]

@@ -260,7 +260,11 @@ env:
 
 ✅ **Write-Gates eingehalten**
 - Nur `CDB_KNOWLEDGE_HUB.md` beschrieben (erlaubt)
+<<<<<<< HEAD
 - Keine Änderungen an `/governance/*` (read-only)
+=======
+- Keine Änderungen an `/knowledge/governance/*` (read-only)
+>>>>>>> copilot/improve-deep-issues-pipeline
 - Keine Änderungen an `/core`, `/services`, `/infrastructure`, `/tests`
 
 ✅ **Autonomie-Zonen beachtet**
@@ -270,7 +274,11 @@ env:
 - Zone D (Verboten): Keine Tresor-, Limit- oder Policy-Änderungen
 
 ✅ **Session Start Protocol**
+<<<<<<< HEAD
 - `governance/NEXUS.MEMORY.yaml` geladen
+=======
+- `knowledge/governance/NEXUS.MEMORY.yaml` geladen
+>>>>>>> copilot/improve-deep-issues-pipeline
 - `CDB_KNOWLEDGE_HUB.md` als SYSTEM_CONTEXT genutzt
 - Alle Governance-Dokumente respektiert
 

@@ -106,7 +106,11 @@ Gemäß `CDB_AGENT_POLICY.md`:
 
 ### ❌ Verboten
 - `/core`, `/services`, `/infrastructure`, `/tests`
+<<<<<<< HEAD
 - `/governance/*`
+=======
+- `/knowledge/governance/*`
+>>>>>>> copilot/improve-deep-issues-pipeline
 - Tresor-Zone
 - Secrets, Keys, Custody
 
@@ -151,8 +155,13 @@ make agent-config-ci
 
 - 📖 **Vollständige Dokumentation**: `AGENT_SETUP.md`
 - 📋 **Agent-Definitionen**: `CLAUDE.md`, `CODEX.md`, `GEMINI.md`, `COPILOT.md`
+<<<<<<< HEAD
 - 🔒 **Governance**: `governance/CDB_AGENT_POLICY.md`
 - 🧠 **Memory**: `governance/NEXUS.MEMORY.yaml`
+=======
+- 🔒 **Governance**: `knowledge/governance/CDB_AGENT_POLICY.md`
+- 🧠 **Memory**: `knowledge/governance/NEXUS.MEMORY.yaml`
+>>>>>>> copilot/improve-deep-issues-pipeline
 - 📝 **Knowledge Hub**: `CDB_KNOWLEDGE_HUB.md`
 
 ---

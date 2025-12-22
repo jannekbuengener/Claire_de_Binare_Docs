@@ -3,8 +3,8 @@ relations:
   role: policy
   domain: governance
   upstream:
-    - governance/CDB_CONSTITUTION.md
-    - governance/CDB_GOVERNANCE.md
+    - knowledge/governance/CDB_CONSTITUTION.md
+    - knowledge/governance/CDB_GOVERNANCE.md
   downstream:
     - knowledge/CDB_KNOWLEDGE_HUB.md
     - agents/
@@ -131,7 +131,7 @@ Agenten dürfen **niemals**:
 - `.cdb_agent_workspace/**` (lokal, gitignored, Working Repo)
 
 ### Verbotene persistente Writes
-- `governance/**`
+- `knowledge/governance/**`
 - Working-Repo-Code (`/core`, `/services`, `/infrastructure`, `/tests`)
 - Tresor-Zone (`CDB_TRESOR_POLICY.md`)
 

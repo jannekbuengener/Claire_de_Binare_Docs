@@ -4,7 +4,7 @@
 **Reviewee:** Gemini (Senior Repository Architect & Governance Planner)
 **Datum:** 2025-12-12
 **Review-Typ:** Technische Validierung, Governance-Compliance, Risiko-Analyse
-**Source:** `governance/GEMINI_MIGRATION_PLAN_FOR_CLAUDE_REVIEW.md`
+**Source:** `knowledge/governance/GEMINI_MIGRATION_PLAN_FOR_CLAUDE_REVIEW.md`
 
 ---
 
@@ -35,7 +35,7 @@ Gemini's Migrationsplan ist **strukturell solide, governance-konform und technis
 ├─ services/ {market/, signal/, risk/, execution/, psm/, observability/}
 ├─ infrastructure/ {compose/, k8s/, iac/, scripts/}
 ├─ tests/ {unit/, integration/, replay/}
-├─ governance/
+├─ knowledge/governance/
 ├─ CDB_KNOWLEDGE_HUB.md
 ├─ .gitignore, docker-compose.yml, README.md, LICENSE
 ```
@@ -47,7 +47,7 @@ Gemini's Migrationsplan ist **strukturell solide, governance-konform und technis
 | `/services/` | ✅ MATCH | 5 Services geplant (market, signal, risk, execution, db_writer) |
 | `/infrastructure/` | ⚠️ PARTIAL | Fehlt: `/compose/` Unterordner (Gordon-Empfehlung!) |
 | `/tests/` | ✅ MATCH | unit/, integration/, replay/ geplant |
-| `/governance/` | ✅ MATCH | Bereits befüllt, weitere Moves geplant |
+| `/knowledge/governance/` | ✅ MATCH | Bereits befüllt, weitere Moves geplant |
 | Root-Files | ✅ MATCH | docker-compose.yml, Makefile, pytest.ini korrekt |
 
 **Ergebnis:** ✅ **95% Konsistenz** – Nur `/infrastructure/compose/` fehlt
@@ -66,7 +66,7 @@ drwxr-xr-x ... core/
 drwxr-xr-x ... services/
 drwxr-xr-x ... infrastructure/
 drwxr-xr-x ... tests/
-drwxr-xr-x ... governance/
+drwxr-xr-x ... knowledge/governance/
 # ❌ KEINE t1/, t2/, t3/ Ordner
 ```
 
@@ -222,13 +222,13 @@ t1/cdb_paper_runner/requirements.txt
 
 **Governance-Policy:**
 - KI schreibt nur in `CDB_KNOWLEDGE_HUB.md`
-- `/governance/` ist read-only (außer Hub)
+- `/knowledge/governance/` ist read-only (außer Hub)
 
 **Gemini's Plan:**
-- `MIG-G001`: `CDB_REPO_STRUCTURE.md` → `governance/CDB_REPO_STRUCTURE.md` ✅
-- `MIG-G002`: `CDB_REPO_INDEX.md` → `governance/CDB_REPO_INDEX.md` ✅
-- `MIG-G003`: `CDB_REPO_MIGRATION_BRIEF.md` → `governance/archive/` ✅
-- `MIG-G004`: `PROMPT.txt` → `governance/archive/` ✅
+- `MIG-G001`: `CDB_REPO_STRUCTURE.md` → `knowledge/governance/CDB_REPO_STRUCTURE.md` ✅
+- `MIG-G002`: `CDB_REPO_INDEX.md` → `knowledge/governance/CDB_REPO_INDEX.md` ✅
+- `MIG-G003`: `CDB_REPO_MIGRATION_BRIEF.md` → `knowledge/governance/archive/` ✅
+- `MIG-G004`: `PROMPT.txt` → `knowledge/governance/archive/` ✅
 
 **Ergebnis:** ✅ **Vollständig governance-konform**
 
@@ -425,7 +425,7 @@ t1/cdb_paper_runner/requirements.txt
 **Prinzipien (CDB_CONSTITUTION.md):**
 1. ✅ **Struktur vor Inhalt** – Plan respektiert Phase 0/1
 2. ✅ **Tier-1 bleibt unsichtbar** – Migration erst nach Freigabe
-3. ✅ **Governance-Trennung** – /governance/ korrekt behandelt
+3. ✅ **Governance-Trennung** – /knowledge/governance/ korrekt behandelt
 4. ✅ **Deterministische Migration** – Skript-basiert, nachvollziehbar
 5. ✅ **Owner-Kontrolle** – Freigabepunkte klar definiert
 

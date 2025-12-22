@@ -3,14 +3,14 @@ relations:
   role: review
   domain: knowledge
   upstream:
-    - governance/CDB_AGENT_POLICY.md
-    - governance/CDB_GOVERNANCE.md
-    - governance/CDB_CONSTITUTION.md
-    - governance/CDB_INFRA_POLICY.md
-    - governance/CDB_POLICY_STACK_MINI.md
-    - governance/CDB_RL_SAFETY_POLICY.md
-    - governance/CDB_TRESOR_POLICY.md
-    - governance/CDB_PSM_POLICY.md
+    - knowledge/governance/CDB_AGENT_POLICY.md
+    - knowledge/governance/CDB_GOVERNANCE.md
+    - knowledge/governance/CDB_CONSTITUTION.md
+    - knowledge/governance/CDB_INFRA_POLICY.md
+    - knowledge/governance/CDB_POLICY_STACK_MINI.md
+    - knowledge/governance/CDB_RL_SAFETY_POLICY.md
+    - knowledge/governance/CDB_TRESOR_POLICY.md
+    - knowledge/governance/CDB_PSM_POLICY.md
   downstream: []
   status: active
   tags: [review, governance, baseline]
@@ -59,7 +59,7 @@ Das Urteil lautet **GO** für den Repository-Aufbau, unter der Bedingung, dass d
 
 Für den **Initial-Start** sind die Policies ausreichend. Die technische Durchsetzung muss parallel zum Aufbau aktiviert werden:
 
-1.  **Sofort:** CODEOWNERS Datei erstellen (Inhalt: * @maintainers, /governance/ @maintainers).
+1.  **Sofort:** CODEOWNERS Datei erstellen (Inhalt: * @maintainers, /knowledge/governance/ @maintainers).
 2.  **Sofort:** Branch Protection auf main aktivieren (sobald Push erfolgt).
 3.  **Follow-up:** CI-Workflows für alidate_write_zones.sh und Secrets-Scan einrichten.
 

@@ -3,15 +3,15 @@ relations:
   role: policy
   domain: governance
   upstream:
-    - governance/CDB_CONSTITUTION.md
-    - governance/CDB_GOVERNANCE.md
+    - knowledge/governance/CDB_CONSTITUTION.md
+    - knowledge/governance/CDB_GOVERNANCE.md
   downstream:
-    - governance/CDB_AGENT_POLICY.md
-    - governance/CDB_INFRA_POLICY.md
-    - governance/CDB_RL_SAFETY_POLICY.md
-    - governance/CDB_TRESOR_POLICY.md
-    - governance/CDB_PSM_POLICY.md
-    - governance/DELIVERY_APPROVED.yaml
+    - knowledge/governance/CDB_AGENT_POLICY.md
+    - knowledge/governance/CDB_INFRA_POLICY.md
+    - knowledge/governance/CDB_RL_SAFETY_POLICY.md
+    - knowledge/governance/CDB_TRESOR_POLICY.md
+    - knowledge/governance/CDB_PSM_POLICY.md
+    - knowledge/governance/DELIVERY_APPROVED.yaml
     - knowledge/CDB_KNOWLEDGE_HUB.md
   status: canonical
   tags: [policy_stack, governance, safety]

@@ -50,7 +50,7 @@ Alle anderen Dateitypen sind grundsätzlich verboten, insbesondere:
 ```
 /
 ├── README.md                    # Repository-Übersicht
-├── governance/                  # Governance-Dokumente
+├── knowledge/governance/                  # Governance-Dokumente
 │   ├── CONSTITUTION.md         # System-Verfassung
 │   ├── REPOSITORY_POLICY.md    # Diese Datei
 │   └── CONTRIBUTION_RULES.md   # Beitragsregeln

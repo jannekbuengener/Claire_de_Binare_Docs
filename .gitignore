@@ -299,3 +299,11 @@ coverage/
 *.backup
 *~
 *.orig
+
+# ============================================
+# LOCAL MACHINE STATE (NEVER COMMIT)
+# ============================================
+
+# Machine-local workspace state
+.local/**
+!.local/README.md

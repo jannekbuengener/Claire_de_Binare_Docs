@@ -178,6 +178,20 @@ cdb-service-logs.ps1
 
 cdb-secrets-sync.ps1
 
+2025-12-27 – M7-M9 Roadmap Refinement Complete (Issue #107)
+
+Epic #91 breakdown: M7 Testnet (4-6 weeks, 10 issues consolidated)
+
+M8 Security critical blockers: Security Lead + Pentest Booking ($10k-$30k)
+
+M9 Release: 2-3 weeks, SLA targets defined (99.9% uptime, <100ms p50 latency)
+
+Roadmaps: knowledge/roadmap/M7_TESTNET_PLAN.md (393 lines), M8_SECURITY_PLAN.md (386 lines), M9_RELEASE_PLAN.md (356 lines)
+
+Critical Path validated: M6 ✅ → M7 🔄 → M8 → M9
+
+Referenz: GitHub Issue #107
+
 2025-12-19 – Agent Roles bleiben extern (external-only policy)
 
 Alle Agent-Definitionen außerhalb der Repositories

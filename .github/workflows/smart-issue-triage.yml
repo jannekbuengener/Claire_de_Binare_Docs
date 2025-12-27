@@ -1,0 +1,137 @@
+name: 🎯 Smart Issue Triage
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  auto-triage:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      
+    steps:
+      - name: 🔍 Analyze Issue Content
+        id: analyze
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const title = issue.title.toLowerCase();
+            const body = issue.body ? issue.body.toLowerCase() : '';
+            const content = title + ' ' + body;
+            
+            let labels = [];
+            let priority = '';
+            let agent = '';
+            
+            // Priority detection
+            if (/urgent|critical|breaking|production|down/.test(content)) {
+              priority = 'priority:critical';
+            } else if (/high|important|blocking|asap/.test(content)) {
+              priority = 'priority:high';
+            } else if (/medium|normal/.test(content)) {
+              priority = 'priority:medium';
+            } else {
+              priority = 'priority:low';
+            }
+            
+            // Type detection
+            if (/bug|error|broken|fail|crash|exception/.test(content)) {
+              labels.push('type:bug');
+            } else if (/feature|enhancement|improvement|add/.test(content)) {
+              labels.push('type:feature');
+            } else if (/test|testing|coverage/.test(content)) {
+              labels.push('type:testing');
+            } else if (/doc|documentation|guide|readme/.test(content)) {
+              labels.push('type:docs');
+            }
+            
+            // Component detection
+            if (/github action|workflow|ci|pipeline/.test(content)) {
+              labels.push('github-actions');
+            } else if (/governance|policy|compliance|violation/.test(content)) {
+              labels.push('governance');
+            } else if (/security|auth|permission|access/.test(content)) {
+              labels.push('security');
+            } else if (/performance|slow|optimization/.test(content)) {
+              labels.push('performance');
+            }
+            
+            // Agent assignment detection
+            if (/\[codex\]|@codex|deterministic|implementation/.test(content)) {
+              agent = 'codex';
+              labels.push('agent:codex');
+            } else if (/\[copilot\]|@copilot|workflow|automation/.test(content)) {
+              agent = 'copilot';
+              labels.push('agent:copilot');
+            } else if (/\[gemini\]|@gemini|governance|review|audit/.test(content)) {
+              agent = 'gemini';
+              labels.push('agent:gemini');
+            }
+            
+            // Add priority
+            if (priority) labels.push(priority);
+            
+            // Store results
+            core.setOutput('labels', labels.join(','));
+            core.setOutput('agent', agent);
+            core.setOutput('priority', priority);
+            
+      - name: 🏷️ Apply Smart Labels
+        if: steps.analyze.outputs.labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labels = '${{ steps.analyze.outputs.labels }}'.split(',').filter(l => l.trim());
+            
+            if (labels.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                labels: labels
+              });
+            }
+            
+      - name: 🤖 Add Smart Comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const agent = '${{ steps.analyze.outputs.agent }}';
+            const priority = '${{ steps.analyze.outputs.priority }}';
+            
+            let comment = '## 🤖 **Smart Triage Complete**\n\n';
+            
+            if (priority) {
+              const priorityEmoji = {
+                'priority:critical': '🚨',
+                'priority:high': '🔥', 
+                'priority:medium': '🔶',
+                'priority:low': '🔹'
+              };
+              comment += `**Priority:** ${priorityEmoji[priority]} ${priority.replace('priority:', '').toUpperCase()}\n\n`;
+            }
+            
+            if (agent) {
+              const agentInfo = {
+                'codex': '**@codex** - Deterministic implementation specialist',
+                'copilot': '**@copilot** - Workflow automation & GitHub Actions expert', 
+                'gemini': '**@gemini** - Governance & compliance validator'
+              };
+              comment += `**Recommended Agent:** ${agentInfo[agent]}\n\n`;
+            }
+            
+            comment += '### 📋 **Next Steps:**\n';
+            comment += '- [ ] Review auto-assigned labels\n';
+            comment += '- [ ] Confirm priority level\n';
+            comment += '- [ ] Assign to appropriate agent\n';
+            comment += '- [ ] Add to project board if needed\n\n';
+            comment += '---\n*Auto-triaged by Smart Issue Triage* 🎯';
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: comment
+            });

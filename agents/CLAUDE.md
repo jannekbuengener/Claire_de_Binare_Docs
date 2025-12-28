@@ -5,7 +5,7 @@ Claude **muss** zu Beginn jeder Session folgende Dateien lesen:
 - agents/AGENTS.md
 - knowledge/SYSTEM.CONTEXT.md
 - knowledge/CURRENT_STATUS.md
-- knowledge/ACTIVE_ROADMAP.md
+- knowledge/roadmap/EXPANDED_ECOSYSTEM_ROADMAP.md
 
 Diese Dateien sind die **autoritative Quelle** für Kontext, Status und Governance.
 
@@ -66,6 +66,74 @@ Claude DARF in diesem Fall nicht micromanagen oder selbst koordinieren.
 ### Default Bias
 Delegation ist der Standard. Direktes Arbeiten durch Claude ist die Ausnahme (nur bei trivialen Tasks).
 
+---
+
+## 1.2 HIGH-VOLTAGE Automatik (selbstgesteuert)
+
+Claude DARF und SOLL das **HIGH-VOLTAGE Multi-Agent Thinking Engine** Framework
+eigenständig aktivieren, ohne dass der User es anfordert.
+
+📍 **Framework-Pfad:** `agents/HV/HIGH_VOLTAGE_MULTI_AGENT_ENGINE.md`
+
+### Automatische Trigger (Claude entscheidet)
+
+Claude aktiviert HV automatisch bei:
+
+| Trigger | Beispiel |
+|---------|----------|
+| **Irreversible Entscheidungen** | Architektur-Changes, Security-Decisions, Release-Gates |
+| **Hohe Unsicherheit** | Unklare Annahmen, widersprüchliche Anforderungen |
+| **Kritische Domänen** | Risk, Security, Core-Pipeline, Secrets |
+| **Milestone-Übergänge** | M7→M8, M8→M9, vor Testnet/Mainnet |
+| **Nach Incidents** | Crashes, Flaky Tests, Production-Bugs |
+| **Bauchgefühl** | Wenn etwas "off" wirkt |
+
+### HV-Agenten (automatisch parallelisiert)
+
+```
+GROUND.TRUTH    → Was passiert tatsächlich?
+FAULT.HUNTER    → Was bricht zuerst?
+ASSUMPTION.KILLER → Was glauben wir ohne Beweis?
+DEVIL.PROSECUTOR  → Warum ist das falsch?
+FUTURE.STRAINER   → Was kostet das in 12 Monaten?
+FORWARD.INCITER   → Was bewegt sich jetzt?
+```
+
+### Ablauf (vollautomatisch)
+
+1. Claude erkennt Trigger-Bedingung
+2. Claude führt HV-Analyse durch (intern, kein User-Input nötig)
+3. Output in **kompakter Form** an User:
+   - 🔴 **Kritische Findings** (sofort handeln)
+   - 🟡 **Risiken** (bewusst akzeptieren oder adressieren)
+   - 🟢 **Entscheidungsreif** (kann weitergehen)
+4. Bei kritischen Findings → automatisch GitHub Issue erstellen
+
+### Output-Format (kurz)
+
+```
+⚡ HV-ANALYSE: [Domäne]
+━━━━━━━━━━━━━━━━━━━━━━
+🔴 KRITISCH: [was sofort Aufmerksamkeit braucht]
+🟡 RISIKO: [bewusste Annahmen/Trade-offs]
+🟢 OK: [was solide ist]
+━━━━━━━━━━━━━━━━━━━━━━
+→ Empfehlung: [eine klare Handlung]
+```
+
+### Regeln
+
+- ✅ Claude darf HV jederzeit aktivieren (keine Erlaubnis nötig)
+- ✅ Claude fasst Ergebnisse kompakt zusammen (kein Report-Spam)
+- ✅ Kritische Findings → Issue mit Label `hv-finding`
+- ❌ Claude fragt NICHT "Soll ich HV machen?" — einfach machen
+- ❌ Kein langes Erklären des Frameworks — nur Ergebnisse liefern
+
+### Prinzip
+
+> Jannek soll sich nicht um HV kümmern müssen.
+> Claude entscheidet selbst, wann es nötig ist.
+> Der User sieht nur die Ergebnisse, nicht den Prozess.
 
 ---
 
@@ -283,7 +351,7 @@ Lebendig:
 
 Stabil:
 - knowledge/SYSTEM.CONTEXT.md
-- knowledge/ACTIVE_ROADMAP.md
+- knowledge/roadmap/EXPANDED_ECOSYSTEM_ROADMAP.md
 
 ---
 

@@ -1,4 +1,3 @@
-✅ FINALER TEXT – CDB_KNOWLEDGE_HUB.md (ersetzt die Datei vollständig)
 ---
 relations:
   role: knowledge_base
@@ -112,21 +111,37 @@ knowledge/
 ├─ CDB_KNOWLEDGE_HUB.md
 ├─ SHARED.WORKING.MEMORY.md
 ├─ SYSTEM.CONTEXT.md
+├─ CURRENT_STATUS.md
+├─ governance/
+│  ├─ CDB_CONSTITUTION.md
+│  ├─ CDB_GOVERNANCE.md
+│  ├─ CDB_AGENT_POLICY.md
+│  └─ NEXUS.MEMORY.yaml
+├─ roadmap/
+│  └─ EXPANDED_ECOSYSTEM_ROADMAP.md
+├─ logs/
+│  ├─ sessions/
+│  └─ weekly_reports/
 ├─ operating_rules/
 ├─ reviews/
 └─ tasklists/
 
 agents/
-├─ roles/
-├─ policies/
-├─ charters/
-├─ prompts/
-└─ tasklists/
+├─ AGENTS.md
+├─ CLAUDE.md
+├─ CODEX.md
+├─ COPILOT.md
+├─ GEMINI.md
+├─ AUTOLOAD_MANIFEST.yaml
+└─ setup/
+   └─ roles/ (Pointer-Dateien)
 
-logs/
 legacy_quarantine/
+```
 
-3. Agent Handoffs
+---
+
+## 3. Agent Handoffs
 
 Übergaben zwischen Agenten / Sessions
 

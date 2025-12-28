@@ -20,6 +20,61 @@ Working Repo enthält nur noch einen Pointer.
 
 ---
 
+## 0. User Authority & Governance-Hierarchie (ABSOLUT)
+
+### 0.1 User Authority (nicht verhandelbar)
+
+**Der User (Jannek) ist der alleinige Eigentümer und Entscheidungsträger dieses Systems.**
+
+Jeder Agent MUSS:
+- ✅ Den User als **oberste Autorität** anerkennen
+- ✅ Bei Unklarheiten **STOPPEN und den User fragen**
+- ✅ User-Entscheidungen **respektieren und umsetzen**
+- ✅ Niemals **gegen explizite User-Anweisungen** handeln
+
+Jeder Agent darf NICHT:
+- ❌ Autonome Entscheidungen treffen, die dem User widersprechen
+- ❌ Governance, Policies oder Canon ohne User-Freigabe ändern
+- ❌ Delivery Mode ohne explizites User-Gate aktivieren
+- ❌ Sich über User-Authority stellen
+
+> **Grundsatz:** KI ist Werkzeug, nicht Betreiber.
+> Der User hat **immer** das letzte Wort.
+
+### 0.2 Governance-Hierarchie (bindend)
+
+Alle Agenten MÜSSEN diese Rangordnung respektieren:
+
+| Rang | Dokument | Pfad | Zweck |
+|------|----------|------|-------|
+| 1 | **CDB_CONSTITUTION** | `knowledge/governance/CDB_CONSTITUTION.md` | Systemverfassung (höchste Instanz) |
+| 2 | **CDB_GOVERNANCE** | `knowledge/governance/CDB_GOVERNANCE.md` | Governance-Regeln |
+| 3 | **CDB_AGENT_POLICY** | `knowledge/governance/CDB_AGENT_POLICY.md` | Agenten-Verhalten |
+| 4 | **Spezifische Policies** | `knowledge/governance/CDB_*_POLICY.md` | Fachliche Policies |
+| 5 | **AGENTS.md** | `agents/AGENTS.md` | Agenten-Registry (diese Datei) |
+| 6 | **Agent-Rollendateien** | `agents/CLAUDE.md`, etc. | Operative Rollen |
+| 7 | **Implementierung** | Code, Config, IaC | Ausführung |
+
+### 0.3 Konfliktauflösung (hart)
+
+Bei Widerspruch zwischen Dokumenten:
+1. **Höherer Rang gewinnt immer**
+2. **User-Entscheidung überschreibt alles** (auch Constitution, falls explizit)
+3. Bei Unklarheit → **STOP & Rückfrage an User**
+
+### 0.4 Pflichtlektüre Governance (alle Agenten)
+
+Vor operativer Arbeit MUSS jeder Agent die Constitution kennen:
+
+📍 `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\knowledge\governance\CDB_CONSTITUTION.md`
+
+Kernpunkte daraus:
+- §3.1: **User-Souveränität** ist technisch erzwungen
+- §4.2: **Delivery-Gate** ist human-only
+- §5: **KI ist Werkzeug**, nicht Betreiber
+
+---
+
 ## 1. Canon & Repo-Split (verbindlich)
 
 - **Docs Hub / Workspace** ist die **kanonische Quelle** für:
@@ -93,12 +148,20 @@ und ersetzt **keine** Canon- oder Governance-Regeln, sondern konkretisiert sie.
 
 ## 3. Autoload-Pflicht (bei jedem Spawn)
 
+📄 **Maschinen-lesbare Definition:** `agents/AUTOLOAD_MANIFEST.yaml`
+
 Jeder Agent MUSS beim Start folgende Dateien laden (Reihenfolge fix):
-C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs
-1. DOCS_HUB_INDEX.md
-2. knowledge/CDB_KNOWLEDGE_HUB.md
-3. knowledge/SHARED.WORKING.MEMORY.md  _(Non-Canonical / Agent-Writable; Whiteboard → Pipeline: Signals → Promotion Queue → Promoted)_
-4. governance/NEXUS.MEMORY.* (falls vorhanden)
+
+**Basispfad:** `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs`
+
+### Pflicht-Dateien (MUST READ):
+1. `agents/AGENTS.md` ← Diese Datei (Agenten-Registry)
+2. `knowledge/governance/CDB_CONSTITUTION.md` ← **Governance-Hierarchie + User-Authority**
+3. `knowledge/CDB_KNOWLEDGE_HUB.md` ← Entscheidungs-Hub
+
+### Optionale Dateien:
+4. `knowledge/SHARED.WORKING.MEMORY.md` _(Non-Canonical / Agent-Writable)_
+5. `knowledge/governance/NEXUS.MEMORY.yaml` (falls vorhanden)
 
 Hinweis zu `knowledge/SHARED.WORKING.MEMORY.md`:
 - Zweck: operatives Whiteboard zur Synchronisation (nicht bindend)
@@ -232,14 +295,25 @@ Bei Konflikt → **STOP & Rückfrage**
 
 ## 7. Konflikt- & Eskalationsregel
 
-Priorität:
-1. Canon
-2. Governance
-3. Knowledge
-4. Working Memory
-5. Chat
+### Priorität (siehe auch §0.2):
+1. **User-Entscheidung** (absolut, überschreibt alles)
+2. **CDB_CONSTITUTION.md** (Systemverfassung)
+3. **CDB_GOVERNANCE.md** (Governance-Regeln)
+4. **CDB_AGENT_POLICY.md** (Agenten-Verhalten)
+5. **Spezifische Policies** (CDB_*_POLICY.md)
+6. **Knowledge Hub** (CDB_KNOWLEDGE_HUB.md)
+7. **Working Memory** (SHARED.WORKING.MEMORY.md)
+8. **Chat-Kontext** (flüchtig)
 
-Unklarheit → **STOP & Rückfrage**
+### Eskalationspfad:
+1. Agent erkennt Konflikt/Unklarheit
+2. → **STOP** (keine autonome Entscheidung)
+3. → Konflikt klar benennen
+4. → **Rückfrage an User (Jannek)**
+5. → User-Entscheidung abwarten
+6. → Entscheidung umsetzen
+
+> **Merksatz:** Im Zweifel: STOP & FRAG JANNEK.
 
 ---
 

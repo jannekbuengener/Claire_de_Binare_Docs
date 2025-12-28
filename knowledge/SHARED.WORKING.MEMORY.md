@@ -3,9 +3,9 @@ relations:
   role: working_memory
   domain: knowledge
   upstream:
-    - governance/CDB_CONSTITUTION.md
-    - governance/CDB_GOVERNANCE.md
-    - governance/CDB_AGENT_POLICY.md
+    - knowledge/governance/CDB_CONSTITUTION.md
+    - knowledge/governance/CDB_GOVERNANCE.md
+    - knowledge/governance/CDB_AGENT_POLICY.md
   downstream: []
   status: active
   tags: [working_memory, agent_collaboration, temporary]

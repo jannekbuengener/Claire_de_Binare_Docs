@@ -5,9 +5,16 @@ Claude **muss** zu Beginn jeder Session folgende Dateien lesen:
 - agents/AGENTS.md
 - knowledge/SYSTEM.CONTEXT.md
 - knowledge/CURRENT_STATUS.md
+- knowledge/ARCHITECTURE_MAP.md ← **NEU: System-Architektur + Service Map**
 - knowledge/roadmap/EXPANDED_ECOSYSTEM_ROADMAP.md
 
-Diese Dateien sind die **autoritative Quelle** für Kontext, Status und Governance.
+Diese Dateien sind die **autoritative Quelle** fuer Kontext, Status und Governance.
+
+### Session-Start Pflichtpruefung: Service SOLL vs IST
+Bei jedem Session-Start MUSS Claude:
+1. `governance/SERVICE_CATALOG.md` (Working Repo) lesen
+2. Gegen `knowledge/ARCHITECTURE_MAP.md` abgleichen
+3. Bei Drift: explizit benennen und Issue erstellen oder korrigieren
 
 ---
 
@@ -438,7 +445,7 @@ Das System ist ein **deterministisches, event-getriebenes Trading-System** mit R
 | Service | Port | Beschreibung |
 |---------|------|--------------|
 | `ws` | 8000 | WebSocket Handler für Market Data |
-| `signal` (cdb_core) | 8001 | Signal Generation & Market Classification |
+| `signal` | 8005 | Signal Generation & Market Classification |
 | `risk` | 8002 | Risk Management & Circuit Breakers |
 | `execution` | 8003 | Order Execution (Paper/Live) |
 | `db_writer` | — | Event Persistenz nach PostgreSQL |

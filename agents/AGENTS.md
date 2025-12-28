@@ -158,10 +158,15 @@ Jeder Agent MUSS beim Start folgende Dateien laden (Reihenfolge fix):
 1. `agents/AGENTS.md` ← Diese Datei (Agenten-Registry)
 2. `knowledge/governance/CDB_CONSTITUTION.md` ← **Governance-Hierarchie + User-Authority**
 3. `knowledge/CDB_KNOWLEDGE_HUB.md` ← Entscheidungs-Hub
+4. `knowledge/ARCHITECTURE_MAP.md` ← **System-Architektur + Service Map** (NEU 2025-12-28)
+5. `knowledge/CURRENT_STATUS.md` ← **Aktueller Projektstatus**
+
+### Operatives Inventar (Working Repo):
+6. `governance/SERVICE_CATALOG.md` ← **Service SOLL vs IST** (Pflichtpruefung bei Session-Start)
 
 ### Optionale Dateien:
-4. `knowledge/SHARED.WORKING.MEMORY.md` _(Non-Canonical / Agent-Writable)_
-5. `knowledge/governance/NEXUS.MEMORY.yaml` (falls vorhanden)
+7. `knowledge/SHARED.WORKING.MEMORY.md` _(Non-Canonical / Agent-Writable)_
+8. `knowledge/governance/NEXUS.MEMORY.yaml` (falls vorhanden)
 
 Hinweis zu `knowledge/SHARED.WORKING.MEMORY.md`:
 - Zweck: operatives Whiteboard zur Synchronisation (nicht bindend)

@@ -370,3 +370,99 @@ Am Ende **jeder Session** mindestens ein Issue:
 - Always Be Experimenting
 - Delegiere Visionen, nicht Zeilen
 - Claude ist Team, nicht Tool
+
+---
+
+## 13. Build & Test Commands (Working Repo)
+
+```bash
+# CI Tests (schnell, mit Mocks)
+make test                    # Alle CI-Tests (unit + integration)
+make test-unit               # Nur Unit-Tests
+make test-coverage           # Tests mit 80% Coverage-Requirement
+
+# Lokale E2E-Tests (benötigt laufende Container)
+make test-e2e                # Alle E2E-Tests
+make test-local              # Alle local-only Tests
+make test-local-stress       # Stress-Tests (100+ Events)
+make test-local-chaos        # Chaos/Resilience Tests (DESTRUKTIV)
+
+# Einzelner Test
+pytest tests/unit/test_specific.py::test_function -v
+
+# Docker
+make docker-up               # Dev-Stack starten (base + dev compose)
+make docker-up-prod          # Prod-Stack starten
+make docker-down             # Alle Container stoppen
+make docker-health           # Container-Health prüfen
+
+# Paper Trading
+make paper-trading-start     # Paper Trading Runner starten
+make paper-trading-logs      # Logs folgen
+make paper-trading-stop      # Runner stoppen
+```
+
+### Test-Marker (pytest.ini)
+- `@pytest.mark.unit` — Schnell, isoliert (CI + lokal)
+- `@pytest.mark.integration` — Mit Mock-Services (CI + lokal)
+- `@pytest.mark.e2e` — End-to-End mit echten Containern (nur lokal)
+- `@pytest.mark.local_only` — Explizit nur lokal
+- `@pytest.mark.chaos` — Destruktive Resilience-Tests (nur lokal)
+- `@pytest.mark.slow` — Tests >10s Laufzeit
+
+---
+
+## 14. Architektur (Working Repo)
+
+### Event-Driven Trading Pipeline
+
+```
+market → signal → risk → execution → result
+```
+
+Das System ist ein **deterministisches, event-getriebenes Trading-System** mit Redis pub/sub für Inter-Service-Kommunikation und PostgreSQL für Persistenz.
+
+### Core-Module (`core/`)
+
+| Modul | Zweck |
+|-------|-------|
+| `core/clients/mexc.py` | MEXC Exchange API Client |
+| `core/indicators/` | Technische Indikatoren (trend, momentum, volatility, composite) |
+| `core/safety/kill_switch.py` | Emergency Stop Mechanismus |
+| `core/utils/rate_limiter.py` | API Rate Limiting |
+| `core/utils/clock.py` | Deterministische Zeit für Replay |
+| `core/domain/event.py` | Domain Event Definitionen |
+
+### Services (`services/`)
+
+| Service | Port | Beschreibung |
+|---------|------|--------------|
+| `ws` | 8000 | WebSocket Handler für Market Data |
+| `signal` (cdb_core) | 8001 | Signal Generation & Market Classification |
+| `risk` | 8002 | Risk Management & Circuit Breakers |
+| `execution` | 8003 | Order Execution (Paper/Live) |
+| `db_writer` | — | Event Persistenz nach PostgreSQL |
+| `paper_runner` | 8004 | Automatisierter Paper Trading Runner |
+
+Jeder Service folgt dem Pattern: `config.py`, `models.py`, `service.py`
+
+### Compose-Struktur (`infrastructure/compose/`)
+- `base.yml` — Core Services (Redis, Postgres, Prometheus, Grafana)
+- `dev.yml` — Development Overrides mit Port-Bindings
+- `prod.yml` — Production Konfiguration
+
+**Container-Naming:** Alle Container mit `cdb_` Prefix (z.B. `cdb_redis`, `cdb_postgres`)
+
+### Code Style
+- Python 3.10+ mit Type Hints (`str | None` Syntax)
+- Dataclasses für Models
+- `black --line-length=88` für Formatierung
+- `flake8 --max-line-length=88 --extend-ignore=E203,W503` für Linting
+- Structured Logging: `logging.getLogger("service_name")`
+- Import-Reihenfolge: stdlib → third-party → local
+
+### Design-Prinzipien
+1. **Determinismus** — Alle State-Änderungen reproduzierbar via Event Replay
+2. **Circuit Breakers** — Risk Service gated alle Order Execution
+3. **Paper Trading First** — Default Mode ist Paper Trading, Live erfordert explizites Gate
+4. **Event Sourcing** — PostgreSQL speichert alle Events für Replay

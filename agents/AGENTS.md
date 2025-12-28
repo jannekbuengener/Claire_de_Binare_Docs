@@ -154,19 +154,25 @@ Jeder Agent MUSS beim Start folgende Dateien laden (Reihenfolge fix):
 
 **Basispfad:** `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs`
 
-### Pflicht-Dateien (MUST READ):
-1. `agents/AGENTS.md` ← Diese Datei (Agenten-Registry)
-2. `knowledge/governance/CDB_CONSTITUTION.md` ← **Governance-Hierarchie + User-Authority**
-3. `knowledge/CDB_KNOWLEDGE_HUB.md` ← Entscheidungs-Hub
-4. `knowledge/ARCHITECTURE_MAP.md` ← **System-Architektur + Service Map** (NEU 2025-12-28)
-5. `knowledge/CURRENT_STATUS.md` ← **Aktueller Projektstatus**
+### Context Core (MUST READ - in dieser Reihenfolge):
+1. `knowledge/ARCHITECTURE_MAP.md` ← **System-Architektur + Service Map**
+2. `governance/SERVICE_CATALOG.md` ← **Service SOLL vs IST**
+3. `knowledge/GOVERNANCE_QUICKREF.md` ← **Governance-Regeln Kurzreferenz** (NEU)
+4. `knowledge/SYSTEM_INVARIANTS.md` ← **Must-Never-Break Rules** (NEU)
+5. `knowledge/OPERATIONS_RUNBOOK.md` ← **Ops Start/Stop/Debug** (NEU)
+6. `knowledge/CURRENT_STATUS.md` ← **Aktueller Projektstatus**
 
-### Operatives Inventar (Working Repo):
-6. `governance/SERVICE_CATALOG.md` ← **Service SOLL vs IST** (Pflichtpruefung bei Session-Start)
+### Agenten-Registry:
+7. `agents/AGENTS.md` ← Diese Datei (Agenten-Registry)
+8. Agent-spezifische Rollendatei (CLAUDE.md, GEMINI.md, etc.)
+
+### Governance (bei Bedarf):
+9. `knowledge/governance/CDB_CONSTITUTION.md` ← Systemverfassung (hoechste Instanz)
+10. `knowledge/CDB_KNOWLEDGE_HUB.md` ← Entscheidungs-Hub
 
 ### Optionale Dateien:
-7. `knowledge/SHARED.WORKING.MEMORY.md` _(Non-Canonical / Agent-Writable)_
-8. `knowledge/governance/NEXUS.MEMORY.yaml` (falls vorhanden)
+11. `knowledge/SHARED.WORKING.MEMORY.md` _(Non-Canonical / Agent-Writable)_
+12. `knowledge/governance/NEXUS.MEMORY.yaml` (falls vorhanden)
 
 Hinweis zu `knowledge/SHARED.WORKING.MEMORY.md`:
 - Zweck: operatives Whiteboard zur Synchronisation (nicht bindend)

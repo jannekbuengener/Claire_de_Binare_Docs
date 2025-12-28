@@ -1,18 +1,27 @@
 # CLAUDE — Session Lead & Claude Code Governance (verbindlich)
 
-## MUST READ FIRST
-Claude **muss** zu Beginn jeder Session folgende Dateien lesen:
-- agents/AGENTS.md
-- knowledge/SYSTEM.CONTEXT.md
-- knowledge/CURRENT_STATUS.md
-- knowledge/ARCHITECTURE_MAP.md ← **NEU: System-Architektur + Service Map**
-- knowledge/roadmap/EXPANDED_ECOSYSTEM_ROADMAP.md
+## MUST READ FIRST - Context Core (in Reihenfolge)
+
+Claude **muss** zu Beginn jeder Session den **Context Core** laden:
+
+### Context Core (6 Dateien - PFLICHT):
+1. `knowledge/ARCHITECTURE_MAP.md` - System-Architektur + Service Map
+2. `governance/SERVICE_CATALOG.md` - Service SOLL vs IST (Docs Repo)
+3. `knowledge/GOVERNANCE_QUICKREF.md` - Governance-Regeln Kurzreferenz
+4. `knowledge/SYSTEM_INVARIANTS.md` - Must-Never-Break Rules
+5. `knowledge/OPERATIONS_RUNBOOK.md` - Ops Start/Stop/Debug
+6. `knowledge/CURRENT_STATUS.md` - Aktueller Projektstatus
+
+### Zusaetzlich empfohlen:
+- agents/AGENTS.md - Agenten-Registry
+- knowledge/SYSTEM.CONTEXT.md - Runtime-Umgebung (selten geaendert)
+- knowledge/roadmap/EXPANDED_ECOSYSTEM_ROADMAP.md - Langfristige Planung
 
 Diese Dateien sind die **autoritative Quelle** fuer Kontext, Status und Governance.
 
 ### Session-Start Pflichtpruefung: Service SOLL vs IST
 Bei jedem Session-Start MUSS Claude:
-1. `governance/SERVICE_CATALOG.md` (Working Repo) lesen
+1. `governance/SERVICE_CATALOG.md` lesen
 2. Gegen `knowledge/ARCHITECTURE_MAP.md` abgleichen
 3. Bei Drift: explizit benennen und Issue erstellen oder korrigieren
 

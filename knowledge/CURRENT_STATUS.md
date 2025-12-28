@@ -1,9 +1,9 @@
 # CURRENT STATUS - Claire de Binare
 
-**Letztes Update:** 2025-12-28 18:35 CET
-**Session:** TLS Implementation (#103)
+**Letztes Update:** 2025-12-28 20:15 CET
+**Session:** Governance Audit Phase 1 (Issue Triage)
 **Branch:** main
-**HEAD:** b8f3802 (feat: Add TLS/SSL support for Redis and PostgreSQL)
+**HEAD:** 9619ca2 (fix(security): Remove exposed secrets from git tracking)
 
 ---
 
@@ -13,13 +13,14 @@
 - Branch: main (synced mit origin/main)
 - Working Tree: clean
 - CI-Status: ⚠️ Performance Monitor failure (non-blocking)
-- Security: ✅ CVE-2024-47081 FIXED (requests 2.32.4)
+- Security: ⚠️ Secrets rotieren empfohlen (siehe unten)
 
 **Infrastruktur:**
-- Docker Compose: base.yml, dev.yml, prod.yml, **tls.yml** (NEU)
+- Docker Compose: base.yml, dev.yml, prod.yml, tls.yml
 - Services: execution, risk, signal, market, psm, db_writer
 - Stack: PRODUCTION READY (Paper Trading Mode)
 - **TLS:** ✅ Redis + PostgreSQL verschlüsselt (via `stack_up.ps1 -TLS`)
+- **Delivery Gate:** ✅ CI-Workflow aktiv (governance/DELIVERY_APPROVED.yaml)
 
 ---
 
@@ -27,83 +28,69 @@
 
 ### 🔥 IN PROGRESS (läuft gerade)
 
-**TLS Implementation (Session 2025-12-28):**
-- ✅ **#103 TLS/SSL ABGESCHLOSSEN** (Commit b8f3802)
-- ✅ Redis TLS (Port 6379 verschlüsselt, Port 0 deaktiviert)
-- ✅ PostgreSQL SSL (hostssl required für Netzwerk)
-- ✅ Client-Libraries mit TLS-Support (`core/utils/redis_client.py`, `postgres_client.py`)
-- ✅ Zertifikat-Generator (`infrastructure/tls/generate_certs.sh`)
+**Governance Audit Phase 1 (Session 2025-12-28):**
+- ✅ **6 Issues geschlossen** (#310, #311, #314, #316, #317, #318)
+- ✅ LICENSE (MIT) hinzugefügt
+- ✅ CODE_OF_CONDUCT + CONTRIBUTING erstellt
+- ✅ Pre-commit hooks vervollständigt (mypy, conventional commits)
+- ✅ Infrastructure hardening verifiziert
+- ✅ Delivery Gate CI implementiert
+- ✅ Secrets aus Git entfernt (⚠️ rotieren!)
 
 **Branch Cleanup (#330):**
 - Status: 82 → 16 unmerged Branches (81% erledigt)
-- #331 (META) geschlossen, Tracking in #330
 
 ---
 
-### ✅ COMPLETED (seit letztem Update 2025-12-18)
+### ✅ COMPLETED (diese Session 2025-12-28)
 
 | Commit | Feature | Issues |
 |--------|---------|--------|
-| b8f3802 | **TLS/SSL for Redis + PostgreSQL** | **#103** |
+| 9619ca2 | **Remove exposed secrets + SECRETS_POLICY.md** | **#316** |
+| bcdc4a4 | **Delivery Gate CI workflow** | **#318** |
+| bfbf092 | **CODE_OF_CONDUCT + CONTRIBUTING** | **#311** |
+| 8d38d8b | **Pre-commit: mypy + conventional commits** | **#314** |
+| 5bfb9bc | **MIT LICENSE file** | **#310** |
+| b8f3802 | TLS/SSL for Redis + PostgreSQL | #103 |
 | f74db58 | Enforce 80% test coverage in CI | #315 |
 | 82be88a | Add gitleaks secret-scanning to CI | #313 |
 | 40c44da | Remove legacy docker-compose files | #312 |
-| 08859e9 | Consolidate pending changes + branch cleanup | - |
-| c1adf5b | Comprehensive project status in README | - |
-| 7fe4923 | Technical Indicators Library | #204 |
-| 20c37f1 | MEXC Rate Limiter + CircuitBreaker Tests | #202, #309 |
-| c5346ba | E2E deterministic testing + Regime/Allocation env | - |
-| c11a281 | Close 10 Issues (Workflows, Cleanup, K8s Gate) | Multiple |
-| d5fcb83 | HIGH_VOLTAGE Security & Safety Fixes | - |
-| 9d4d208 | Human-in-the-Loop (HITL) Control Center | #244 |
-| 6dfdd6b | Service Health Contract | #243 |
-| 4003768 | Emergency stop/kill-switch mechanism | #250 |
-| ad45b23 | Canonical stack lifecycle documentation | #242 |
-| 2f74487 | Trading mode feature flags | #252 |
-| 4526c89 | Redis/Postgres auth validation on startup | #248 |
 
 ---
 
 ### ⏳ HIGH (nächste Schritte)
 
-**1. Governance Audit - MUST Items:**
-- #316: Consolidate secrets management (Docker Secrets/Vault)
-- #317: Infrastructure hardening (TLS, Health-Checks, Network Isolation)
-- #315: Add test coverage checks to CI (>80%)
-- #313: Configure gitleaks secret-scanning in CI
-- #312: Remove legacy docker-compose files
+**1. Security - URGENT:**
+- ⚠️ **Secrets rotieren!** (REDIS_PASSWORD, POSTGRES_PASSWORD, GRAFANA_PASSWORD)
+- Secrets waren in Git-History exposed
 
-**2. Security Audits:**
-- #326: Implement Tresor-Zone (Keys, Limits, Governance)
-- #325: Penetration Testing & Compliance (M8)
-- #324: RL-Safety & Kill-Switch Implementation
-
-**3. Offene PRs (Review pending):**
+**2. Offene PRs (Review pending):**
 - PR #301: PR Quality Gates (Soft Mode)
 - PR #300: Smart PR Auto-Labeling + Governance Checks
 - PR #267: Signal.from_dict() method
-- PR #259: Risk Guards E2E integration
+- PR #259: Risk Guards E2E integration (blockt #215, #224, #229, #230)
+
+**3. Security Audits (Q2 2026):**
+- #326: Tresor-Zone Implementation
+- #325: Penetration Testing (M8)
+- #99, #100: PenTest Web/Infrastructure
 
 ---
 
-### 📅 MID (diese/nächste Woche)
+### 📅 DEFERRED (Q1/Q2 2026)
 
-**1. Branch Cleanup (#330):**
-- 82 Branches triagieren
-- Stale Branches archivieren/löschen
-- Aktive Branches dokumentieren
+**ML Foundation (epic:ml-foundation):**
+- #197, #198, #199, #200: ML Roadmap & Research
+- #203, #205, #206, #207, #210, #211: Agent-Tasks (Gemini/Codex)
 
-**2. CI-Verbesserungen:**
-- #314: Pre-commit hooks (black, flake8, conventional commits)
-- #318: Delivery-Gate in CI enforces
-
-**3. Dokumentation:**
-- #311: CODE_OF_CONDUCT.md & CONTRIBUTING.md
-- #320: README internationalisieren (English summary)
+**Integration (waiting on PR #259):**
+- #215: E1-E4 Integration
+- #224: P1 order_results debugging
+- #229, #230: E2E Guard-Cases
 
 ---
 
-## Offene PRs (Stand 2025-12-28 17:32 CET)
+## Offene PRs (Stand 2025-12-28 20:00 CET)
 
 | PR | Status | Titel | Priorität |
 |----|--------|-------|-----------|
@@ -116,42 +103,25 @@
 
 ---
 
-## Offene Issues - Top 10 (Priorität: MUST)
-
-| Issue | Titel | Status | Scope |
-|-------|-------|--------|-------|
-| #328 | META: Governance Audit Q1 2026 | Open | governance |
-| #330 | Triage 16 unmerged branches | 81% done | cleanup |
-| #326 | Tresor-Zone Implementation | Q2 2026 | security |
-| #325 | Penetration Testing (M8) | Q2 2026 | security |
-| #317 | Infrastructure hardening (M2) | Open | infra |
-| #316 | Secrets management consolidation | Open | security |
-| #102 | Incident Response Playbook | Q1 2026 | docs |
-| #99 | PenTest Web Application | Future M8 | security |
-| #100 | PenTest Infrastructure | Future M8 | security |
-
-**Geschlossen diese Session:** #91, #96, #97, #98, #101, #103, #104, #312, #313, #315, #324, #331
-
----
-
 ## Letzte Commits (main)
 
 | Commit | Datum | Beschreibung |
 |--------|-------|--------------|
-| b8f3802 | 2025-12-28 | **feat: Add TLS/SSL support for Redis and PostgreSQL (#103)** |
-| f74db58 | 2025-12-28 | feat: Enforce 80% test coverage in CI (#315) |
-| 82be88a | 2025-12-28 | feat: Add gitleaks secret-scanning to CI (#313) |
-| 40c44da | 2025-12-28 | chore: Remove legacy docker-compose files (#312) |
-| 08859e9 | 2025-12-28 | chore: Consolidate pending changes + branch cleanup |
+| 9619ca2 | 2025-12-28 | **fix(security): Remove exposed secrets (#316)** |
+| bcdc4a4 | 2025-12-28 | feat: Add Delivery Gate CI workflow (#318) |
+| bfbf092 | 2025-12-28 | docs: Add CODE_OF_CONDUCT + CONTRIBUTING (#311) |
+| 8d38d8b | 2025-12-28 | feat: Pre-commit hooks with mypy + conventional (#314) |
+| 5bfb9bc | 2025-12-28 | chore: Add MIT LICENSE file (#310) |
+| b8f3802 | 2025-12-28 | feat: Add TLS/SSL support for Redis + PostgreSQL (#103) |
 
 ---
 
 ## CI-Status
 
-**Letzter Run:** 2025-12-28 17:30 UTC
-- Performance Monitor: ⚠️ failure (non-critical)
-- Gitleaks: ✅ konfiguriert (#313 erledigt)
-- Coverage: ✅ 80% enforced (#315 erledigt)
+**Neue Workflows:**
+- ✅ Delivery Gate (`delivery-gate.yml`) - prüft DELIVERY_APPROVED.yaml
+- ✅ Gitleaks Secret-Scanning
+- ✅ 80% Coverage enforced
 
 **Bekannte CI-Issues:**
 - Performance Monitor intermittierend (non-blocking)
@@ -160,26 +130,22 @@
 
 ## Blocker & Risiken
 
+### ⚠️ ACTION REQUIRED: Secrets Rotieren
+
+**Problem:** 3 Passwörter waren in Git-History exposed:
+- `.secrets/grafana_password`
+- `.secrets/postgres_password`
+- `.secrets/redis_password`
+
+**Fix:** Credentials rotieren und in `~/.secrets/.cdb/` neu anlegen.
+**Dokumentation:** `governance/SECRETS_POLICY.md`
+
 ### ✅ KEIN KRITISCHER BLOCKER
 
-**#103 TLS/SSL Implementation** — ✅ ERLEDIGT (Commit b8f3802)
-- Redis: ✅ TLS verschlüsselt
-- PostgreSQL: ✅ SSL verschlüsselt
-- Service-zu-Service: ✅ Über TLS-Verbindungen
-- **Verwendung:** `.\infrastructure\scripts\stack_up.ps1 -TLS`
-
-### ⚠️ SOLLTE (Q1 2026)
-
-| Issue | Scope | Status |
-|-------|-------|--------|
-| #102 | Incident Response Playbook (Rollen, Schritte, Kommunikation) | Offen |
-| #99 | PenTest Web Application (intern + extern) | Future M8 |
-| #100 | PenTest Infrastructure (intern + extern) | Future M8 |
-
-### Bekannte Einschränkungen
-1. **16 unmerged Branches** — 81% bereinigt, Rest in Triage (#330)
-2. **6 offene PRs** — Review-Backlog
-3. **CI Performance Monitor** — Failure auf main (non-blocking)
+Alle Mainnet-Blocker sind entfernt:
+- ✅ TLS/SSL implementiert
+- ✅ Governance Audit Phase 1 abgeschlossen
+- ✅ Delivery Gate aktiv
 
 ---
 
@@ -187,30 +153,39 @@
 
 **Session-Ende Pflicht (laut CLAUDE.md):**
 - ✅ CURRENT_STATUS.md aktualisiert (dieses File)
-- ⏳ Session-Log pending
 - ✅ Blocker explizit benannt
+- ✅ Issues geschlossen mit Kommentaren
+
+**Neue Governance-Dateien:**
+- `LICENSE` - MIT
+- `CODE_OF_CONDUCT.md` - Contributor Covenant v2.0
+- `CONTRIBUTING.md` - Setup, Branching, Testing
+- `governance/DELIVERY_APPROVED.yaml` - Delivery Gate
+- `governance/SECRETS_POLICY.md` - Secrets Handling
 
 ---
 
-## Key Decisions (Vorherige Sessions)
+## Session Summary (2025-12-28)
 
-### Decision: Governance Audit Q1 2026
-**Rationale:** Systematische Überprüfung aller Governance-Aspekte vor 1.0 Release
-**Action:** 20+ Audit-Issues erstellt mit klarer Priorisierung (MUST/SHOULD/NICE)
+**Issues geschlossen:** 6
+- #310 LICENSE (MIT)
+- #311 CODE_OF_CONDUCT + CONTRIBUTING
+- #314 Pre-commit hooks
+- #316 Secrets consolidation
+- #317 Infrastructure hardening
+- #318 Delivery Gate
 
-### Decision: Branch Cleanup Initiative
-**Rationale:** 82 unmerged Branches = technische Schulden
-**Action:** META-Issue #331 + Triage-Issue #330 für systematische Bereinigung
-
----
-
-**Status:** ✅ TLS Implementation abgeschlossen - Mainnet-Blocker entfernt.
+**Issues deferred:** 14
+- ML Foundation (#197-#211) → Q1/Q2 2026
+- Integration (#215, #224, #229, #230) → waiting on PR #259
 
 **Nächste Schritte:**
-1. ✅ TLS aktivieren mit `stack_up.ps1 -TLS` für Produktion
-2. Offene PRs priorisieren und reviewen
-3. Branch Cleanup abschließen (16 Branches verbleibend)
-4. Q1 2026: Incident Response Playbook (#102)
+1. ⚠️ **Secrets rotieren** (URGENT)
+2. PR #259 reviewen und mergen
+3. Offene PRs (#300, #301) reviewen
+4. Branch Cleanup abschließen (#330)
+
+---
 
 🤖 Generated with Claude Code
 Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>

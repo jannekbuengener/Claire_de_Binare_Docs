@@ -17,7 +17,7 @@
 
 **Infrastruktur:**
 - Docker Compose: base.yml, dev.yml, prod.yml, tls.yml
-- Services: execution, risk, signal, market, psm, db_writer
+- Services: cdb_signal, cdb_risk, cdb_execution, cdb_ws, cdb_paper_runner, cdb_db_writer
 - Stack: PRODUCTION READY (Paper Trading Mode)
 - **TLS:** ✅ Redis + PostgreSQL verschlüsselt (via `stack_up.ps1 -TLS`)
 - **Delivery Gate:** ✅ CI-Workflow aktiv (governance/DELIVERY_APPROVED.yaml)

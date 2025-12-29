@@ -122,3 +122,24 @@ Ein Verstoß gegen diese Policy gilt als:
 **Ein Issue = ein Thema.**  
 **Ein Branch = ein Arbeitsraum.**  
 **Main = der einzige Abschlusszustand.**
+
+
+---
+
+## 9. Trust Score Integration (Audit)
+
+Jede Lifecycle-Aktion ist ein **Decision Event** und muss im Trust-Ledger erfasst werden:
+`knowledge/agent_trust/ledger/`
+
+Pflicht-Events u. a.:
+- `issue.close`, `issue.reopen`
+- `branch.create`, `branch.delete`
+- PR Merge-Entscheidung (inkl. Evidence)
+
+**Compliance-Regel (Policy Card PC-ISSUE-001):**
+Issue schließen ohne Merge-Evidence gilt als **Verstoß** und reduziert den Compliance-Score.
+
+Bei Unsicherheit:
+- Issue bleibt offen
+- Agent kommentiert Evidence + Optionen
+- `uncertainty: true` im Decision Event

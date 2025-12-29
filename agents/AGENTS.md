@@ -75,6 +75,35 @@ Kernpunkte daraus:
 
 ---
 
+
+## 0.5 Trust Score & Decision Events (bindend)
+
+Alle Agenten (Claude, Codex, Gemini, Copilot, OpenCode, …) arbeiten unter einem
+**einheitlichen Trust-Score-System**:
+
+- Canonical Policy: `knowledge/governance/CDB_TRUST_SCORE_POLICY.md`
+- Policy Cards: `knowledge/governance/policy_cards/`
+- Ledger: `knowledge/agent_trust/ledger/`
+
+Pflicht:
+- Relevante Entscheidungen/Aktionen erzeugen **Decision Events** (YAML, append-only).
+- Bei Unsicherheit: `uncertainty: true` + Optionen + Evidence.
+
+Ziel: hohe Autonomie **mit** Auditierbarkeit (ohne Mikromanagement).
+
+### Pflicht-Entry-Points (MUST READ)
+
+Jeder Agent (Claude, Codex, Gemini, Copilot, **alle OpenCode-Agents**, …) MUSS diese Dateien kennen
+und bei operativer Arbeit **laden**:
+
+1. `knowledge/governance/CDB_TRUST_SCORE_POLICY.md`
+2. `knowledge/governance/TRUST_SCORE_CONFIG.yaml`
+3. `knowledge/governance/policy_cards/` *(alle Cards, inkl. Schema)*
+4. `knowledge/agent_trust/decision_event.schema.yaml`
+5. `knowledge/agent_trust/ledger/` *(append-only Events; Referenz + Beispiele)*
+
+**Regel:** Wenn ein Entry-Point fehlt oder nicht lesbar ist → **STOP & Rückfrage an Jannek**.
+
 ## 1. Canon & Repo-Split (verbindlich)
 
 - **Docs Hub / Workspace** ist die **kanonische Quelle** für:
@@ -144,6 +173,17 @@ und ersetzt **keine** Canon- oder Governance-Regeln, sondern konkretisiert sie.
 
 ❗ **Ein Agent ohne geladene eigene Rollendatei gilt als nicht initialisiert.**
 
+### Nicht gelistete Agenten (z. B. neue OpenCode-Agents)
+
+Wenn ein Agent **nicht** in der Zuordnung oben steht, gilt:
+
+- Der Agent darf **nicht** arbeiten, bis eine passende Rollendatei unter  
+  `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\agents\<AGENT>.md`  
+  existiert **oder** Jannek ihn explizit einer bestehenden Rolle zuweist.
+- Kein „best guess“, kein improvisiertes Mandat.
+
+➡️ **STOP & Rückfrage**: „Welche Rolle soll ich übernehmen und welche Rollendatei soll ich laden?“
+
 ---
 
 ## 3. Autoload-Pflicht (bei jedem Spawn)
@@ -166,13 +206,23 @@ Jeder Agent MUSS beim Start folgende Dateien laden (Reihenfolge fix):
 7. `agents/AGENTS.md` ← Diese Datei (Agenten-Registry)
 8. Agent-spezifische Rollendatei (CLAUDE.md, GEMINI.md, etc.)
 
-### Governance (bei Bedarf):
-9. `knowledge/governance/CDB_CONSTITUTION.md` ← Systemverfassung (hoechste Instanz)
-10. `knowledge/CDB_KNOWLEDGE_HUB.md` ← Entscheidungs-Hub
+### Governance & Trust (MUST READ – vor jeder mutierenden Aktion, inkl. Issue-Statusänderungen):
+9. `knowledge/governance/CDB_POLICY_STACK_MINI.md` ← Canon-Stack (Lesereihenfolge)
+10. `knowledge/governance/CDB_CONSTITUTION.md` ← Systemverfassung (höchste Instanz)
+11. `knowledge/governance/CDB_GOVERNANCE.md` ← Rollen/Zonen/Change-Control
+12. `knowledge/governance/CDB_AGENT_POLICY.md` ← Agenten-Zonen + Write-Gates
+13. `ISSUE_AND_BRANCH_LIFECYCLE.md` ← Issue/Branch/PR Abschlussregeln
+14. `knowledge/governance/CDB_TRUST_SCORE_POLICY.md` ← Trust/Score System (bindend)
+15. `knowledge/governance/TRUST_SCORE_CONFIG.yaml` ← Score-Konfiguration (maschinenlesbar)
+16. `knowledge/governance/policy_cards/` ← Policy-DSL (maschinenlesbar)
+17. `knowledge/agent_trust/decision_event.schema.yaml` ← Decision-Event Schema (maschinenlesbar)
+
+### Decision Hub:
+18. `knowledge/CDB_KNOWLEDGE_HUB.md` ← Entscheidungs-Hub
 
 ### Optionale Dateien:
-11. `knowledge/SHARED.WORKING.MEMORY.md` _(Non-Canonical / Agent-Writable)_
-12. `knowledge/governance/NEXUS.MEMORY.yaml` (falls vorhanden)
+19. `knowledge/SHARED.WORKING.MEMORY.md` _(Non-Canonical / Agent-Writable)_
+20. `knowledge/governance/NEXUS.MEMORY.yaml` (falls vorhanden)
 
 Hinweis zu `knowledge/SHARED.WORKING.MEMORY.md`:
 - Zweck: operatives Whiteboard zur Synchronisation (nicht bindend)

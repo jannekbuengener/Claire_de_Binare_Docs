@@ -40,6 +40,9 @@ Erlaubte Dokumentationskategorien:
 
 ## Artikel III: Governance-Struktur
 
+Zusatz: Agenten-Autonomie wird über ein Trust-Score-System gesteuert (auditierbar).
+Referenz: `CDB_TRUST_SCORE_POLICY.md`, Ledger: `knowledge/agent_trust/ledger/`.
+
 ### §1 Hierarchie
 ```
 knowledge/governance/          - Verfassung und Grundregeln

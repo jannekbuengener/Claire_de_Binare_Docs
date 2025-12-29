@@ -7,6 +7,7 @@ relations:
     - knowledge/governance/CDB_GOVERNANCE.md
   downstream:
     - knowledge/governance/CDB_AGENT_POLICY.md
+    - knowledge/governance/CDB_TRUST_SCORE_POLICY.md
     - knowledge/governance/CDB_INFRA_POLICY.md
     - knowledge/governance/CDB_RL_SAFETY_POLICY.md
     - knowledge/governance/CDB_TRESOR_POLICY.md
@@ -19,7 +20,7 @@ relations:
 # CDB_POLICY_STACK_MINI
 **Mini-Policy-Stack – Kanonischer Governance- & Safety-Kern**
 
-Version: 1.1  
+Version: 1.2  
 Status: Canonical
 
 ---
@@ -44,11 +45,12 @@ Es existiert **kein** weiterer impliziter Regelraum außerhalb dieses Stacks.
 1. `CDB_CONSTITUTION.md` – höchste Instanz (Prinzipien & Grenzen)
 2. `CDB_GOVERNANCE.md` – Rollen, Zonen, Change-Control
 3. `CDB_AGENT_POLICY.md` – KI-/Agentenregeln, Write-Gates
-4. `CDB_INFRA_POLICY.md` – IaC, GitOps, Eventing, K8s-Readiness
-5. `CDB_RL_SAFETY_POLICY.md` – RL-Guardrails, Action Masking, Kill-Switch
-6. `CDB_TRESOR_POLICY.md` – Tresor-Zone & Human-Only-Kontrollen
-7. `CDB_PSM_POLICY.md` – Portfolio & State Manager (Single Source of Truth)
-8. `DELIVERY_APPROVED.yaml` – human-only Delivery Gate
+4. `CDB_TRUST_SCORE_POLICY.md` – Trust Score, Decision Events, Enforcement
+5. `CDB_INFRA_POLICY.md` – IaC, GitOps, Eventing, K8s-Readiness
+6. `CDB_RL_SAFETY_POLICY.md` – RL-Guardrails, Action Masking, Kill-Switch
+7. `CDB_TRESOR_POLICY.md` – Tresor-Zone & Human-Only-Kontrollen
+8. `CDB_PSM_POLICY.md` – Portfolio & State Manager (Single Source of Truth)
+9. `DELIVERY_APPROVED.yaml` – human-only Delivery Gate
 
 Nicht-kanonische oder als Draft markierte Dateien gehören **nicht** in diesen Stack.
 
@@ -59,11 +61,12 @@ Nicht-kanonische oder als Draft markierte Dateien gehören **nicht** in diesen S
 1) Constitution  
 2) Governance  
 3) Agent Policy  
-4) Infra Policy  
-5) RL Safety Policy  
-6) Tresor Policy  
-7) PSM Policy  
-8) Delivery Gate
+4) Trust Score Policy  
+5) Infra Policy  
+6) RL Safety Policy  
+7) Tresor Policy  
+8) PSM Policy  
+9) Delivery Gate
 
 Diese Reihenfolge ist verbindlich für Reviews, Audits und Onboarding.
 

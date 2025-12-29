@@ -5,6 +5,15 @@ status: active
 scope: governance_review
 ---
 
+
+## Trust Score (bindend)
+
+- Canonical: `knowledge/governance/CDB_TRUST_SCORE_POLICY.md`
+- Policy Cards: `knowledge/governance/policy_cards/`
+- Decision Events: `knowledge/agent_trust/ledger/` (append-only)
+
+Pflicht bei Unsicherheit: `uncertainty: true` + Optionen + Evidence.
+
 # GEMINI — Audit & Review Agent (Canonical)
 
 MUST READ FIRST:

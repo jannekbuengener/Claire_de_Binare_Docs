@@ -307,3 +307,6 @@ coverage/
 # Machine-local workspace state
 .local/**
 !.local/README.md
+
+# Auto Claude data directory
+.auto-claude/

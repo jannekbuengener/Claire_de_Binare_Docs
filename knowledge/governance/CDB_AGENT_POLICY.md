@@ -14,7 +14,7 @@ relations:
 # CDB_AGENT_POLICY
 **KI- & Agenten-Policy (Canonical)**
 
-Version: 1.1  
+Version: 1.2  
 Status: Canonical  
 Gültig ab: 2025-12-12
 
@@ -186,6 +186,51 @@ Bei Ausfall oder Unzuverlässigkeit von Coding-KI:
 - Architektur bleibt modell-agnostisch
 
 ---
+
+
+---
+
+## 9. Trust Score & Decision Events (Canonical)
+
+Dieses Projekt nutzt ein **Trust-Score-System** zur Steuerung von Autonomie, Overhead
+und Eskalation für **alle Agenten**.
+
+**Canonical Reference**
+- `knowledge/governance/CDB_TRUST_SCORE_POLICY.md`
+- `knowledge/governance/TRUST_SCORE_CONFIG.yaml`
+- `knowledge/governance/policy_cards/`
+
+### 9.1 Pflicht: Decision Events (Audit)
+
+Für relevante Aktionen muss der Agent ein **Decision Event** (YAML) schreiben nach:
+`knowledge/agent_trust/ledger/`
+
+Pflicht u. a. bei:
+- Issue close/reopen/label changes
+- „Obsolete“-Einstufungen oder DoD-Interpretationen
+- Governance-nahe Entscheidungen (Policy-Edge, Write-Gates, Delivery-Gate)
+- Deaktivierung/Bypass von Checks/Guards
+
+### 9.2 Pflicht: Unsicherheit deklarieren
+
+Wenn eine Entscheidung auf Annahmen basiert oder die Policy-Lage mehrdeutig ist:
+
+- `uncertainty: true`
+- Reason + Optionen dokumentieren
+- ggf. Review-Hinweis / Eskalation (je nach Severity)
+
+**Regel:** Unsicherheit ist neutral – *Verschweigen* ist ein Score-Verstoß.
+
+### 9.3 Trust-Tiers steuern Overhead (nicht die Grenzen)
+
+Trust-Tiers dürfen:
+- Begründungspflichten erhöhen oder senken
+- Review-/Eskalationspflicht auslösen
+
+Trust-Tiers dürfen **nicht**:
+- Tresor-/Custody-Verbote aufheben
+- Delivery-Gates umgehen
+- Canonical Policies „autonom“ ändern
 
 ## Abschluss
 

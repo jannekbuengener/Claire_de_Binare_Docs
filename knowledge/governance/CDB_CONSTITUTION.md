@@ -20,7 +20,7 @@ relations:
 # CDB_CONSTITUTION
 **Claire de Binare – Systemverfassung (Canonical)**
 
-Version: 1.1  
+Version: 1.2  
 Status: Canonical  
 Gültig ab: 2025-12-12
 
@@ -131,7 +131,7 @@ Regel:
 - Keine stillen Änderungen
 - Keine Ausführung ohne Risk-Layer
 
-Details: `CDB_AGENT_POLICY.md`
+Details: `CDB_AGENT_POLICY.md` und `CDB_TRUST_SCORE_POLICY.md`
 
 ---
 

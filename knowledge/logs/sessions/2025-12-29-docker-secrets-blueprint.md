@@ -1,6 +1,6 @@
 # Session Log: Docker Secrets Blueprint Implementation
 
-**Datum:** 2025-12-29 02:00 - 04:15 CET
+**Datum:** 2025-12-29 02:00 - 04:55 CET
 **Session Lead:** Claude Opus 4.5
 **Teilnehmer:** Jannek
 
@@ -82,6 +82,24 @@ entrypoint: ["sh", "-c", "export REDIS_PASSWORD=$(cat /run/secrets/redis_passwor
 | W4 | Legacy `.env.*` Dateien | Verifiziert: keine Secrets, nur Config-Flags |
 | W5 | `SECRETS_PATH` undokumentiert | In `.env.example` dokumentiert |
 
+### Phase 6: GitHub Repository Secrets
+
+**GitHub Secrets gesetzt (03:53 CET):**
+| Secret | Timestamp |
+|--------|-----------|
+| `REDIS_PASSWORD` | 2025-12-29T02:53:18Z |
+| `POSTGRES_PASSWORD` | 2025-12-29T02:53:22Z |
+| `GRAFANA_PASSWORD` | 2025-12-29T02:53:26Z |
+
+**Hardcoded Pfade bereinigt:**
+- `docs/runbook_papertrading.md`: Windows-Pfade durch `$env:SECRETS_PATH` ersetzt
+
+**Dokumentation erstellt:**
+- `knowledge/context_build/GITHUB_SECRETS_SETUP.md`
+
+**Issue für verbleibende Vulnerabilities:**
+- [#339 - fix(security): Resolve Dependabot vulnerabilities - Werkzeug](https://github.com/jannekbuengener/Claire_de_Binare/issues/339)
+
 ---
 
 ## Probleme & Lösungen
@@ -142,6 +160,14 @@ cdb_paper_runner    Up (healthy)
 | `f5e86c4` | fix(security): upgrade vulnerable dependencies |
 | `7ddce25` | refactor(security): remove env_file references, use secrets directive |
 | `653067b` | fix(security): resolve scan findings - secrets hygiene |
+| `efb867f` | docs: replace hardcoded Windows paths with generic placeholders |
+| `ceef89a` | chore: sync config and test updates |
+
+**Docs Repo:**
+| SHA | Message |
+|-----|---------|
+| `2842b43` | docs: add GitHub Secrets Setup documentation |
+| `551eeea` | refactor: reorganize agents/ and governance/ |
 
 ---
 
@@ -197,7 +223,8 @@ cdb_paper_runner    Up (healthy)
 - [ ] `core/domain/secrets.py` deprecaten und löschen
 - [ ] SOPS + age für verschlüsselte Secrets in Git evaluieren (optional)
 - [ ] TLS-Overlay für Redis/Postgres testen
-- [ ] GitHub Repository Secrets setzen (REDIS_PASSWORD, POSTGRES_PASSWORD, GRAFANA_PASSWORD)
+- [x] ~~GitHub Repository Secrets setzen~~ → Done (Phase 6)
+- [ ] Dependabot Vulnerabilities beheben → Issue #339
 
 ---
 
@@ -205,5 +232,7 @@ cdb_paper_runner    Up (healthy)
 
 **Docker Health Snapshot:** 2025-12-29T04:10:00 CET
 **Git Branch:** main
-**Final Commit:** `653067b`
+**Final Commit (Claire_de_Binare):** `ceef89a`
+**Final Commit (Docs):** `551eeea`
 **Stack Status:** ALL HEALTHY (10/10)
+**GitHub Secrets:** 5 total (3 new + 2 existing)

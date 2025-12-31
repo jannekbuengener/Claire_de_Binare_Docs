@@ -115,7 +115,7 @@ docker compose --env-file .\.cdb_local\.secrets\.env.compose -f docker-compose.b
 - **Troubleshooting commands:**
   - `docker compose --env-file .\.cdb_local\.secrets\.env.compose -f docker-compose.base.yml -f infrastructure\compose\base.yml -f infrastructure\compose\dev.yml ps --format json`
   - `docker compose --env-file .\.cdb_local\.secrets\.env.compose -f docker-compose.base.yml -f infrastructure\compose\base.yml -f infrastructure\compose\dev.yml logs --no-color --tail 200 <service>`
-  - `docker network inspect claire_de_binare_cdb_network`
+  - `docker network inspect ${STACK_NAME}_cdb_network` (default: `cdb_cdb_network`)
 
 ## Freeze notes
 - The stack is in AUDIT + FREEZE mode: do not edit compose files, Dockerfiles, secret layouts, or networks; only run verification, documentation, or scripting work documented here.

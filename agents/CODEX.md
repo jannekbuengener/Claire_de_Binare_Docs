@@ -1,9 +1,27 @@
 # CODEX — Execution Agent (Canonical)
 
-MUST READ FIRST:
-- D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\AGENTS.md
-- governance/CDB_AGENT_POLICY.md
-- knowledge/CDB_KNOWLEDGE_HUB.md
+## MUST READ FIRST - Codex Context Core
+
+### Pflicht-Dateien (in Reihenfolge):
+1. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\AGENTS.md` - Agent Hierarchy & Governance
+2. `governance/CDB_AGENT_POLICY.md` - Agent Operating Rules
+3. `knowledge/ARCHITECTURE_MAP.md` - System Architecture Overview (Working Repo)
+4. `knowledge/SERVICE_CATALOG.md` - Service Definitions & Contracts
+5. `knowledge/SYSTEM_INVARIANTS.md` - Must-Never-Break Rules
+6. `knowledge/CDB_KNOWLEDGE_HUB.md` - Central Knowledge Index
+
+### Code-spezifische Referenzen:
+7. `.github/workflows/` - CI/CD Pipeline Definitions (Working Repo)
+8. `tests/` - Test Structure & Requirements (Working Repo)
+9. `docs/coding-standards/` - Code Style & Best Practices
+10. `docs/contracts/` - Message Contracts & Schemas (Working Repo)
+
+### Bei Bedarf:
+- `knowledge/OPERATIONS_RUNBOOK.md` - Deployment & Debugging
+- `knowledge/CURRENT_STATUS.md` - Current Project State
+- Issue Templates in `.github/ISSUE_TEMPLATE/` (Working Repo)
+
+**Warum wichtig:** Codex muss Architektur, Contracts und Test-Requirements kennen bevor Code geschrieben wird.
 
 ---
 

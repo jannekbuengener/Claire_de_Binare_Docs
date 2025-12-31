@@ -16,12 +16,34 @@ Pflicht bei Unsicherheit: `uncertainty: true` + Optionen + Evidence.
 
 # GEMINI — Audit & Review Agent (Canonical)
 
-MUST READ FIRST:
-- agents/AGENTS.md
-- knowledge/governance/CDB_AGENT_POLICY.md
-- knowledge/governance/CDB_GOVERNANCE.md
-- knowledge/governance/CDB_CONSTITUTION.md
-- knowledge/CDB_KNOWLEDGE_HUB.md
+## MUST READ FIRST - Gemini Context Core
+
+### Pflicht-Dateien (in Reihenfolge):
+1. `agents/AGENTS.md` - Agent Hierarchy & Governance
+2. `knowledge/governance/CDB_AGENT_POLICY.md` - Agent Operating Rules
+3. `knowledge/governance/CDB_GOVERNANCE.md` - Governance Framework
+4. `knowledge/governance/CDB_CONSTITUTION.md` - System Constitution
+5. `knowledge/SYSTEM_INVARIANTS.md` - Must-Never-Break Rules
+6. `knowledge/CDB_KNOWLEDGE_HUB.md` - Central Knowledge Index
+
+### Audit-spezifische Referenzen:
+7. `knowledge/governance/policy_cards/` - Policy Definitions
+8. `knowledge/agent_trust/ledger/` - Decision Event Log
+9. `governance/SERVICE_CATALOG.md` - Service Definitions (Audit Target)
+10. `knowledge/ARCHITECTURE_MAP.md` - System Architecture (Drift Detection)
+11. `knowledge/GOVERNANCE_QUICKREF.md` - Quick Governance Rules
+
+### MCP-Server Evidenzquellen:
+12. **Grafana MCP** - Metrics, Trends, Alerts (via MCP tools)
+13. **Redis MCP** - Live State, Queue Lengths, Health Keys (via MCP tools)
+14. **Postgres MCP** - Historical Data, Audit Trails (via MCP tools)
+
+### Bei Bedarf:
+- `knowledge/CURRENT_STATUS.md` - Current Project State
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge/SESSION_HANDOFF.md` - Session Context
+- `.github/workflows/` - CI/CD Compliance Check (Working Repo)
+
+**Warum wichtig:** Gemini muss Governance-Regeln, System-Invariants und Evidenzquellen kennen für objektive Audits.
 
 ---
 

@@ -13,9 +13,12 @@ Claude **muss** zu Beginn jeder Session den **Context Core** laden:
 6. `knowledge/CURRENT_STATUS.md` - Aktueller Projektstatus
 
 ### Zusaetzlich empfohlen:
-- agents/AGENTS.md - Agenten-Registry
+- agents/AGENTS.md - Agenten-Registry & Hierarchy
+- agents/orchestrator.md - Orchestrator-Modus (aktiviert bei 3+ Agenten, siehe §1.1)
+- agents/CODEX.md, agents/GEMINI.md, agents/COPILOT.md - Spezialisierte Agenten
 - knowledge/SYSTEM.CONTEXT.md - Runtime-Umgebung (selten geaendert)
 - knowledge/roadmap/EXPANDED_ECOSYSTEM_ROADMAP.md - Langfristige Planung
+- knowledge/SESSION_HANDOFF.md - Session Handoff Template
 
 Diese Dateien sind die **autoritative Quelle** fuer Kontext, Status und Governance.
 
@@ -90,6 +93,29 @@ Claude DARF in diesem Fall nicht micromanagen oder selbst koordinieren.
 
 ### Default Bias
 Delegation ist der Standard. Direktes Arbeiten durch Claude ist die Ausnahme (nur bei trivialen Tasks).
+
+### Bugfix-Dokumentations-Regel (VERBINDLICH)
+Bei **allen Bugfixes** MUSS ein Dokumentations-Team zum Standard gehören:
+
+**Pflicht-Agent bei Bugfixes:**
+- **agent_repository-auditor** ODER **agent_code-reviewer**
+
+**Verantwortlichkeiten:**
+- Root Cause Analysis dokumentieren
+- Erkenntnisse festhalten (was war falsch, warum, wie gefixed)
+- Lessons Learned für `knowledge/logs/sessions/` oder Runbooks
+- Related Issues/PRs verlinken
+
+**Workflow:**
+1. Bug identifiziert → Fix implementiert
+2. Dokumentations-Agent parallel aktivieren
+3. Evidence in Session Log ablegen (Symptom, Root Cause, Fix, Prevention)
+
+**Beispiel:** Issue #341 (cdb_ws Metrics broken) → Repository Auditor dokumentiert:
+- Symptom: Prometheus scraping failed
+- Root Cause: `/metrics` endpoint nicht erreichbar
+- Fix: [konkrete Änderung]
+- Prevention: Health-Check für `/metrics` in CI
 
 ---
 

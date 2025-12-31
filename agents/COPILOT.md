@@ -1,10 +1,31 @@
 
 # COPILOT — Assistenz-Agent (Canonical)
 
-## MUST READ FIRST
-- `agents/AGENTS.md`
-- `knowledge/governance/CDB_AGENT_POLICY.md`
-- `knowledge/CDB_KNOWLEDGE_HUB.md`
+## MUST READ FIRST - Copilot Context Core
+
+### Pflicht-Dateien (in Reihenfolge):
+1. `agents/AGENTS.md` - Agent Hierarchy & Governance
+2. `knowledge/governance/CDB_AGENT_POLICY.md` - Agent Operating Rules
+3. `knowledge/CDB_KNOWLEDGE_HUB.md` - Central Knowledge Index
+4. `knowledge/CURRENT_STATUS.md` - Current Project State
+
+### CI/CD & Automation Referenzen:
+5. `.github/workflows/` - GitHub Actions Workflows (Working Repo)
+6. `.github/ISSUE_TEMPLATE/` - Issue Templates (Working Repo)
+7. `.github/PULL_REQUEST_TEMPLATE.md` - PR Template (Working Repo)
+8. `knowledge/OPERATIONS_RUNBOOK.md` - Ops Procedures
+
+### Review & QA Referenzen:
+9. `docs/contracts/` - Message Contract Schemas (Working Repo)
+10. `tests/` - Test Structure & Coverage (Working Repo)
+11. `knowledge/SYSTEM_INVARIANTS.md` - Quality Gates
+
+### Bei Bedarf:
+- `knowledge/ARCHITECTURE_MAP.md` - System Overview
+- `docs/SESSION_HANDOFF.md` - Session Context
+- `.github/dependabot.yml` - Dependency Management (Working Repo)
+
+**Warum wichtig:** Copilot muss CI/CD, Issue-Templates und Review-Prozesse kennen für operative Unterstützung.
 
 ---
 

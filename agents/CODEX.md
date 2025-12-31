@@ -1,7 +1,7 @@
 # CODEX — Execution Agent (Canonical)
 
 MUST READ FIRST:
-- C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\agents\AGENTS.md
+- D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\AGENTS.md
 - governance/CDB_AGENT_POLICY.md
 - knowledge/CDB_KNOWLEDGE_HUB.md
 

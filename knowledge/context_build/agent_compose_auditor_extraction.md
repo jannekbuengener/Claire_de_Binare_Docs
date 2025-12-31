@@ -94,10 +94,10 @@ network-prod.yml  -> Production Network Isolation (optional)
 
 ## Source Pointers
 
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\infrastructure\compose\base.yml`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\infrastructure\compose\dev.yml`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\infrastructure\compose\prod.yml`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\infrastructure\compose\tls.yml`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\infrastructure\compose\logging.yml`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\infrastructure\scripts\stack_up.ps1`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\infrastructure\scripts\stack_verify.ps1`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\infrastructure\compose\base.yml`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\infrastructure\compose\dev.yml`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\infrastructure\compose\prod.yml`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\infrastructure\compose\tls.yml`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\infrastructure\compose\logging.yml`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\infrastructure\scripts\stack_up.ps1`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\infrastructure\scripts\stack_verify.ps1`

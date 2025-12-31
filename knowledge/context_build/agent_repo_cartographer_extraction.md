@@ -78,6 +78,6 @@
 
 ## Source Pointers
 
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\core\`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\services\`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\tools\`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\core\`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\services\`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\tools\`

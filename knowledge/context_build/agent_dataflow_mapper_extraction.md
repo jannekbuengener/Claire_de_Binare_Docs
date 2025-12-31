@@ -107,8 +107,8 @@ class Event:
 
 ## Source Pointers
 
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\core\domain\event.py`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\services\db_writer\db_writer.py` (Zeile 57: channels)
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\services\signal\service.py` (Zeile 89: subscribe, 142: publish)
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\services\risk\service.py` (Zeile 117-121: subscribe, 429-451: publish)
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\services\execution\service.py` (Zeile 145: subscribe, 183-190: publish)
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\core\domain\event.py`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\services\db_writer\db_writer.py` (Zeile 57: channels)
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\services\signal\service.py` (Zeile 89: subscribe, 142: publish)
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\services\risk\service.py` (Zeile 117-121: subscribe, 429-451: publish)
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\services\execution\service.py` (Zeile 145: subscribe, 183-190: publish)

@@ -57,7 +57,7 @@ Diese Inkonsistenzen stellen ein **hohes Risiko** für die Systemintegrität, di
 #### 1.4 Logdateien im Working Repo
 *   **Status:** 🟡 **PARTIAL**
 *   **Problem:** Ein leerer `logs`-Ordner existiert im Working Repo, obwohl laut `CDB_REPO_STRUCTURE.md` keine Logs im Working Repo sein sollten.
-*   **Betroffene Elemente:** `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\logs`
+*   **Betroffene Elemente:** `D:\Dev\Workspaces\Repos\Claire_de_Binare\logs`
 *   **Empfohlene Maßnahmen:** Den leeren `logs`-Ordner entfernen.
 
 ---
@@ -89,7 +89,7 @@ Diese Inkonsistenzen stellen ein **hohes Risiko** für die Systemintegrität, di
 #### 2.3 Front-Matter Konsistenz
 *   **Status:** 🟡 **PARTIAL**
 *   **Problem:** `DOCS_HUB_INDEX.md` fehlt YAML Frontmatter. Die Feststellung im `CONSISTENCY_AUDIT.md`, dass das Root `README.md` im Docs Hub Repo kein Frontmatter hat, ist inkonsistent, da kein `README.md` im Root des Docs Hub Repo existiert. Der `README.md` im Working Repo hat Frontmatter.
-*   **Betroffene Elemente:** `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\DOCS_HUB_INDEX.md`.
+*   **Betroffene Elemente:** `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\DOCS_HUB_INDEX.md`.
 *   **Empfohlene Maßnahmen:**
     1.  Frontmatter zu `DOCS_HUB_INDEX.md` hinzufügen.
     2.  Der `CONSISTENCY_AUDIT.md` sollte korrigiert werden, um die fehlerhafte Referenz auf den `README.md` zu entfernen.
@@ -97,7 +97,7 @@ Diese Inkonsistenzen stellen ein **hohes Risiko** für die Systemintegrität, di
 #### 2.4 Fehlendes Verzeichnis `knowledge/tasklists/`
 *   **Status:** 🔴 **OPEN**
 *   **Problem:** Das Verzeichnis `knowledge/tasklists/` fehlt im Docs Hub Repo, obwohl es in `DOCS_HUB_INDEX.md` als Teil der kanonischen Struktur aufgeführt ist.
-*   **Betroffene Elemente:** `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\knowledge`
+*   **Betroffene Elemente:** `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge`
 *   **Empfohlene Maßnahmen:** Das Verzeichnis `knowledge/tasklists/` erstellen und eine `README.md` hinzufügen.
 
 ---

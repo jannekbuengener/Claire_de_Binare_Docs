@@ -11,7 +11,7 @@
 Die lokale Arbeitsfläche ist **minimalistisch** strukturiert:
 
 ```
-C:\Users\janne\Documents\GitHub\Workspaces\
+D:\Dev\Workspaces\Repos\
 ├── Claire_de_Binare\           # Working Repo (Code/Execution only)
 └── Claire_de_Binare_Docs\      # Docs Hub (Single Source of Truth)
 ```
@@ -57,13 +57,13 @@ Workspaces Root war:
 
 ### 1. Workspaces Root (Container nur)
 ```
-C:\Users\janne\Documents\GitHub\Workspaces\
+D:\Dev\Workspaces\Repos\
 ```
 **Regel:** Enthält NUR die 2 Repos. Nichts anderes.
 
 ### 2. Docs Hub (Single Source of Truth)
 ```
-C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\
+D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\
 ```
 
 **Struktur:**
@@ -92,7 +92,7 @@ Claire_de_Binare_Docs/
 
 ### 3. Working Repo (Code Execution)
 ```
-C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\
+D:\Dev\Workspaces\Repos\Claire_de_Binare\
 ```
 
 **Struktur:**
@@ -153,7 +153,7 @@ Claire_de_Binare/
 
 Before consolidation, full backup was created:
 ```
-C:\Users\janne\Documents\GitHub\Workspaces\.BACKUP_BEFORE_CONSOLIDATION\
+D:\Dev\Workspaces\Repos\.BACKUP_BEFORE_CONSOLIDATION\
 ```
 
 ---
@@ -182,21 +182,21 @@ C:\Users\janne\Documents\GitHub\Workspaces\.BACKUP_BEFORE_CONSOLIDATION\
 
 ### Check Workspaces Root is clean
 ```powershell
-cd C:\Users\janne\Documents\GitHub\Workspaces
+cd D:\Dev\Workspaces\Repos
 Get-ChildItem -Force | Where-Object { $_.Name -notin @('Claire_de_Binare','Claire_de_Binare_Docs','.BACKUP_BEFORE_CONSOLIDATION','zusatz.txt') }
 ```
 **Expected:** Empty (or only backup/temp files)
 
 ### Check .local is not tracked
 ```powershell
-cd C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs
+cd D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs
 git status --porcelain | Select-String "\.local"
 ```
 **Expected:** Only `.local/README.md` or nothing
 
 ### Check path references are updated
 ```powershell
-cd C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs
+cd D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs
 rg -n "Workspaces\\\.cdb_local" -S
 ```
 **Expected:** No results (old paths removed)

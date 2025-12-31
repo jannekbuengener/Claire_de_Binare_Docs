@@ -90,9 +90,9 @@
 
 ## Source Pointers
 
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\governance\SERVICE_CATALOG.md`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\knowledge\CURRENT_STATUS.md`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\agents\AGENTS.md`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\agents\CLAUDE.md`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\infrastructure\compose\prod.yml`
-- `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare\infrastructure\compose\tls.yml`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\governance\SERVICE_CATALOG.md`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\CURRENT_STATUS.md`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\AGENTS.md`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\CLAUDE.md`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\infrastructure\compose\prod.yml`
+- `D:\Dev\Workspaces\Repos\Claire_de_Binare\infrastructure\compose\tls.yml`

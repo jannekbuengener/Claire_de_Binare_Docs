@@ -48,7 +48,7 @@
 
 **Fix:**
 ```powershell
-cd C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs
+cd D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs
 git mv agents/tasklist agents/tasklists
 ```
 
@@ -204,7 +204,7 @@ Changes not staged for commit:
 
 **Fix:**
 ```powershell
-cd C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs
+cd D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs
 git diff README.md  # Review changes
 git add README.md
 git commit -m "docs: update README to reflect standalone Docs Hub structure"

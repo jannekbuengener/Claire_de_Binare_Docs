@@ -10,7 +10,7 @@ Diese Datei ist die **einzige autoritative Quelle** für:
 
 📍 **Physischer Speicherort (Single Source of Truth):**
 
-C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\agents\AGENTS.md
+D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\AGENTS.md
 
 Alle anderen Agentenreferenzen sind **sekundär** und dürfen diese Datei
 **weder ersetzen noch duplizieren**.

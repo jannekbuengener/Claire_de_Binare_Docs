@@ -35,3 +35,9 @@ Moved to quarantine during Slice E.
 
 ### client.crt
 Moved to quarantine during Slice E.
+
+## ca.key (2026-01-02)
+- sha256: 5E352127701E98AFEB814E065A4DD2857D28F5DD21BD3197A96A14065027DB0C
+- quarantined_to: C:\Users\janne\.secrets\.cdb\verlosung\ca.key
+- rationale: removed private key material from repo; docs-only + no-secrets policy
+

@@ -1,0 +1,4 @@
+roter_faden002: [149, 100, 99]
+roter_faden003: [145]
+roter_faden005: [147]
+roter_faden006: [334, 330, 323, 322, 151, 148]

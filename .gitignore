@@ -310,3 +310,9 @@ coverage/
 
 # Auto Claude data directory
 .auto-claude/
+
+# Slice E Cleanup
+.worktrees/
+.claude_settings.json
+configs/
+

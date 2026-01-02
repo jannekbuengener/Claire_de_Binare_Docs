@@ -29,3 +29,9 @@ The following secret files were removed from the repository and moved to the ext
 ## Instructions
 To restore these secrets for local development, copy them from the quarantine location to the appropriate configuration directory (gitignored).
 **NEVER COMMIT THESE FILES.**
+
+### ca.crt
+Moved to quarantine during Slice E.
+
+### client.crt
+Moved to quarantine during Slice E.

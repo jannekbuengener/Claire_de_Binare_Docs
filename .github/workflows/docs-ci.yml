@@ -1,0 +1,44 @@
+name: Docs CI
+
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'knowledge/**'
+      - 'README.md'
+      - 'DOCS_HUB_INDEX.md'
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'knowledge/**'
+      - 'README.md'
+      - 'DOCS_HUB_INDEX.md'
+  workflow_dispatch:
+
+jobs:
+  lint-docs:
+    name: Markdown lint + links
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install linters
+        run: npm install -g markdownlint-cli markdown-link-check
+
+      - name: Run markdownlint on docs
+        run: |
+          markdownlint 'docs/**/*.md' 'knowledge/**/*.md' README.md || true
+
+      - name: Check markdown links
+        run: |
+          set -o pipefail
+          find docs knowledge -name '*.md' -print0 | xargs -0 -n1 markdown-link-check --quiet
+

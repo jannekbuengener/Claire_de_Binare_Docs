@@ -7,3 +7,6 @@ This repository is the **Canonical Docs Hub** for the Claire de Binare project. 
 The primary entry point for all developers and agents is the Architecture Cockpit.
 
 ➡️ **[Go to Architecture Cockpit](./knowledge/ARCHITECTURE_COCKPIT.md)**
+
+## Docs CI
+.github/workflows/docs-ci.yml runs markdown linting and link checks when docs/knowledge sources change (logs, docs, or README updates).

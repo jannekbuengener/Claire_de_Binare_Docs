@@ -299,3 +299,20 @@ coverage/
 *.backup
 *~
 *.orig
+
+# ============================================
+# LOCAL MACHINE STATE (NEVER COMMIT)
+# ============================================
+
+# Machine-local workspace state
+.local/**
+!.local/README.md
+
+# Auto Claude data directory
+.auto-claude/
+
+# Slice E Cleanup
+.worktrees/
+.claude_settings.json
+configs/
+

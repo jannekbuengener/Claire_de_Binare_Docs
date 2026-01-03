@@ -1,7 +1,3 @@
-✅ FINALER TEXT – SHARED.WORKING.MEMORY.md
-
-(1:1 ersetzen)
-
 ---
 relations:
   role: working_memory
@@ -17,7 +13,7 @@ relations:
 # SHARED.WORKING.MEMORY
 **CDB – Shared Working Memory Layer**
 
-Version: 1.1  
+Version: 1.2  
 Status: Non-Canonical / Agent-Writable  
 Charakter: Flüchtig, explorativ, nicht bindend
 
@@ -25,11 +21,11 @@ Charakter: Flüchtig, explorativ, nicht bindend
 
 ## 0. Rangordnung & Systemeinordnung
 
-Diese Datei unterliegt strikt:
+Diese Datei ist **nicht-kanonisch** und unterliegt strikt der Rangordnung:
 
-1. `CDB_CONSTITUTION.md`  
-2. `CDB_GOVERNANCE.md`  
-3. `CDB_AGENT_POLICY.md`
+1. `governance/CDB_CONSTITUTION.md`  
+2. `governance/CDB_GOVERNANCE.md`  
+3. `governance/CDB_AGENT_POLICY.md`
 
 Sie ist ausdrücklich:
 - ❌ keine Governance
@@ -37,22 +33,20 @@ Sie ist ausdrücklich:
 - ❌ kein Entscheidungsartefakt
 - ❌ kein Audit- oder Logbuch
 
-Sie besitzt **keine Autorität** im System.
+**Merksatz:** Eintrag ≠ Wahrheit ≠ Entscheidung.
 
 ---
 
 ## 1. Zweck
 
-`SHARED.WORKING.MEMORY.md` ist der **gemeinsame Denk- und Arbeitsraum**
-aller beteiligten Agenten und Modelle.
+`SHARED.WORKING.MEMORY.md` ist der **gemeinsame Denk- und Arbeitsraum** für Agenten/Modelle, um:
 
-Sie existiert, um:
-- paralleles Denken zu ermöglichen
-- Hypothesen, Skizzen und Zwischenstände zu sammeln
+- Zwischenstände festzuhalten (Skizzen, Hypothesen, Notizen)
 - Abhängigkeiten sichtbar zu machen
-- kognitive Kohärenz zwischen Agenten herzustellen
+- Parallel-Work zu synchronisieren
+- Entscheidungen vorzubereiten (nicht zu treffen)
 
-> Dies ist der Ort, an dem Agenten **denken dürfen**, ohne Recht zu behalten.
+> Hier darf gedacht werden. Behalten wird woanders.
 
 ---
 
@@ -61,21 +55,21 @@ Sie existiert, um:
 Diese Datei ist:
 - ein temporärer **kognitiver Synchronisationsraum**
 - ein **Arbeitskontext**, kein Wissensspeicher
-- ein Ort für unfertige Gedanken
+- ein Ort für unfertige Gedanken und verworfene Optionen
 
-Stabilität ist **nicht** das Ziel.
+**Stabilität ist nicht das Ziel.**
 
 ---
 
 ## 3. Was diese Datei NICHT ist
 
-Diese Datei ist **nicht**:
-- System- oder Langzeitgedächtnis → `NEXUS.MEMORY.yaml`
-- Entscheidungslog → `CDB_KNOWLEDGE_HUB.md`
-- Dokumentation
-- Statusübersicht
-- Taskliste
-- Governance
+Diese Datei ist nicht:
+- System- oder Langzeitgedächtnis → `governance/NEXUS.MEMORY.yaml`
+- Entscheidungslog / Change-Proposal → `knowledge/CDB_KNOWLEDGE_HUB.md`
+- Dokumentation (How-To / Architektur)
+- Status-Übersicht (Current Status / Roadmap)
+- Taskliste als Quelle der Wahrheit
+- Secrets-/Key-Ablage
 
 Alles, was bestätigt, stabil oder bindend ist, gehört **nicht** hierher.
 
@@ -84,23 +78,18 @@ Alles, was bestätigt, stabil oder bindend ist, gehört **nicht** hierher.
 ## 4. Zugriffsrechte
 
 ### 4.1 Lesen
-- Alle Agenten
-- Alle Modelle
+- alle Agenten / Modelle
 - Session Lead
 - User
 
 ### 4.2 Schreiben
-- ✅ Alle Agenten
-- ✅ Parallel
-- ✅ Ohne Vorab-Freigabe
-- ✅ Auch im Analysis Mode
+- ✅ alle Agenten (parallel, ohne Vorab-Freigabe)
+- ✅ auch im Analysis Mode
 
-### 4.3 Einschränkungen
-- ❌ Kein automatischer Transfer nach `NEXUS.MEMORY`
-- ❌ Kein Persistenz-Upgrade
-- ❌ Keine implizite Autorität
-
-Eintrag ≠ Wahrheit.
+### 4.3 Einschränkungen (hart)
+- ❌ kein automatischer Transfer nach `NEXUS.MEMORY`
+- ❌ kein „Persistenz-Upgrade“ durch Copy/Paste in andere Kanäle
+- ❌ keine implizite Autorität („steht da, also gilt das“)
 
 ---
 
@@ -109,75 +98,70 @@ Eintrag ≠ Wahrheit.
 Einträge dürfen:
 - widersprüchlich sein
 - unfertig sein
-- verworfen werden
-- überschrieben werden
+- überschrieben oder verworfen werden
 
-**Wahrheit ist optional.**  
-**Nützlichkeit ist Pflicht.**
+**Wahrheit ist optional. Nützlichkeit ist Pflicht.**
 
 ---
 
-## 6. Empfohlene Beitragsstruktur (nicht zwingend)
-
-Agenten *sollten* Beiträge so kennzeichnen:
+## 6. Beitragsformat (empfohlen)
 
 ```md
-### [Agent / Modell | Datum-Zeit]
+### [Agent/Modell | YYYY-MM-DD HH:MM]
 - Kontext:
-- Gedanke / Hypothese:
-- Abhängigkeiten:
+- Beobachtung:
+- Hypothese / Idee:
+- Auswirkungen (Impact):
 - Risiken / Unsicherheiten:
-- Offene Fragen:
+- Nächster Schritt (konkret):
+- Links/Artefakte:
+```
+
+---
 
 ## 7. Beziehung zu anderen Ebenen
-Ebene	Zweck	Schreibrechte
-SHARED.WORKING.MEMORY	Denken	Agenten
-CDB_KNOWLEDGE_HUB	Entscheiden	Session Lead
-NEXUS.MEMORY	Erinnern	User + Lead
 
-Kein Übergang erfolgt automatisch.
-Jeder Transfer ist bewusst und manuell.
+| Ebene | Zweck | Schreibrechte | Charakter |
+|---|---|---|---|
+| `knowledge/SHARED.WORKING.MEMORY.md` | Denken & Synchronisieren | Agenten | flüchtig |
+| `knowledge/CDB_KNOWLEDGE_HUB.md` | Entscheiden & Beauftragen | Session Lead | versioniert |
+| `governance/NEXUS.MEMORY.yaml` | Erinnern (stabilisiertes Wissen) | User + Lead | langfristig |
+
+**Regel:** Kein Übergang erfolgt automatisch. Jeder Transfer ist bewusst und manuell.
+
+---
 
 ## 8. Löschung & Vergessen
 
 Vergessen ist erwünscht.
 
-### Einträge dürfen jederzeit:
+Einträge dürfen jederzeit:
+- gelöscht
+- zusammengefasst
+- ersetzt
+- verworfen
 
-gelöscht
-
-zusammengefasst
-
-ersetzt
-
-verworfen werden
+---
 
 ## 9. Sicherheitsprinzip
 
-Diese Datei darf das System klüger, aber niemals mächtiger machen.
+Diese Datei darf das System **klüger**, aber niemals **mächtiger** machen.
 
-### Kein Eintrag darf:
+Kein Eintrag darf:
+- Execution auslösen
+- Policies verändern
+- Limits umgehen
+- Secrets enthalten oder indirekt reproduzierbar machen
 
-Execution auslösen
-
-Policies verändern
-
-Limits umgehen
-
-implizite Autorität erzeugen
+---
 
 ## 10. Abschlussregel
 
-### Wenn etwas:
+Wenn etwas:
+- stabil ist
+- bewiesen ist
+- systemweit gelten soll
 
-stabil ist
+→ **raus aus dieser Datei** (in Knowledge Hub / NEXUS / Governance – je nach Rang).
 
-bewiesen ist
-
-systemweit gelten soll
-
-→ raus aus dieser Datei.
-
-Dies ist ein Denkraum.
-Kein Gedächtnis.
-Kein Gesetz.
+Dies ist ein Denkraum. Kein Gedächtnis. Kein Gesetz.

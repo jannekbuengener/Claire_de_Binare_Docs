@@ -1,4 +1,3 @@
-✅ FINALER TEXT – CDB_KNOWLEDGE_HUB.md (ersetzt die Datei vollständig)
 ---
 relations:
   role: knowledge_base
@@ -112,21 +111,37 @@ knowledge/
 ├─ CDB_KNOWLEDGE_HUB.md
 ├─ SHARED.WORKING.MEMORY.md
 ├─ SYSTEM.CONTEXT.md
+├─ CURRENT_STATUS.md
+├─ governance/
+│  ├─ CDB_CONSTITUTION.md
+│  ├─ CDB_GOVERNANCE.md
+│  ├─ CDB_AGENT_POLICY.md
+│  └─ NEXUS.MEMORY.yaml
+├─ roadmap/
+│  └─ EXPANDED_ECOSYSTEM_ROADMAP.md
+├─ logs/
+│  ├─ sessions/
+│  └─ weekly_reports/
 ├─ operating_rules/
 ├─ reviews/
 └─ tasklists/
 
 agents/
-├─ roles/
-├─ policies/
-├─ charters/
-├─ prompts/
-└─ tasklists/
+├─ AGENTS.md
+├─ CLAUDE.md
+├─ CODEX.md
+├─ COPILOT.md
+├─ GEMINI.md
+├─ AUTOLOAD_MANIFEST.yaml
+└─ setup/
+   └─ roles/ (Pointer-Dateien)
 
-logs/
 legacy_quarantine/
+```
 
-3. Agent Handoffs
+---
+
+## 3. Agent Handoffs
 
 Übergaben zwischen Agenten / Sessions
 
@@ -177,6 +192,20 @@ cdb-stack-doctor.ps1
 cdb-service-logs.ps1
 
 cdb-secrets-sync.ps1
+
+2025-12-27 – M7-M9 Roadmap Refinement Complete (Issue #107)
+
+Epic #91 breakdown: M7 Testnet (4-6 weeks, 10 issues consolidated)
+
+M8 Security critical blockers: Security Lead + Pentest Booking ($10k-$30k)
+
+M9 Release: 2-3 weeks, SLA targets defined (99.9% uptime, <100ms p50 latency)
+
+Roadmaps: knowledge/roadmap/M7_TESTNET_PLAN.md (393 lines), M8_SECURITY_PLAN.md (386 lines), M9_RELEASE_PLAN.md (356 lines)
+
+Critical Path validated: M6 ✅ → M7 🔄 → M8 → M9
+
+Referenz: GitHub Issue #107
 
 2025-12-19 – Agent Roles bleiben extern (external-only policy)
 

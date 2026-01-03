@@ -9,7 +9,7 @@ Goal: Safe defaults, no live trading, no secrets in repo
 - EXECUTION=dry-run
 
 Location of defaults:
-- C:\Users\janne\Documents\GitHub\Workspaces\.cdb_local\.secrets\.env.example
+- D:\Dev\Workspaces\Repos\.cdb_local\.secrets\.env.example
 
 ## Preconditions
 - Secrets are stored outside the Working Repo.

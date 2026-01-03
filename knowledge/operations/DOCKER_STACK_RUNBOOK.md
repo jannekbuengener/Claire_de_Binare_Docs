@@ -492,10 +492,11 @@ docker volume prune
 
 ```powershell
 # Check network connectivity
-docker exec cdb_core ping cdb_postgres
+docker exec cdb_signal ping cdb_postgres
 
-# Check if containers are on same network
-docker network inspect claire_de_binare_cdb_network
+# Check if containers are on same network (adjust STACK_NAME if customized)
+docker network inspect ${STACK_NAME}_cdb_network
+# Default (STACK_NAME=cdb): docker network inspect cdb_cdb_network
 
 # Restart networking
 docker-compose down

@@ -1,0 +1,104 @@
+TASK: GO:B – Workflow/Templates Konsolidierung im Working Repo (controlled execution, no double-runs)
+
+REPOS
+- Working Repo: D:\Dev\Workspaces\Repos\Claire_de_Binare
+- Source (aus “Kellerkiste” / Docs Hub): D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\verlosung
+  (falls einzelne Files inzwischen nach knowledge/archive/ verschoben wurden, dort ebenfalls suchen)
+
+OBJECTIVE
+- Workflows + Templates aus verlosung so integrieren, dass im Working Repo am Ende nur 1 kanonische Variante pro Thema existiert.
+- KEINE parallelen, doppelt triggernden Workflows erzeugen.
+- Ergebnis: sauberer Branch + kleine Commits + Push + PR-ready.
+
+HARD RULES (NON-NEGOTIABLE)
+1) No Secrets in Git. Scan ALL YAML/MD you touch for tokens/keys/credentials before commit. If found: STOP and report.
+2) No double-runs: Do NOT add a new workflow file if an equivalent already exists. Consolidate into the existing canonical file instead.
+3) Do NOT touch Docs governance/policy content. Only move/merge workflow/template assets into Working Repo.
+4) Keep commits small and scoped. Max ~1 theme per commit.
+5) If DELIVERY_APPROVED in Docs Hub is false and your rules forbid mutations: STOP and output diff-only plan. Otherwise proceed.
+
+SCOPE (Slice B)
+Working Repo targets:
+- .github/workflows/
+- .github/ISSUE_TEMPLATE/
+- .github/dependabot.yml
+- .github/PULL_REQUEST_TEMPLATE.md
+
+Primary source candidates (from verlosung):
+- bug.yml, task.yml, config.yml
+- issue-governance.yml
+- ci.yml
+- security.yml
+- dependabot.yml
+- copilot-setup-steps.yml
+- docker-build-push.yml
+- Docker Registry (GHCR).yml
+- pull_request_template.md
+
+PHASE 0 – SAFETY & STATE CHECK (must run)
+A) In Working Repo:
+- git status -sb must be clean OR you create a new worktree/branch that isolates Slice B. Do not mix with unrelated changes.
+B) Secrets scan (fast):
+- ripgrep for patterns: "token", "secret", "apikey", "password", "glsa_", "-----BEGIN", "PRIVATE KEY"
+- If any hit is real secret: STOP and report path+line only (no copying secret content).
+C) Collision scan:
+- List existing files in .github/workflows and .github/ISSUE_TEMPLATE and compare names against source candidates.
+
+PHASE 1 – CANONICAL MAPPING (output first, then execute)
+Produce a short mapping table:
+- Source file -> Target canonical file -> Action (MERGE/IGNORE/ARCHIVE POINTER)
+Rules:
+- If target exists: MERGE into target, don’t add a second workflow with same purpose.
+- If target missing: add new file, but ensure no overlapping triggers with existing workflows.
+
+PHASE 2 – IMPLEMENTATION (execute after mapping)
+1) Create branch from main:
+- feat/verlosung-github-pack
+2) Templates:
+- Move/merge bug.yml, task.yml, config.yml into .github/ISSUE_TEMPLATE/
+- Ensure config.yml doesn’t conflict with existing template config.
+3) PR template:
+- Ensure .github/PULL_REQUEST_TEMPLATE.md is canonical. If already exists, MERGE best parts; do not duplicate.
+4) dependabot:
+- If .github/dependabot.yml exists, MERGE entries rather than overwrite. Keep schedule sane.
+5) Workflows:
+- For each workflow topic (ci, security, issue-governance, copilot-setup-steps, docker/ghcr):
+  - If a workflow already exists in .github/workflows: open diff vs source and MERGE the missing useful parts.
+  - If both docker-build-push.yml and “Docker Registry (GHCR).yml” overlap:
+    - Choose ONE canonical docker workflow file name (prefer existing in Working Repo).
+    - Merge logic; ensure only one workflow remains active.
+    - If you need to keep the non-canonical version: store it as docs reference in Docs Hub archive, not as active workflow.
+  - Ensure workflow names are unique, triggers are intentional, and no duplicate schedules.
+6) Validate YAML quickly:
+- Run a basic sanity check (at least parse/format check if available) or minimal `yamllint` if installed; otherwise just ensure valid YAML structure.
+7) Ensure no service-name drift:
+- grep for cdb_core/cdb_signal. If found, report and normalize to current canonical naming (do not guess; prefer what exists in working repo).
+
+COMMITS (suggested split)
+- commit 1: chore(templates): add/merge issue templates from verlosung
+- commit 2: chore(pr): consolidate pull request template
+- commit 3: chore(dependabot): merge dependabot config
+- commit 4: ci: consolidate workflow(s) (no duplicates)
+- commit 5: security: consolidate workflow(s) (no duplicates)
+- commit 6: build: consolidate docker/ghcr workflow into single canonical pipeline
+
+PUSH + PR
+- Push branch to origin.
+- Prepare PR title: "chore: consolidate GitHub ops pack from verlosung (Slice B)"
+- PR body must include:
+  - what was merged, what was ignored, and why
+  - confirmation: no secrets committed
+  - confirmation: no duplicate workflow triggers remain
+  - list of files touched
+
+STOP CONDITIONS
+- Any real secret content discovered -> STOP immediately, no commit.
+- Any uncertain conflict about overwriting an existing canonical workflow -> STOP and ask for decision.
+- If Working Repo not clean and cannot isolate safely -> STOP and propose worktree approach.
+
+OUTPUT REQUIRED
+At end print:
+- branch name
+- commit SHAs
+- list of touched files
+- quick note: “double-run risk resolved: YES/NO”

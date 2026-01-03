@@ -1,25 +1,26 @@
 # CURRENT STATUS - Claire de Binare
 
-**Letztes Update:** 2025-12-18 19:00 CET
-**Session:** PR #87 Finalization + CI Stabilization (Branch Sync + Security Updates)
+**Letztes Update:** 2025-12-28 20:15 CET
+**Session:** Governance Audit Phase 1 (Issue Triage)
 **Branch:** main
-**HEAD:** 548f3fd (Bump the pip group - Security Updates #87 MERGED)
+**HEAD:** 9619ca2 (fix(security): Remove exposed secrets from git tracking)
 
 ---
 
 ## System-Status
 
 **Repository:**
-- Branch: main (synced mit gitlab/main & origin/main)
-- Working Tree: clean (docs submodule modified = normal)
-- Root Baseline: ✅ Verified (lokal)
-- CI-Status: ⚠️ Teilweise Failures (Gitleaks, Tests, Guards) - Copilot-Fix folgt
-- Security: ✅ CVE-2024-47081 FIXED (requests 2.32.4), cryptography 44.0.1 deployed
+- Branch: main (synced mit origin/main)
+- Working Tree: clean
+- CI-Status: ⚠️ Performance Monitor failure (non-blocking)
+- Security: ⚠️ Secrets rotieren empfohlen (siehe unten)
 
 **Infrastruktur:**
-- Docker Compose: base.yml, dev.yml, prod.yml
-- Services: execution, risk, signal, market, psm, db_writer
-- Discussion Pipeline: PRODUCTION READY
+- Docker Compose: base.yml, dev.yml, prod.yml, tls.yml
+- Services: cdb_signal, cdb_risk, cdb_execution, cdb_ws, cdb_paper_runner, cdb_db_writer
+- Stack: PRODUCTION READY (Paper Trading Mode)
+- **TLS:** ✅ Redis + PostgreSQL verschlüsselt (via `stack_up.ps1 -TLS`)
+- **Delivery Gate:** ✅ CI-Workflow aktiv (governance/DELIVERY_APPROVED.yaml)
 
 ---
 
@@ -27,99 +28,78 @@
 
 ### 🔥 IN PROGRESS (läuft gerade)
 
-**CI-Stabilisierung (Copilot):**
-- Status: Verbleibende Failures nach PR #87 Merge
-- Failures: Gitleaks, Tests (Python 3.11/3.12), claude-review, enforce-pr-template, guard
-- Nächster Schritt: Copilot-Fix für verbleibende CI-Issues
+**Governance Audit Phase 1 (Session 2025-12-28):**
+- ✅ **6 Issues geschlossen** (#310, #311, #314, #316, #317, #318)
+- ✅ LICENSE (MIT) hinzugefügt
+- ✅ CODE_OF_CONDUCT + CONTRIBUTING erstellt
+- ✅ Pre-commit hooks vervollständigt (mypy, conventional commits)
+- ✅ Infrastructure hardening verifiziert
+- ✅ Delivery Gate CI implementiert
+- ✅ Secrets aus Git entfernt (⚠️ rotieren!)
+
+**Branch Cleanup (#330):**
+- Status: 82 → 16 unmerged Branches (81% erledigt)
 
 ---
 
-### ✅ COMPLETED (diese Session)
+### ✅ COMPLETED (diese Session 2025-12-28)
 
-**PR #87 (Dependabot Security Updates) - MERGED:**
-- Status: ✅ MERGED (Commit 548f3fd, 2025-12-18 18:55 UTC)
-- Updates: requests 2.31.0 → 2.32.4, cryptography 42.0.4 → 44.0.1
-- Security: CVE-2024-47081 FIXED + 9 Dependabot Alerts geschlossen
-- CI: Kern-Checks grün (Branch-Policy, Black, Ruff, mypy), verbleibende Failures → Copilot
-
-**PR #125 (Agent Config) - CLOSED:**
-- Status: ✅ CLOSED als duplicate (2025-12-18 19:00 CET)
-- Rationale: Agent-Config bereits teilweise gemerged (cc7981d), Makefile-Scope-Creep
-- Original-Merge: Commit cc7981d (Agent-Config-Files only)
-
-**Branch-Synchronisation gitlab ↔ GitHub:**
-- Status: ✅ COMPLETE (Commit 821e22f)
-- Problem: gitlab/main und origin/main divergiert nach f35f8f9
-- Lösung: Merge origin/main → gitlab/main + Push → GitHub
-- Konflikte: Makefile, mcp-config.toml (resolved)
-
-**Issue #128 (BSDE vs. Stochastic Control) - Week 1 COMPLETE (Vorherige Session):**
-- Status: Week 1-2 Dimensionality Audit COMPLETE
-- Deliverable: DIMENSIONALITY_AUDIT_REPORT_W1.md (400+ Zeilen, Docs Repo)
-- Key Findings: d_realistic = 35-40 (HYBRID region)
-- Framework Decision: ✅ GO for HYBRID (HJB baseline + selective BSDE)
-- Next: Week 3 HJB Baseline Prototype
+| Commit | Feature | Issues |
+|--------|---------|--------|
+| 9619ca2 | **Remove exposed secrets + SECRETS_POLICY.md** | **#316** |
+| bcdc4a4 | **Delivery Gate CI workflow** | **#318** |
+| bfbf092 | **CODE_OF_CONDUCT + CONTRIBUTING** | **#311** |
+| 8d38d8b | **Pre-commit: mypy + conventional commits** | **#314** |
+| 5bfb9bc | **MIT LICENSE file** | **#310** |
+| b8f3802 | TLS/SSL for Redis + PostgreSQL | #103 |
+| f74db58 | Enforce 80% test coverage in CI | #315 |
+| 82be88a | Add gitleaks secret-scanning to CI | #313 |
+| 40c44da | Remove legacy docker-compose files | #312 |
 
 ---
 
-### ⏳ HIGH (nächste Session)
+### ⏳ HIGH (nächste Schritte)
 
-**1. PR #87 Finalisierung:**
-- Prüfe CI-Status nach Dependabot-Rebase
-- Merge wenn grün
-- Priorität: SECURITY (CVE-Fix)
+**1. Security - URGENT:**
+- ⚠️ **Secrets rotieren!** (REDIS_PASSWORD, POSTGRES_PASSWORD, GRAFANA_PASSWORD)
+- Secrets waren in Git-History exposed
 
-**2. Issue #128 - Week 3 Kickoff (HJB Baseline):**
-- 3D Black-Scholes HJB Solver implementieren
-- Analytische Validation (gegen bekannte Lösungen)
-- Environment: scipy.optimize, FEniCS, OR-Tools
-- Ziel: HJB-Kompetenz etablieren vor Skalierung
+**2. Offene PRs (Review pending):**
+- PR #301: PR Quality Gates (Soft Mode)
+- PR #300: Smart PR Auto-Labeling + Governance Checks
+- PR #267: Signal.from_dict() method
+- PR #259: Risk Guards E2E integration (blockt #215, #224, #229, #230)
 
-**3. Docs Repo: Branch Merge:**
-- copilot/improve-deep-issues-pipeline → main
-- Files: DIMENSIONALITY_AUDIT_REPORT_W1.md, session log
-
----
-
-### 📅 MID (diese/nächste Woche)
-
-**1. Issue #123 - Paper Trading Ops Setup:**
-- Defaults: paper mode in .env.example
-- Runbook: docs/runbook_papertrading.md
-- Validation: make docker-up + health checks
-
-**2. Issue #122 - Docker Hardening Report:**
-- Report-only, keine Runtime-Änderungen
-- Audit: Dockerfiles/compose files
-- Kategorisierung: MUST/SHOULD/NICE
-
-**3. Issue #128 - Week 4 (Sector-Level HJB):**
-- 3-Asset HJB Solver (d=25)
-- Test auf korrelierten Assets (e.g., AAPL, MSFT, GOOGL)
-- Ziel: Sector Clustering Feasibility prüfen
+**3. Security Audits (Q2 2026):**
+- #326: Tresor-Zone Implementation
+- #325: Penetration Testing (M8)
+- #99, #100: PenTest Web/Infrastructure
 
 ---
 
-## Offene PRs (Stand 2025-12-18 19:00 CET)
+### 📅 DEFERRED (Q1/Q2 2026)
 
-| PR | Status | Titel | Priorität | Nächster Schritt |
-|----|--------|-------|-----------|------------------|
-| #125 | ✅ CLOSED (2025-12-18 19:00) | Agent Config Fix | - | - |
-| #127 | ✅ MERGED (2025-12-17 21:31) | Claude Workflows | - | - |
-| #126 | ✅ CLOSED (Duplikat) | Claude Actions | - | - |
-| #87 | ✅ MERGED (2025-12-18 18:55) | Dependabot Security | - | - |
+**ML Foundation (epic:ml-foundation):**
+- #197, #198, #199, #200: ML Roadmap & Research
+- #203, #205, #206, #207, #210, #211: Agent-Tasks (Gemini/Codex)
 
-**Aktuell keine offenen PRs.**
+**Integration (waiting on PR #259):**
+- #215: E1-E4 Integration
+- #224: P1 order_results debugging
+- #229, #230: E2E Guard-Cases
 
 ---
 
-## Offene Issues (Top 5)
+## Offene PRs (Stand 2025-12-28 20:00 CET)
 
-| Issue | Status | Titel | Priorität | Nächster Schritt |
-|-------|--------|-------|-----------|------------------|\
-| #128 | ✅ WEEK 1 COMPLETE | BSDE vs. Stochastic Control | HIGH | Week 3: HJB Baseline Prototype |
-| #123 | OFFEN | Paper Trading Ops Setup | MID | Defaults + Runbook |
-| #122 | OFFEN | Docker Hardening Report | MID | Audit starten |
+| PR | Status | Titel | Priorität |
+|----|--------|-------|-----------|
+| #301 | OPEN | PR Quality Gates (Soft Mode) | HIGH |
+| #300 | OPEN | Smart PR Auto-Labeling + Governance Checks | HIGH |
+| #299 | OPEN | Smart PR Auto-Labeling System | MID |
+| #267 | OPEN | Signal.from_dict() method | MID |
+| #259 | OPEN | Risk Guards E2E integration | HIGH |
+| #239 | OPEN | Automatic PR labeling | LOW |
 
 ---
 
@@ -127,110 +107,85 @@
 
 | Commit | Datum | Beschreibung |
 |--------|-------|--------------|
-| 548f3fd | 2025-12-18 18:55 | Bump the pip group - Security Updates (PR #87 MERGED) |
-| 8ac4491 | 2025-12-18 19:42 | fix: CI pipeline improvements (Copilot) |
-| 821e22f | 2025-12-18 18:27 | Merge origin/main into gitlab/main (Branch Sync) |
-| cc7981d | 2025-12-17 23:30 | Merge branch 'clean-agent-config' (Agent Configuration) |
-| 7064207 | 2025-12-17 23:25 | feat: Add Agent Configuration (partial from PR #125) |
+| 9619ca2 | 2025-12-28 | **fix(security): Remove exposed secrets (#316)** |
+| bcdc4a4 | 2025-12-28 | feat: Add Delivery Gate CI workflow (#318) |
+| bfbf092 | 2025-12-28 | docs: Add CODE_OF_CONDUCT + CONTRIBUTING (#311) |
+| 8d38d8b | 2025-12-28 | feat: Pre-commit hooks with mypy + conventional (#314) |
+| 5bfb9bc | 2025-12-28 | chore: Add MIT LICENSE file (#310) |
+| b8f3802 | 2025-12-28 | feat: Add TLS/SSL support for Redis + PostgreSQL (#103) |
 
 ---
 
-## Letzte Commits (docs repo - copilot/improve-deep-issues-pipeline branch)
+## CI-Status
 
-| Commit | Datum | Beschreibung |
-|--------|-------|--------------|\
-| 65feab6 | 2025-12-17 23:35 | feat: Week 1 Dimensionality Audit Report for Issue #128 |
+**Neue Workflows:**
+- ✅ Delivery Gate (`delivery-gate.yml`) - prüft DELIVERY_APPROVED.yaml
+- ✅ Gitleaks Secret-Scanning
+- ✅ 80% Coverage enforced
+
+**Bekannte CI-Issues:**
+- Performance Monitor intermittierend (non-blocking)
 
 ---
 
 ## Blocker & Risiken
 
-**Aktuell keine kritischen Blocker.**
+### ⚠️ ACTION REQUIRED: Secrets Rotieren
 
-**Bekannte Einschränkungen:**
-1. **CI-Failures auf main:** Gitleaks, Tests (Python 3.11/3.12), claude-review, guards
-   - Status: ⚠️ Teilweise Failures nach PR #87 Merge
-   - Mitigation: Copilot-Fix folgt für verbleibende Issues
-   - Impact: Kern-Checks grün (Branch-Policy, Black, Ruff, mypy), Security-Updates deployed
-2. **Docs Repo Branch:** Audit Report committed auf `copilot/improve-deep-issues-pipeline` statt `main`
-   - Mitigation: File ist vorhanden, Branch kann später gemerged werden
-3. **CircleCI nicht konfiguriert:** Fehlende .circleci/config.yml
-   - Mitigation: CircleCI deaktivieren oder konfigurieren (LOW priority)
+**Problem:** 3 Passwörter waren in Git-History exposed:
+- `.secrets/grafana_password`
+- `.secrets/postgres_password`
+- `.secrets/redis_password`
 
----
+**Fix:** Credentials rotieren und in `~/.secrets/.cdb/` neu anlegen.
+**Dokumentation:** `governance/SECRETS_POLICY.md`
 
-## Nächste Session - Vorgeschlagene Agenda
+### ✅ KEIN KRITISCHER BLOCKER
 
-1. **PR #87 Finalisierung:**
-   - CI-Status prüfen (nach Rebase)
-   - Mergen falls grün
-   - Session-Log updaten
-
-2. **Issue #128 Week 3 Kickoff:**
-   - HJB Baseline Prototype (3D Black-Scholes)
-   - Environment Setup (scipy, FEniCS, OR-Tools)
-   - Analytische Validation
-
-3. **Docs Repo Cleanup:**
-   - Branch copilot/improve-deep-issues-pipeline → main mergen
-   - ODER: Files auf main cherry-picken
-
-4. **Issue #123 & #122:**
-   - Paper Trading Ops Setup starten
-   - Docker Hardening Report Audit
+Alle Mainnet-Blocker sind entfernt:
+- ✅ TLS/SSL implementiert
+- ✅ Governance Audit Phase 1 abgeschlossen
+- ✅ Delivery Gate aktiv
 
 ---
 
 ## Governance-Compliance
 
 **Session-Ende Pflicht (laut CLAUDE.md):**
-- ✅ Session-Log erstellt: `knowledge/logs/sessions/session_2025-12-17_continuation.md`
 - ✅ CURRENT_STATUS.md aktualisiert (dieses File)
-- ✅ Blocker explizit benannt: Keine kritischen
+- ✅ Blocker explizit benannt
+- ✅ Issues geschlossen mit Kommentaren
 
-**Lebende Dateien aktualisiert:**
-- ✅ knowledge/CURRENT_STATUS.md (dieses File)
-- ✅ knowledge/logs/sessions/session_2025-12-17_continuation.md
-
----
-
-## Key Decisions (diese Session)
-
-### Decision 1: Branch-Synchronisation gitlab ↔ GitHub
-**Problem:** gitlab/main und origin/main divergiert nach f35f8f9
-**Rationale:** GitLab-Main enthält CI-Fixes (7e638b8), GitHub-Main enthält PR #127 Workflows
-**Action:** Merge origin/main → gitlab/main, Konflikte resolved, Push zu GitHub (821e22f)
-
-### Decision 2: PR #87 Erneuter Rebase auf 8ac4491
-**Problem:** PR basierte auf 821e22f, aber Copilot-Fixes kamen in 8ac4491 danach
-**Rationale:** PR muss Copilot-Fixes enthalten für Branch-Policy + CI-Stabilität
-**Action:** Erneuter @dependabot rebase auf aktuellen main (8ac4491) → f1be946 → MERGED (548f3fd)
-
-### Decision 3: PR #87 Merge trotz CI-Failures
-**Rationale:** Kern-Checks grün (Branch-Policy, Black, Ruff, mypy), Security-Fixes kritisch
-**Action:** Merge durchgeführt, verbleibende Failures (Gitleaks, Tests, Guards) → Copilot-Follow-up
-**Impact:** CVE-2024-47081 FIXED, 9 Dependabot Alerts geschlossen
-
-### Decision 4: PR #125 Close als Duplicate
-**Rationale:** Agent-Config bereits teilweise gemerged (cc7981d), Makefile = Scope Creep
-**Action:** PR #125 geschlossen mit Erklärung, Makefile-Änderungen können separater PR werden
+**Neue Governance-Dateien:**
+- `LICENSE` - MIT
+- `CODE_OF_CONDUCT.md` - Contributor Covenant v2.0
+- `CONTRIBUTING.md` - Setup, Branching, Testing
+- `governance/DELIVERY_APPROVED.yaml` - Delivery Gate
+- `governance/SECRETS_POLICY.md` - Secrets Handling
 
 ---
 
-**Status:** ✅ Session erfolgreich abgeschlossen - PR #87 MERGED, Security-Fixes deployed.
+## Session Summary (2025-12-28)
 
-**Completion (Session 2025-12-18):**
-- ✅ Branch-Synchronisation gitlab ↔ GitHub (821e22f)
-- ✅ PR #87 MERGED - Security Updates deployed (548f3fd)
-- ✅ PR #125 CLOSED als duplicate
-- ⚠️ CI-Failures verbleibend → Copilot-Follow-up
-- ✅ Alle Entscheidungen dokumentiert
-- ✅ Kein kritischer Blocker
+**Issues geschlossen:** 6
+- #310 LICENSE (MIT)
+- #311 CODE_OF_CONDUCT + CONTRIBUTING
+- #314 Pre-commit hooks
+- #316 Secrets consolidation
+- #317 Infrastructure hardening
+- #318 Delivery Gate
 
-**Vorherige Session (2025-12-17):**
-- ✅ PR #125: Teilweise gemerged (cc7981d)
-- ✅ Issue #128 Week 1: Report complete (65feab6)
-- ✅ CI-Fixes auf main (7e638b8)
+**Issues deferred:** 14
+- ML Foundation (#197-#211) → Q1/Q2 2026
+- Integration (#215, #224, #229, #230) → waiting on PR #259
+
+**Nächste Schritte:**
+1. ⚠️ **Secrets rotieren** (URGENT)
+2. PR #259 reviewen und mergen
+3. Offene PRs (#300, #301) reviewen
+4. Branch Cleanup abschließen (#330)
+
+---
 
 🤖 Generated with Claude Code
-Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>

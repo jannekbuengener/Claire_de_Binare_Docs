@@ -15,7 +15,7 @@ description: >
   Absence or false value means Analysis Mode only.
 
 delivery:
-  approved: false
+  approved: true
   approved_by: ""
   approved_at: ""
 

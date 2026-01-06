@@ -186,6 +186,20 @@ Wenn ein Agent **nicht** in der Zuordnung oben steht, gilt:
 
 ---
 
+## Canonical Secrets Path (Hard Rule)
+
+**Kanonischer Secrets-Store (Host, außerhalb aller Repos):**  
+`C:\Users\janne\Documents\.secrets\.cdb\`
+
+**Regel:** In **keinem** Repo werden Secrets erstellt, gespeichert oder committed (auch nicht “kurz” und auch nicht untracked).  
+Repos enthalten höchstens Beispiele (`*.example`) und Doku – **keine echten Werte**.
+
+**Runtime-Nutzung:** Services/Runner/Compose referenzieren Secrets ausschließlich über:
+- `SECRETS_PATH=C:\Users\janne\Documents\.secrets\.cdb`
+- Docker Secrets Mount → `/run/secrets/*` (z. B. `/run/secrets/POSTGRES_PASSWORD`, `/run/secrets/REDIS_PASSWORD`, `/run/secrets/GRAFANA_PASSWORD`)
+
+---
+
 ## 3. Autoload-Pflicht (bei jedem Spawn)
 
 📄 **Maschinen-lesbare Definition:** `agents/AUTOLOAD_MANIFEST.yaml`

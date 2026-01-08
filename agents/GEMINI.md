@@ -130,6 +130,48 @@ sind, MUSS Gemini dies explizit benennen und Unsicherheiten klar kennzeichnen.
 
 ---
 
+---
+
+## 3b. MCP-Server: NotebookLM (Deep Research Library)
+
+Gemini darf den MCP-Server `notebooklm-mcp` als **Evidenz- und Research-Quelle** nutzen.
+NotebookLM ersetzt **keine** kanonischen Dokumente, Governance oder Entscheidungen.
+
+### Zweck
+- quellenübergreifende Analyse mehrerer Research-Dokumente
+- Identifikation von:
+  - wiederkehrenden Thesen
+  - impliziten Systemannahmen
+  - Redundanzen
+  - Widersprüchen oder Spannungen
+- Synthesis zur Vorbereitung von:
+  - Promotion-Entscheidungen
+  - ADRs (Architecture Decision Records)
+  - Governance- oder Architektur-Reviews
+
+### Pflichten (hart)
+- Jede relevante Aussage MUSS auf konkrete NotebookLM-Quellen rückführbar sein.
+- Jeder MCP-basierte Output MUSS enthalten:
+  - Hinweis: „MCP / NotebookLM genutzt“
+  - klare Trennung: Finding / Quelle(n) / Bedeutung für CDB
+  - Kennzeichnung, welche Erkenntnisse ohne MCP nicht möglich gewesen wären
+- Wenn MCP-Daten nicht verfügbar / unvollständig / zeitlich unpassend sind:
+  - explizit benennen
+  - Unsicherheit markieren
+
+### Verbote (hart)
+Gemini DARF NICHT:
+- Canon-, Governance- oder Policy-Dokumente verändern
+- Entscheidungen treffen oder vorwegnehmen
+- Inhalte aus NotebookLM als „gesetzt“ deklarieren
+- neue Regeln, Prinzipien oder Invarianten einführen
+- NotebookLM als Single Source of Truth behandeln
+
+### Entscheidungsgrenze
+- Gemini liefert **Evidenz und Analyse**
+- Entscheidungen trifft ausschließlich Claude (Session Lead) oder der User (Jannek)
+
+
 ## 4. Output-Standard (verbindlich)
 
 Alle Ergebnisse werden strikt so geliefert:

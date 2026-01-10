@@ -1,150 +1,156 @@
-# Monitoring & Alerting Setup
+# Grafana Dashboards (Issue #296)
 
-## Übersicht
+Übersicht aller verfügbaren Grafana Dashboards für Claire de Binare.
 
-Dieses Dokument beschreibt die Monitoring- und Alerting-Infrastruktur für CDB gemäß Issue #96.
+## Dashboard-Übersicht
 
-## Komponenten
+| Dashboard | Datei | Beschreibung |
+|-----------|-------|--------------|
+| Paper Trading | claire_paper_trading_v1.json | Hauptdashboard für Trading-Übersicht |
+| Execution | claire_execution_v1.json | Order-Ausführung, Latenz, Fill-Rate |
+| Risk Manager | claire_risk_manager_v1.json | Drawdown, Exposure, Circuit Breaker |
+| Signal Engine | claire_signal_engine_v1.json | Signal-Generierung, Confidence |
+| System Performance | claire_system_performance_v1.json | CPU, Memory, Disk |
+| Database | claire_database_v1.json | PostgreSQL Metriken |
+| HITL Control | claire_hitl_control_v1.json | Human-in-the-Loop Controls |
+| Dark Theme | claire_dark_v1.json | Dunkles Theme Dashboard |
 
-| Service | Port | Funktion |
-|---------|------|----------|
-| Prometheus | 9090 | Metriken-Sammlung |
-| AlertManager | 9093 | Alert-Routing & Deduplication |
-| Grafana | 3000 | Visualisierung & Dashboards |
-
-## Dashboards
-
-### Verfügbare Dashboards
-
-| Dashboard | UID | Beschreibung |
-|-----------|-----|--------------|
-| System Performance | `claire_system_v1` | Container Health, CPU, Memory |
-| Signal Engine | `claire_signal_v1` | Signal-Generierung, Events/sec |
-| Risk Manager | `claire_risk_v1` | P&L, Exposure, Rejections |
-| Execution | `claire_execution_v1` | Order Latency, Fill Rate |
-| Paper Trading | `claire_paper_v1` | Paper Trading Metrics |
-| Database | `claire_database_v1` | PostgreSQL & Redis Metrics |
-| HITL Control | `claire_hitl_v1` | Human-in-the-Loop Controls |
-
-### Dashboard URLs
+## Zugriff
 
 ```
-System:     http://localhost:3000/d/claire_system_v1
-Signal:     http://localhost:3000/d/claire_signal_v1
-Risk:       http://localhost:3000/d/claire_risk_v1
-Execution:  http://localhost:3000/d/claire_execution_v1
-Database:   http://localhost:3000/d/claire_database_v1
+URL: http://localhost:3001
+User: admin
+Password: (aus .secrets/GRAFANA_PASSWORD)
 ```
 
-## Alert Rules
+## Dashboard-Details
 
-### Critical Alerts (Sofortige Aktion)
+### Paper Trading Dashboard
 
-| Alert | Condition | Description |
-|-------|-----------|-------------|
-| `ServiceDown` | `up == 0` for 1m | Service nicht erreichbar |
-| `CircuitBreakerTriggered` | `cdb_circuit_breaker_triggered == 1` | Trading gestoppt |
-| `DatabaseConnectionLost` | `pg_up == 0` for 30s | PostgreSQL-Verbindung verloren |
-| `RedisConnectionLost` | `redis_up == 0` for 30s | Redis-Verbindung verloren |
-| `DailyDrawdownExceeded` | `cdb_daily_drawdown_pct > 5` | Drawdown >5% |
+**Panels:**
+- Risk Approval Rate (%)
+- Signal Generation Rate
+- Order Status Distribution
+- Portfolio Equity Timeline
+- Active Positions
+- Daily P&L
 
-### High Priority Alerts
+**Metriken:**
+```promql
+# Approval Rate
+(orders_approved_total / (orders_approved_total + orders_blocked_total)) * 100
 
-| Alert | Condition | Description |
-|-------|-----------|-------------|
-| `HighLatency` | P95 > 500ms for 5m | Hohe Latenz erkannt |
-| `HighErrorRate` | Error Rate > 5% for 5m | Viele Fehler |
-| `OrderProcessingDelayed` | Processing > 1s for 2m | Order-Verarbeitung verzögert |
-| `PositionLimitApproaching` | Utilization > 80% | Position-Limit nähert sich |
+# Signal Rate
+rate(signals_generated_total[5m])
 
-### Warning Alerts
+# Portfolio Equity
+portfolio_equity_usdt
+```
 
-| Alert | Condition | Description |
-|-------|-----------|-------------|
-| `HighCPUUsage` | CPU > 80% for 10m | Hohe CPU-Auslastung |
-| `HighMemoryUsage` | Memory > 85% for 10m | Hohe Memory-Auslastung |
-| `ContainerRestarting` | >3 Restarts/h | Container instabil |
+### Risk Manager Dashboard
 
-## AlertManager Konfiguration
+**Panels:**
+- Current Drawdown (%)
+- Portfolio Exposure (%)
+- Circuit Breaker Status
+- Risk Rejections
+- Position Sizes
 
-### Routing
+**Alerts:**
+- Drawdown > 10%: Warning
+- Drawdown > 15%: Critical
+- Circuit Breaker Triggered: Alert
+
+### Execution Dashboard
+
+**Panels:**
+- Order Latency (p50, p95, p99)
+- Fill Rate (%)
+- Slippage Distribution
+- Orders by Status
+- MEXC API Status
+
+## Provisioning
+
+Dashboards werden automatisch provisioniert beim Stack-Start:
 
 ```yaml
-route:
-  receiver: 'default-receiver'
-  group_by: ['alertname', 'severity', 'service']
-  routes:
-    - match: { severity: critical }
-      receiver: 'critical-receiver'
-      group_wait: 10s
-    - match: { alertname: CircuitBreakerTriggered }
-      receiver: 'trading-halt-receiver'
-      group_wait: 0s
+# infrastructure/monitoring/grafana/provisioning/dashboards/dashboards.yml
+apiVersion: 1
+providers:
+  - name: 'Claire Dashboards'
+    folder: 'Claire de Binare'
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards
 ```
 
-### Inhibition Rules
+## Time Range Presets
 
-- Service Down → alle anderen Alerts für den Service unterdrückt
-- Database Down → Order Processing Alerts unterdrückt
-- Critical → Warning Alerts für gleichen Service unterdrückt
+| Preset | Verwendung |
+|--------|-----------|
+| Last 1h | Debugging, Live-Monitoring |
+| Last 6h | Session-Review |
+| Last 24h | Daily Overview |
+| Last 7d | Weekly Performance |
+| Last 30d | Monthly Review |
 
-## Konfigurationsdateien
+## Auto-Refresh
 
-```
-infrastructure/monitoring/
-├── prometheus.yml        # Prometheus scrape config
-├── alerts.yml           # Alert rules
-├── alertmanager.yml     # AlertManager routing
-└── grafana/
-    ├── dashboards/      # Dashboard JSON exports
-    └── provisioning/    # Auto-provisioning configs
-```
+- Default: 30s
+- Empfohlen für Live-Trading: 10s
+- Empfohlen für Review: Off
 
-## Prometheus Metriken
+## Alerting
 
-### Standard Metriken
+### Konfigurierte Alerts
 
-```promql
-# Service Health
-up{job="cdb_*"}
+| Alert | Condition | Severity |
+|-------|-----------|----------|
+| High Drawdown | > 15% | Critical |
+| Circuit Breaker Active | triggered == 1 | Warning |
+| API Connection Lost | up == 0 | Critical |
+| High Latency | p99 > 1000ms | Warning |
 
-# Request Rate
-rate(cdb_requests_total[5m])
+### Notification Channels
 
-# Latency P95
-histogram_quantile(0.95, rate(cdb_latency_seconds_bucket[5m]))
+- Alertmanager → Slack (konfigurierbar)
+- Email (optional)
 
-# Error Rate
-rate(cdb_errors_total[5m]) / rate(cdb_requests_total[5m])
-```
+## Fehlerbehebung
 
-### Trading-spezifische Metriken
+### "No Data" in Panels
 
-```promql
-# Orders per Second
-rate(cdb_orders_processed_total[1m])
+1. Prometheus läuft?
+   ```bash
+   docker logs cdb_prometheus
+   ```
 
-# Position Utilization
-cdb_position_utilization_pct
+2. Metriken verfügbar?
+   ```bash
+   curl http://localhost:9090/api/v1/query?query=up
+   ```
 
-# Daily Drawdown
-cdb_daily_drawdown_pct
+3. Service exportiert Metriken?
+   ```bash
+   curl http://cdb_risk:8000/metrics
+   ```
 
-# Circuit Breaker Status
-cdb_circuit_breaker_triggered
-```
+### Dashboard lädt nicht
 
-## Eskalation
+1. Grafana Logs prüfen:
+   ```bash
+   docker logs cdb_grafana
+   ```
 
-| Severity | Response Time | Actions |
-|----------|---------------|---------|
-| Critical | < 5 min | Page On-Call, Auto Kill-Switch |
-| High | < 30 min | Notification, Manual Review |
-| Warning | < 4h | Ticket erstellen |
+2. Provisioning-Pfad prüfen
 
-## Referenzen
+3. JSON-Syntax validieren
 
-- Issue #96: Monitoring: Grafana Dashboards & Alerting
-- Epic #91: Paper Trading
-- [Prometheus Docs](https://prometheus.io/docs/)
-- [AlertManager Config](https://prometheus.io/docs/alerting/latest/configuration/)
+## Custom Dashboard erstellen
+
+1. In Grafana UI: Create → Dashboard
+2. Panels hinzufügen
+3. Save → Export as JSON
+4. JSON in `infrastructure/monitoring/grafana/dashboards/` speichern
+5. Grafana neustarten: `docker restart cdb_grafana`

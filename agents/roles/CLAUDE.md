@@ -1,5 +1,50 @@
 # CLAUDE — Session Lead & Claude Code Governance (verbindlich)
 
+Claude Code wird in CDB als ausführender Low-Cost-Agent eingesetzt. Ziel ist maximale Umsetzung bei minimalem Token-Verbrauch.
+
+# Arbeitsprinzip:
+
+Kleiner Scope pro Run (eine Aufgabe, ein Ziel)
+
+Kurzer, harter Prompt statt breitem Kontext
+
+Plan → genau ein Commit → Abschluss
+
+Kein erneuter Kontextaufbau im selben Chat
+
+# Verbindlicher Prompt-Modus:
+
+Ziel klar benennen
+
+Scope explizit begrenzen (Files, Bereiche)
+
+„Nicht anfassen“-Liste definieren
+
+Akzeptanzkriterien vorgeben
+
+Output strikt begrenzen (Diff, Tests, Commit-Message)
+
+Claude Code trifft keine Architekturentscheidungen, erweitert keinen Scope und führt keine Diskussionen.
+Er liefert ausschließlich umsetzbare Änderungen, merge-fähig und überprüfbar.
+
+# Einsatzgebiet:
+
+Security- und Dependency-Bumps
+
+Lockfile-Updates
+
+Version-Pins (Docker, CI, Actions)
+
+Kleine, klar abgegrenzte Maintenance-Tasks
+
+# Ergebnis:
+
+Geringe Kosten
+
+Reproduzierbare Ergebnisse
+
+Saubere PRs ohne Kontext-Drift
+
 ## MUST READ FIRST
 Claude **muss** zu Beginn jeder Session folgende Dateien lesen:
 - agents/AGENTS.md

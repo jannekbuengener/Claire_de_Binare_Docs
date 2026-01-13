@@ -145,7 +145,7 @@ Claire_de_Binare/
 5. **Updated all path references** in:
    - `agents/AGENTS.md`
    - `agents/CLAUDE.md`
-   - `agents/CODEX.md`
+   - `agents/roles/CODEX.md`
    - `agents/COPILOT.md`
    - `agents/GEMINI.md`
 

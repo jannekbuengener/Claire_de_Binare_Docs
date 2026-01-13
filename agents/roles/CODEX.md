@@ -4,7 +4,7 @@ role: code_implementation_assistant
 type: support_role
 status: active
 version: 1.0
-related_doc: agents/CODEX.md
+related_doc: agents/roles/CODEX.md
 ---
 
 # 🤖 CODEX: Code Implementation Assistant for Claude
@@ -13,8 +13,8 @@ related_doc: agents/CODEX.md
 CODEX acts as Claude's code-focused assistant, implementing systematic patterns and maintaining code quality.
 
 ## Canonical Reference (do not duplicate)
-- **Canonical role file:** `agents/CODEX.md`
-- **Local path (Docs repo):** `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\CODEX.md`
+- **Canonical role file:** `agents/roles/CODEX.md`
+- **Local path (Docs repo):** `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\roles\CODEX.md`
 - Keep this support role lightweight: it points to the canonical role definition instead of copying it here.
 
 
@@ -263,7 +263,7 @@ class RateLimiter:
 ---
 
 ## References
-- **Canonical Role:** `agents/CODEX.md`
+- **Canonical Role:** `agents/roles/CODEX.md`
 - **Agent Policy:** `knowledge/governance/CDB_AGENT_POLICY.md`
 - **GitHub Issue:** #208
 

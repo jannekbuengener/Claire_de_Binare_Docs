@@ -43,7 +43,7 @@ agents:
     evidence_path: knowledge/logs/sessions/
 
   codex:
-    role_file: agents/CODEX.md
+    role_file: agents/roles/CODEX.md
     must_read:
       - knowledge/governance/CDB_AGENT_POLICY.md
 

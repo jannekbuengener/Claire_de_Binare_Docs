@@ -50,7 +50,7 @@ Der Docs Hub ist **autoritativer** als:
 - `agents/AGENTS.md` → Gemeinsame Agenten-Grundordnung (Canonical)
 - `agents/CLAUDE.md` → Session Lead / Orchestrator
 - `agents/GEMINI.md` → Audit & Review
-- `agents/CODEX.md` → Deterministische Ausführung
+- `agents/roles/CODEX.md` → Deterministische Ausführung
 - `agents/COPILOT.md` → Assistenz / Komfort
 
 #### Unterordner

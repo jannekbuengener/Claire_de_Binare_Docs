@@ -15,7 +15,7 @@ Methodik: Sichtprüfung der Dateien, keine Änderungen vorgenommen.
 | agents/charters/charter-template.yaml | Vorlage für Agenten-Charters (v1.0.0) | OK+Hinweis | Überschneidung mit ehemaligem `agents/charter-template.yaml` – kanonischen Speicherort festlegen. |
 | agents/roles/AGENTS.md | Gemeinsame Agenten-Charter (shared) | Konfliktpotenzial | Doppelung zu bisherigem `agents/AGENTS.md` (gelöscht) – Quelle/Canonical klären. |
 | agents/roles/CLAUDE.md | Rolle CLAUDE (Session Lead) | Konfliktpotenzial | Überlappt mit bisherigem `agents/CLAUDE.md` – Single Source definieren. |
-| agents/roles/CODEX.md | Rolle CODEX (Execution Agent) | Konfliktpotenzial | Überlappt mit bisherigem `agents/CODEX.md`. |
+| agents/roles/CODEX.md | Rolle CODEX (Execution Agent) | Konfliktpotenzial | Überlappt mit bisherigem `agents/roles/CODEX.md`. |
 | agents/roles/COPILOT.md | Rolle COPILOT (Assistenz) | Konfliktpotenzial | Überlappt mit bisherigem `agents/COPILOT.md`. |
 | agents/roles/GEMINI.md | Rolle GEMINI (Audit & Review) | Konfliktpotenzial | Überlappt mit bisherigem `agents/GEMINI.md`. |
 | agents/roles/roles.yaml | Registry der Agentenrollen & Kategorien | OK+Hinweis | Neue Taxonomie – Abgleich mit `CDB_AGENT_POLICY.md`/`AGENTS.md` nötig, um Divergenzen zu vermeiden. |

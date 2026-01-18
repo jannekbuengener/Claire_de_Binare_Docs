@@ -3,7 +3,7 @@ Stand: 2025-12-25
 
 ## Was ist drin?
 ### Playbooks (kannonisch)
-- `docs/playbooks/*` (Golden Path, Security, DB Init/Migrations, Redis Debug, E2E Spec)
+- `knowledge/playbooks/*` (Golden Path, Security, DB Init/Migrations, Redis Debug, E2E Spec)
 
 ### #255 MVP Test
 - `tests/e2e/test_paper_trading_regression_shield.py`
@@ -16,7 +16,7 @@ Stand: 2025-12-25
 - `scripts/run_e2e_regression_shield.ps1`
 
 ## Einbau ins Repo
-1) ZIP ins Repo-Root entpacken (Ordner `docs/`, `tests/`, `scripts/` entstehen/werden ergänzt)
+1) ZIP ins Repo-Root entpacken (Ordner `knowledge/`, `tests/`, `scripts/` entstehen/werden ergänzt)
 2) `git status` prüfen
 3) Commit + PR erstellen
 

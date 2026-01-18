@@ -25,7 +25,7 @@ Stand: 2025-12-16
   - paper/live flags
   - execution toggles
   - safe defaults
-- Runbook erstellen: `docs/runbook_papertrading.md` (kurz, ausführbar)
+- Runbook erstellen: `knowledge/operating_rules/runbook_papertrading.md` (kurz, ausführbar)
   - Start/Stop
   - Healthcheck
   - Minimal Smoke-Test

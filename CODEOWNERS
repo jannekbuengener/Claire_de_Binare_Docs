@@ -63,10 +63,10 @@
 # Dokumentations-Maintainer sind verantwortlich
 
 # Haupt-Dokumentations-Index
-/docs/INDEX.md                            @docs-maintainers
+/knowledge/INDEX.md                       @docs-maintainers
 
 # Templates (kritisch für Konsistenz)
-/docs/templates/*.md                      @docs-maintainers
+/knowledge/templates/*.md                 @docs-maintainers
 
 # ============================================
 # REPOSITORY-ROOT

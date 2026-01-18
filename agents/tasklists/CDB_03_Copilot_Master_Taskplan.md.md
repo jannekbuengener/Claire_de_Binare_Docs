@@ -153,7 +153,7 @@ DOCKER_HARDENING_REPORT.md
 2. Runbook:
 
 
-docs/runbook_papertrading.md
+knowledge/operating_rules/runbook_papertrading.md
 
 3. Validierung:
 - make docker-up

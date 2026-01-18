@@ -38,7 +38,7 @@ Nach jeder Phase immer:
 - `DOCKER_HARDENING_REPORT.md` vorhanden, mit MUST/SHOULD/NICE + Diff-Snippets; sonst keine Änderungen.
 
 ### Phase 6
-- `.env.example` erweitert (safe defaults) + `docs/runbook_papertrading.md` vorhanden.
+- `.env.example` erweitert (safe defaults) + `knowledge/operating_rules/runbook_papertrading.md` vorhanden.
 
 ---
 

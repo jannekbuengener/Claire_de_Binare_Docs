@@ -119,9 +119,9 @@ Phase 0 (Plan Mode):
 - Regeln
 
 Geplante Outputs:
-- docs/BLUEPRINT.md
+- knowledge/planning/BLUEPRINT.md
 - tasks/todo.md
-- docs/session-notes/YYYY-MM-DD-init.md
+- knowledge/logs/sessions/YYYY-MM-DD-init.md
 - CLAUDE.md
 
 ---

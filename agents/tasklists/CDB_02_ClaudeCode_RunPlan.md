@@ -81,7 +81,7 @@ ACCEPTANCE:
 PHASE 6 — WORKING REPO: PAPERTRADING OPS SETUP (SAFE DEFAULTS)
 Tasks:
 - Extend .env.example with paper/live flags & execution toggles (safe defaults = paper/dry-run)
-- Create docs/runbook_papertrading.md with start/stop/health/smoke steps
+- Create knowledge/operating_rules/runbook_papertrading.md with start/stop/health/smoke steps
 - Provide validation commands: make docker-up, make docker-health, minimal smoke
 ACCEPTANCE:
 - Runbook + .env.example update; no live trading activation; no secrets.

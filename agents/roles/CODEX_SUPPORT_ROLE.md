@@ -4,7 +4,7 @@ role: code_implementation_assistant
 type: support_role
 status: active
 version: 1.0
-related_doc: agents/roles/CODEX.md
+related_doc: agents/CODEX.md
 ---
 
 # 🤖 CODEX: Code Implementation Assistant for Claude
@@ -257,7 +257,7 @@ class RateLimiter:
 ---
 
 ## References
-- **Canonical Role:** `agents/roles/CODEX.md`
+- **Canonical Role:** `agents/CODEX.md`
 - **Agent Policy:** `knowledge/governance/CDB_AGENT_POLICY.md`
 - **GitHub Issue:** #208
 

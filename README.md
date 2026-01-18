@@ -1,9 +1,32 @@
-# Claire de Binare - Docs Hub
+# CDB Phase 2 Pack — Playbooks + #255 Regression Shield
+Stand: 2025-12-25
 
-This repository is the **Canonical Docs Hub** for the Claire de Binare project. It contains all architecture, governance, and design documentation.
+## Was ist drin?
+### Playbooks (kannonisch)
+- `docs/playbooks/*` (Golden Path, Security, DB Init/Migrations, Redis Debug, E2E Spec)
 
-## Quick Access
+### #255 MVP Test
+- `tests/e2e/test_paper_trading_regression_shield.py`
+  - Publish `orders`
+  - Subscribe `order_results`
+  - Assert payload contract
+  - Optional: stream persistence (`CDB_E2E_REQUIRE_STREAM=1`)
 
-The primary entry point for all developers and agents is the Architecture Cockpit.
+### Local runner
+- `scripts/run_e2e_regression_shield.ps1`
 
-➡️ **[Go to Architecture Cockpit](./knowledge/ARCHITECTURE_COCKPIT.md)**
+## Einbau ins Repo
+1) ZIP ins Repo-Root entpacken (Ordner `docs/`, `tests/`, `scripts/` entstehen/werden ergänzt)
+2) `git status` prüfen
+3) Commit + PR erstellen
+
+## Lokaler Run (Beispiel)
+```powershell
+docker compose up -d
+.\scriptsun_e2e_regression_shield.ps1 -TimeoutSeconds 10
+```
+
+## CI Hinweis
+Für CI muss Redis + Execution erreichbar sein. Üblich:
+- docker compose up -d
+- pytest -m e2e ...

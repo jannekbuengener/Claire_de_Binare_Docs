@@ -321,8 +321,8 @@ Langzeit-Wissen und Entscheidungen.
 │   ├── index.yaml                     # Wissens-Index
 │   └── decisions/                     # Entscheidungen
 │       └── ADR-NNN-titel.md          # Einzelne ADRs
-└── docs/                               # Dokumentation
-    ├── INDEX.md                       # Dieser Index
+└── knowledge/                          # Dokumentation (konsolidiert)
+    ├── INDEX.md                       # Wissens-Index
     └── templates/                     # Vorlagen
         ├── adr-template.md            # ADR-Vorlage
         └── governance-doc-template.md # Governance-Vorlage

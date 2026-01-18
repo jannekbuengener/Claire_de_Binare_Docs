@@ -108,7 +108,7 @@ Daher: **Docs Hub = Canon/Knowledge/Reports**, **Working Repo = Code/Compose/Run
 
 ### Schritte
 - `.env.example` Flags ergänzen (paper/live/dry-run, execution toggles).
-- `docs/runbook_papertrading.md` erstellen (ausführbar, kurz).
+- `knowledge/operating_rules/runbook_papertrading.md` erstellen (ausführbar, kurz).
 - Validierung: `make docker-up` → `make docker-health` → smoke.
 
 ### DoD

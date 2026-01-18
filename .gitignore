@@ -316,3 +316,6 @@ coverage/
 .claude_settings.json
 configs/
 
+
+.cdb_docs_inventory.txt
+.cdb_knowledge_inventory.txt

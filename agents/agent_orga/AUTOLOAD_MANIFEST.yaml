@@ -9,7 +9,7 @@
 # - Eindeutige Quelle für Agent-Bootstrapping
 
 version: "1.0"
-base_path: "C:\\Users\\janne\\Documents\\GitHub\\Workspaces\\Claire_de_Binare_Docs"
+base_path: "D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs"
 
 # Gemeinsame Dateien für alle Agenten
 # HINWEIS: CDB_CONSTITUTION.md ist PFLICHT für alle Agenten
@@ -43,7 +43,7 @@ agents:
     evidence_path: knowledge/logs/sessions/
 
   codex:
-    role_file: agents/roles/CODEX.md
+    role_file: agents/CODEX.md
     must_read:
       - knowledge/governance/CDB_AGENT_POLICY.md
 

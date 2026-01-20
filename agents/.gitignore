@@ -3,4 +3,3 @@ _local/
 **/*.log
 **/.secrets/
 .cdb_local/
-agents/

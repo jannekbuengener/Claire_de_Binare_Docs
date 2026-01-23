@@ -337,6 +337,23 @@ Bei Konflikt → **STOP & Rückfrage**
 
 ---
 
+## CI Exception Signal (verbindlich)
+
+Signal:
+- GREEN +  EXCEPTION ≠ DONE
+- Bedeutung: Pipeline lief mit STUB/Guardrails (z. B. fehlende Secrets). Keine echte E2E-Validierung.
+
+Pflichtverhalten für Agenten:
+1) EXCEPTION immer explizit benennen.
+2) Ergebnis als „WARN – Follow-up required“ behandeln.
+3) Auf protected/nightly: Issue-Referenz prüfen (Auto-Issue).
+4) Erst GREEN ohne EXCEPTION gilt als realer E2E-PASS.
+
+Maschinenflag:
+- CDB_E2E_EXCEPTION=true
+
+---
+
 ## 6. Rollenmodell (Kurzreferenz)
 
 - **Claude**

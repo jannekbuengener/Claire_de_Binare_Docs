@@ -1,7 +1,6 @@
 ---
-status: deprecated
+status: cannon
 canonical_role_file: "agents/CODEX.md"
-note: "DO NOT USE this legacy role file. Use agents/CODEX.md under the Docs Hub."
 ---
 
 # CODEX — Execution Agent (Canonical)

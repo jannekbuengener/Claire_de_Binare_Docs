@@ -52,7 +52,7 @@ Alle Agenten MÜSSEN diese Rangordnung respektieren:
 | 3 | **CDB_AGENT_POLICY** | `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_AGENT_POLICY.md` | Agenten-Verhalten |
 | 4 | **Spezifische Policies** | `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_*_POLICY.md` | Fachliche Policies |
 | 5 | **AGENTS.md** | `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\AGENTS.md` | Agenten-Registry (diese Datei) |
-| 6 | **Agent-Rollendateien** | `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\CLAUDE.md`, etc. | Operative Rollen |
+| 6 | **Agent-Rollendateien** | `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\roles\CLAUDE.md`, etc. | Operative Rollen |
 | 7 | **Implementierung** | Code, Config, IaC | Ausführung |
 
 ### 0.3 Konfliktauflösung (hart)
@@ -127,7 +127,7 @@ liegen **ausschließlich** im Dokumenten-Workspace.
 
 📍 **Kanonischer Rollenpfad:**
 
-D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\
+D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\roles\
 
 ### Verbindliche Regeln
 - Jeder Agent **MUSS** seine Rollendefinition **dort** laden
@@ -181,7 +181,7 @@ und ersetzt **keine** Canon- oder Governance-Regeln, sondern konkretisiert sie.
 Wenn ein Agent **nicht** in der Zuordnung oben steht, gilt:
 
 - Der Agent darf **nicht** arbeiten, bis eine passende Rollendatei unter  
-  `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\AGENTS.md`  
+  `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\roles\<AGENT>.md`  
   existiert **oder** Jannek ihn explizit einer bestehenden Rolle zuweist.
 - Kein „best guess“, kein improvisiertes Mandat.
 
@@ -191,7 +191,7 @@ Wenn ein Agent **nicht** in der Zuordnung oben steht, gilt:
 
 ## 3. Autoload-Pflicht (bei jedem Spawn)
 
-📄 **Maschinen-lesbare Definition:** `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\AUTOLOAD_MANIFEST.yaml`
+📄 **Maschinen-lesbare Definition:** `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\agent_orga\AUTOLOAD_MANIFEST.yaml`
 
 Jeder Agent MUSS beim Start folgende Dateien laden (Reihenfolge fix):
 

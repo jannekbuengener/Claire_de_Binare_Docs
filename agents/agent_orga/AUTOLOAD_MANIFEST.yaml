@@ -9,7 +9,7 @@
 # - Eindeutige Quelle für Agent-Bootstrapping
 
 version: "1.0"
-base_path: "D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs"
+base_path: 'D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs'
 
 # Gemeinsame Dateien für alle Agenten
 # HINWEIS: CDB_CONSTITUTION.md ist PFLICHT für alle Agenten
@@ -33,7 +33,7 @@ user_authority:
 # Agenten-spezifische Autoload-Listen
 agents:
   claude:
-    role_file: agents/CLAUDE.md
+    role_file: agents/roles/CLAUDE.md
     must_read:
       - knowledge/SYSTEM.CONTEXT.md
       - knowledge/CURRENT_STATUS.md
@@ -43,17 +43,17 @@ agents:
     evidence_path: knowledge/logs/sessions/
 
   codex:
-    role_file: agents/CODEX.md
+    role_file: agents/roles/CODEX.md
     must_read:
       - knowledge/governance/CDB_AGENT_POLICY.md
 
   copilot:
-    role_file: agents/COPILOT.md
+    role_file: agents/roles/COPILOT.md
     must_read:
       - knowledge/governance/CDB_AGENT_POLICY.md
 
   gemini:
-    role_file: agents/GEMINI.md
+    role_file: agents/roles/GEMINI.md
     must_read:
       - knowledge/governance/CDB_AGENT_POLICY.md
       - knowledge/governance/CDB_GOVERNANCE.md

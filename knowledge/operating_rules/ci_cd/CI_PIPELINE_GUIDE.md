@@ -256,9 +256,14 @@ docker-compose -f base.yml -f dev.yml down -v
 
 **Main Branch Rules:**
 - Require PR before merging
-- Require status checks:
-  - `delivery-gate`
-  - `gitleaks`
+- Require status checks (minimal set):
+
+  | Check (workflow name) | Purpose |
+  | --- | --- |
+  | `Delivery Gate` | Enforces delivery.approved=true before merge |
+  | `Gitleaks Secret Scan` | Prevents secrets from entering Git history |
+  | `CI/CD Pipeline` | Core quality gate (lint/format/tests/e2e + security scans) |
+
 - Require conversation resolution
 
 ---

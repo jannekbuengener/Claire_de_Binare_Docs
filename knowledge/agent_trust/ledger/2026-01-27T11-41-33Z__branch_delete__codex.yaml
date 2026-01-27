@@ -1,0 +1,30 @@
+# Decision Event
+event_id: 22800417-494e-4472-a793-d1693e121c8b
+timestamp: "2026-01-27T11:41:33Z"
+agent:
+  id: codex
+  vendor: openai
+  role: execution
+action:
+  type: branch.delete
+  summary: "Deleted local branch feature/testpack-660-wire after merge"
+  reversible: true
+scope:
+  repo: Claire_de_Binare
+  issue: "#660"
+  branch: "feature/testpack-660-wire"
+uncertainty:
+  flag: false
+  reason: "Branch fully merged"
+  options: []
+policy_refs:
+  - ISSUE_AND_BRANCH_LIFECYCLE
+  - CDB_TRUST_SCORE_POLICY
+  - CDB_AGENT_POLICY
+evidence:
+  - "git worktree remove .worktrees/issue-660"
+  - "git branch -D feature/testpack-660-wire"
+  - "https://github.com/jannekbuengener/Claire_de_Binare/pull/682"
+outcome:
+  result: recorded
+  notes: "Cleanup complete"

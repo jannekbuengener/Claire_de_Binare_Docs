@@ -43,6 +43,17 @@ mode: "paper"  # oder "live"
 
 ---
 
+## 2.1 Branch Protection (Required Status Checks)
+
+**main required contexts (exact names):**
+- `ci`
+- `gitleaks`
+
+**Hinweis:** Required Status Checks muessen exakt den Context-Namen entsprechen.
+Abweichende Labels (z.B. "CI (Build/Test)") fuehren zu "expected checks" und blockieren Merges.
+
+---
+
 ## 3. Agenten-Verhalten (Kurzform)
 
 ### MUSS

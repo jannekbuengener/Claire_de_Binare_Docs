@@ -1,0 +1,27 @@
+event_id: 9598c6ad-6dff-4105-89bb-bb22870b79f6
+timestamp: '2026-01-27T08:00:18Z'
+agent:
+  id: codex
+  vendor: openai
+  role: execution
+action:
+  type: pr.create
+  summary: Opened PR #678 for Jules gov-review required check workflow
+  reversible: true
+scope:
+  repo: Claire_de_Binare
+  branch: ci/jules-gov-review-gate
+  issue: "659"
+  pr: "678"
+uncertainty:
+  flag: false
+policy_refs:
+- CDB_CONSTITUTION
+- CDB_GOVERNANCE
+- CDB_AGENT_POLICY
+- CDB_TRUST_SCORE_POLICY
+- ISSUE_AND_BRANCH_LIFECYCLE
+evidence:
+- https://github.com/jannekbuengener/Claire_de_Binare/pull/678
+- https://github.com/jannekbuengener/Claire_de_Binare/issues/659
+- .github/workflows/jules-gov-review.yml

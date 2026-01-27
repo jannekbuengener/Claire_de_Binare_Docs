@@ -1,0 +1,24 @@
+event_id: 77c915f2-ccfe-49bb-b1cb-3f19460b5260
+timestamp: '2026-01-27T08:05:34Z'
+agent:
+  id: codex
+  vendor: openai
+  role: execution
+action:
+  type: branch.protection.update
+  summary: Enabled required status checks on main and added jules/gov-review
+  reversible: true
+scope:
+  repo: Claire_de_Binare
+  branch: main
+uncertainty:
+  flag: false
+policy_refs:
+- CDB_CONSTITUTION
+- CDB_GOVERNANCE
+- CDB_AGENT_POLICY
+- CDB_TRUST_SCORE_POLICY
+- ISSUE_AND_BRANCH_LIFECYCLE
+evidence:
+- gh api repos/jannekbuengener/Claire_de_Binare/branches/main/protection (required_status_checks: jules/gov-review)
+- https://github.com/jannekbuengener/Claire_de_Binare/pull/678

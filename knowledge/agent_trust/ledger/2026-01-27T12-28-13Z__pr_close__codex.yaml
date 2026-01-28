@@ -1,0 +1,25 @@
+event_id: codex-2026-01-27T12:28:13Z-pr-close-684
+timestamp: "2026-01-27T12:28:13Z"
+agent:
+  id: codex
+  vendor: openai
+  role: execution
+action:
+  type: pr.close
+  summary: "Closed PR #684 as superseded by #685 due to branch-name gate."
+  reversible: true
+scope:
+  repo: Claire_de_Binare
+  pr: "#684"
+uncertainty:
+  flag: false
+  reason: ""
+  options: []
+policy_refs:
+- CDB_AGENT_POLICY
+- CDB_TRUST_SCORE_POLICY
+- ISSUE_AND_BRANCH_LIFECYCLE
+evidence:
+- https://github.com/jannekbuengener/Claire_de_Binare/pull/684
+- https://github.com/jannekbuengener/Claire_de_Binare/pull/685
+- gh pr close 684 -c "Superseded by #685 due to branch-name gate."

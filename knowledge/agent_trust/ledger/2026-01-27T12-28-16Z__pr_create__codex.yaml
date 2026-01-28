@@ -1,0 +1,25 @@
+event_id: codex-2026-01-27T12:28:16Z-pr-create-685
+timestamp: "2026-01-27T12:28:16Z"
+agent:
+  id: codex
+  vendor: openai
+  role: execution
+action:
+  type: pr.create
+  summary: "Opened replacement PR #685 from feature/656-owner-cockpit for #656."
+  reversible: true
+scope:
+  repo: Claire_de_Binare
+  issue: "#656"
+  pr: "#685"
+  branch: "feature/656-owner-cockpit"
+uncertainty:
+  flag: false
+  reason: ""
+  options: []
+policy_refs:
+- CDB_AGENT_POLICY
+- CDB_TRUST_SCORE_POLICY
+- ISSUE_AND_BRANCH_LIFECYCLE
+evidence:
+- https://github.com/jannekbuengener/Claire_de_Binare/pull/685

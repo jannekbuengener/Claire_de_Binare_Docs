@@ -1,0 +1,24 @@
+event_id: codex-2026-01-27T12:28:14Z-branch-delete-dashboards-656-owner-cockpit
+timestamp: "2026-01-27T12:28:14Z"
+agent:
+  id: codex
+  vendor: openai
+  role: execution
+action:
+  type: branch.delete
+  summary: "Deleted branch dashboards/656-owner-cockpit after replacement PR."
+  reversible: true
+scope:
+  repo: Claire_de_Binare
+  issue: "#656"
+  branch: "dashboards/656-owner-cockpit"
+uncertainty:
+  flag: false
+  reason: ""
+  options: []
+policy_refs:
+- CDB_AGENT_POLICY
+- CDB_TRUST_SCORE_POLICY
+- ISSUE_AND_BRANCH_LIFECYCLE
+evidence:
+- git push origin --delete dashboards/656-owner-cockpit

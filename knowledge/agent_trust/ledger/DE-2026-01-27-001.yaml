@@ -1,0 +1,31 @@
+# Decision Event
+event_id: DE-2026-01-27-001
+timestamp: "2026-01-27T11:39:50Z"
+agent:
+  id: codex
+  vendor: openai
+  role: execution
+action:
+  type: pr.replace
+  summary: "Replaced PR #681 with PR #682 due to branch-name gate (feature/* required)"
+  reversible: true
+scope:
+  repo: Claire_de_Binare
+  issue: "660"
+  pr: "681"
+  branch: "testpack/660-wire"
+uncertainty:
+  flag: false
+  reason: ""
+  options: []
+policy_refs:
+  - ISSUE_AND_BRANCH_LIFECYCLE
+  - CDB_AGENT_POLICY
+  - CDB_TRUST_SCORE_POLICY
+evidence:
+  - "https://github.com/jannekbuengener/Claire_de_Binare/pull/681"
+  - "https://github.com/jannekbuengener/Claire_de_Binare/pull/682"
+  - "https://github.com/jannekbuengener/Claire_de_Binare/issues/660#issuecomment-3804170153"
+outcome:
+  result: replaced
+  notes: "PR #681 superseded by #682"

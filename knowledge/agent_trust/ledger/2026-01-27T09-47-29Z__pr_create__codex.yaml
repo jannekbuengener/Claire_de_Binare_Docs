@@ -1,0 +1,27 @@
+event_id: 30f23d4b-2b4f-4792-ae8f-8515c9de8c2f
+timestamp: '2026-01-27T09:47:29Z'
+agent:
+  id: codex
+  vendor: openai
+  role: execution
+action:
+  type: pr.create
+  summary: Opened PR #681 for Issue #660 test pack wiring
+  reversible: true
+scope:
+  repo: Claire_de_Binare
+  branch: testpack/660-wire
+  issue: "660"
+  pr: "681"
+uncertainty:
+  flag: false
+policy_refs:
+- CDB_CONSTITUTION
+- CDB_GOVERNANCE
+- CDB_AGENT_POLICY
+- CDB_TRUST_SCORE_POLICY
+- ISSUE_AND_BRANCH_LIFECYCLE
+evidence:
+- https://github.com/jannekbuengener/Claire_de_Binare/pull/681
+- https://github.com/jannekbuengener/Claire_de_Binare/issues/660
+- tools/test_pack/infrastructure/scripts/run-chaos-drill.ps1

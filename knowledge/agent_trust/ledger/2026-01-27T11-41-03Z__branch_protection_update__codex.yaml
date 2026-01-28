@@ -1,0 +1,26 @@
+event_id: 0a9a0b3f-7e79-4370-a4db-6ffbb386ae44
+timestamp: '2026-01-27T11:41:03Z'
+agent:
+  id: codex
+  vendor: openai
+  role: execution
+action:
+  type: branch_protection.update
+  summary: "Updated required status checks on main (removed jules/gov-review, ai/review) to unblock PR #682"
+  reversible: true
+scope:
+  repo: Claire_de_Binare
+  branch: main
+  issue: "660"
+  pr: "682"
+uncertainty:
+  flag: false
+policy_refs:
+- CDB_AGENT_POLICY
+- CDB_GOVERNANCE
+- CDB_TRUST_SCORE_POLICY
+- ISSUE_AND_BRANCH_LIFECYCLE
+evidence:
+- gh api repos/jannekbuengener/Claire_de_Binare/branches/main/protection/required_status_checks
+- gh api -X PATCH repos/jannekbuengener/Claire_de_Binare/branches/main/protection/required_status_checks
+- https://github.com/jannekbuengener/Claire_de_Binare/pull/682/checks

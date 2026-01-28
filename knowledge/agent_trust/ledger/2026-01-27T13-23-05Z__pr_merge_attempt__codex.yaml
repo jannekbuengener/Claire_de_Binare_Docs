@@ -1,0 +1,26 @@
+event_id: codex-2026-01-27T13:23:05Z-pr-merge_attempt-686
+timestamp: "2026-01-27T13:23:05Z"
+agent:
+  id: codex
+  vendor: openai
+  role: execution
+action:
+  type: pr.merge_attempt
+  summary: "Merge attempt for PR #686 blocked by required CodeQL code scanning results."
+  reversible: true
+scope:
+  repo: Claire_de_Binare
+  issue: "#432"
+  pr: "#686"
+  branch: "feature/432-mcp-stack-green"
+uncertainty:
+  flag: false
+  reason: ""
+  options: []
+policy_refs:
+- CDB_AGENT_POLICY
+- CDB_TRUST_SCORE_POLICY
+- ISSUE_AND_BRANCH_LIFECYCLE
+evidence:
+- gh api -X PUT repos/jannekbuengener/Claire_de_Binare/pulls/686/merge -f merge_method=squash
+- https://github.com/jannekbuengener/Claire_de_Binare/pull/686

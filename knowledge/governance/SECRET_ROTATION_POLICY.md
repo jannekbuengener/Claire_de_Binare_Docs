@@ -256,3 +256,7 @@ If `GRAFANA_ADMIN_PASSWORD` was also compromised:
 ---
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+
+Note: v1.2 stores rotation state outside the repo. A one-time auto-migration copies legacy state from 	ools/secrets/.rotation_state.json to $SECRETS_PATH/.rotation_state.json. After verification, the legacy file may be deleted.
+

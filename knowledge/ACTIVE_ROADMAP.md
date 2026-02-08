@@ -25,7 +25,7 @@ This file exists as a pointer to satisfy AGENTS.md §3 Autoload requirements.
 ## Quick Status (as of 2026-02-08)
 
 **Live-Readiness:** 80% complete
-- ✅ LR-001 to LR-004, LR-006A: DONE
+- ✅ LR-001 to LR-004, LR-006: DONE
 - 🔴 LR-005: BLOCKED (RC_WAIT_IMPLEMENTATION)
 - ⏳ LR-007: IN_PROGRESS (Shadow Mode 30-Day Soak)
 

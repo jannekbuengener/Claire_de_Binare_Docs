@@ -1,0 +1,25 @@
+event_id: codex-2026-01-27T12:28:18Z-branch-delete-feature-656-owner-cockpit
+timestamp: "2026-01-27T12:28:18Z"
+agent:
+  id: codex
+  vendor: openai
+  role: execution
+action:
+  type: branch.delete
+  summary: "Branch feature/656-owner-cockpit deleted after PR #685 merge (auto)."
+  reversible: true
+scope:
+  repo: Claire_de_Binare
+  issue: "#656"
+  branch: "feature/656-owner-cockpit"
+uncertainty:
+  flag: false
+  reason: ""
+  options: []
+policy_refs:
+- CDB_AGENT_POLICY
+- CDB_TRUST_SCORE_POLICY
+- ISSUE_AND_BRANCH_LIFECYCLE
+evidence:
+- https://github.com/jannekbuengener/Claire_de_Binare/pull/685
+- gh api repos/jannekbuengener/Claire_de_Binare/branches/feature/656-owner-cockpit (404 after merge)

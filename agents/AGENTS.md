@@ -47,12 +47,12 @@ Alle Agenten MÜSSEN diese Rangordnung respektieren:
 
 | Rang | Dokument | Pfad | Zweck |
 |------|----------|------|-------|
-| 1 | **CDB_CONSTITUTION** | `knowledge/governance/CDB_CONSTITUTION.md` | Systemverfassung (höchste Instanz) |
-| 2 | **CDB_GOVERNANCE** | `knowledge/governance/CDB_GOVERNANCE.md` | Governance-Regeln |
-| 3 | **CDB_AGENT_POLICY** | `knowledge/governance/CDB_AGENT_POLICY.md` | Agenten-Verhalten |
-| 4 | **Spezifische Policies** | `knowledge/governance/CDB_*_POLICY.md` | Fachliche Policies |
-| 5 | **AGENTS.md** | `agents/AGENTS.md` | Agenten-Registry (diese Datei) |
-| 6 | **Agent-Rollendateien** | `agents/CLAUDE.md`, etc. | Operative Rollen |
+| 1 | **CDB_CONSTITUTION** | `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_CONSTITUTION.md` | Systemverfassung (höchste Instanz) |
+| 2 | **CDB_GOVERNANCE** | `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_GOVERNANCE.md` | Governance-Regeln |
+| 3 | **CDB_AGENT_POLICY** | `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_AGENT_POLICY.md` | Agenten-Verhalten |
+| 4 | **Spezifische Policies** | `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_*_POLICY.md` | Fachliche Policies |
+| 5 | **AGENTS.md** | `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\AGENTS.md` | Agenten-Registry (diese Datei) |
+| 6 | **Agent-Rollendateien** | `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\roles\CLAUDE.md`, etc. | Operative Rollen |
 | 7 | **Implementierung** | Code, Config, IaC | Ausführung |
 
 ### 0.3 Konfliktauflösung (hart)
@@ -66,7 +66,7 @@ Bei Widerspruch zwischen Dokumenten:
 
 Vor operativer Arbeit MUSS jeder Agent die Constitution kennen:
 
-📍 `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\knowledge\governance\CDB_CONSTITUTION.md`
+📍 `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_CONSTITUTION.md`
 
 Kernpunkte daraus:
 - §3.1: **User-Souveränität** ist technisch erzwungen
@@ -81,9 +81,9 @@ Kernpunkte daraus:
 Alle Agenten (Claude, Codex, Gemini, Copilot, OpenCode, …) arbeiten unter einem
 **einheitlichen Trust-Score-System**:
 
-- Canonical Policy: `knowledge/governance/CDB_TRUST_SCORE_POLICY.md`
-- Policy Cards: `knowledge/governance/policy_cards/`
-- Ledger: `knowledge/agent_trust/ledger/`
+- Canonical Policy: `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_TRUST_SCORE_POLICY.md`
+- Policy Cards: `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance/policy_cards\`
+- Ledger: `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\agent_trust\ledger/`
 
 Pflicht:
 - Relevante Entscheidungen/Aktionen erzeugen **Decision Events** (YAML, append-only).
@@ -96,11 +96,11 @@ Ziel: hohe Autonomie **mit** Auditierbarkeit (ohne Mikromanagement).
 Jeder Agent (Claude, Codex, Gemini, Copilot, **alle OpenCode-Agents**, …) MUSS diese Dateien kennen
 und bei operativer Arbeit **laden**:
 
-1. `knowledge/governance/CDB_TRUST_SCORE_POLICY.md`
-2. `knowledge/governance/TRUST_SCORE_CONFIG.yaml`
-3. `knowledge/governance/policy_cards/` *(alle Cards, inkl. Schema)*
-4. `knowledge/agent_trust/decision_event.schema.yaml`
-5. `knowledge/agent_trust/ledger/` *(append-only Events; Referenz + Beispiele)*
+1. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_TRUST_SCORE_POLICY.md`
+2. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\TRUST_SCORE_CONFIG.yaml`
+3. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\policy_cards\` *(alle Cards, inkl. Schema)*
+4. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\agent_trust\decision_event.schema.yaml`
+5. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\agent_trust\ledger\` *(append-only Events; Referenz + Beispiele)*
 
 **Regel:** Wenn ein Entry-Point fehlt oder nicht lesbar ist → **STOP & Rückfrage an Jannek**.
 
@@ -127,7 +127,7 @@ liegen **ausschließlich** im Dokumenten-Workspace.
 
 📍 **Kanonischer Rollenpfad:**
 
-C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\agents\
+D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\roles\
 
 ### Verbindliche Regeln
 - Jeder Agent **MUSS** seine Rollendefinition **dort** laden
@@ -136,8 +136,8 @@ C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\agents\
 - Keine Ableitungen
 - Bei fehlendem Zugriff → **STOP & Rückfrage**
 
-⚠️ **Legacy-Pfad (veraltet):** Alte Rollendefinitionen lagen in `.cdb_local/agents/roles/`.
-Diese wurden nach `.local/workspaces-root/.cdb_local/` archiviert (untracked).
+⚠️ **Legacy-Pfad (veraltet):** Alte Rollendefinitionen lagen in `.cdb_local\agents\roles\`.
+Diese wurden nach `.local\workspaces-root\.cdb_local\` archiviert (untracked).
 
 ## 2.1 Agent-spezifische Rollendateien (verbindlich)
 
@@ -152,16 +152,19 @@ und ersetzt **keine** Canon- oder Governance-Regeln, sondern konkretisiert sie.
 ### Verbindliche Zuordnung
 
 - **Claude**
-  C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\agents\CLAUDE.md
+  D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\roles\CLAUDE.md
 
 - **Codex**
-  C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\agents\CODEX.md
+  D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\roles\CODEX.md
 
 - **Copilot**
-  C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\agents\COPILOT.md
+  D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\roles\COPILOT.md
 
 - **Gemini**
-  C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\agents\GEMINI.md
+  D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\roles\GEMINI.md
+
+  - **OPENCODE**
+  D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\roles\OPENCODE.md
 
 ### Verhaltensregel (hart)
 
@@ -178,7 +181,7 @@ und ersetzt **keine** Canon- oder Governance-Regeln, sondern konkretisiert sie.
 Wenn ein Agent **nicht** in der Zuordnung oben steht, gilt:
 
 - Der Agent darf **nicht** arbeiten, bis eine passende Rollendatei unter  
-  `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs\agents\<AGENT>.md`  
+  `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\roles\<AGENT>.md`  
   existiert **oder** Jannek ihn explizit einer bestehenden Rolle zuweist.
 - Kein „best guess“, kein improvisiertes Mandat.
 
@@ -188,43 +191,43 @@ Wenn ein Agent **nicht** in der Zuordnung oben steht, gilt:
 
 ## 3. Autoload-Pflicht (bei jedem Spawn)
 
-📄 **Maschinen-lesbare Definition:** `agents/AUTOLOAD_MANIFEST.yaml`
+📄 **Maschinen-lesbare Definition:** `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\agent_orga\AUTOLOAD_MANIFEST.yaml`
 
 Jeder Agent MUSS beim Start folgende Dateien laden (Reihenfolge fix):
 
-**Basispfad:** `C:\Users\janne\Documents\GitHub\Workspaces\Claire_de_Binare_Docs`
+**Basispfad:** `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs`
 
 ### Context Core (MUST READ - in dieser Reihenfolge):
-1. `knowledge/ARCHITECTURE_MAP.md` ← **System-Architektur + Service Map**
-2. `governance/SERVICE_CATALOG.md` ← **Service SOLL vs IST**
-3. `knowledge/GOVERNANCE_QUICKREF.md` ← **Governance-Regeln Kurzreferenz** (NEU)
-4. `knowledge/SYSTEM_INVARIANTS.md` ← **Must-Never-Break Rules** (NEU)
-5. `knowledge/OPERATIONS_RUNBOOK.md` ← **Ops Start/Stop/Debug** (NEU)
-6. `knowledge/CURRENT_STATUS.md` ← **Aktueller Projektstatus**
+1. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\ARCHITECTURE_MAP.md` ← **System-Architektur + Service Map**
+2. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\SERVICE_CATALOG.md` ← **Service SOLL vs IST**
+3. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\GOVERNANCE_QUICKREF.md` ← **Governance-Regeln Kurzreferenz** (NEU)
+4. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\SYSTEM_INVARIANTS.md` ← **Must-Never-Break Rules** (NEU)
+5. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\OPERATIONS_RUNBOOK.md` ← **Ops Start/Stop/Debug** (NEU)
+6. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\CURRENT_STATUS.md` ← **Aktueller Projektstatus**
 
 ### Agenten-Registry:
-7. `agents/AGENTS.md` ← Diese Datei (Agenten-Registry)
+7. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\agents\AGENTS.md` ← Diese Datei (Agenten-Registry)
 8. Agent-spezifische Rollendatei (CLAUDE.md, GEMINI.md, etc.)
 
 ### Governance & Trust (MUST READ – vor jeder mutierenden Aktion, inkl. Issue-Statusänderungen):
-9. `knowledge/governance/CDB_POLICY_STACK_MINI.md` ← Canon-Stack (Lesereihenfolge)
-10. `knowledge/governance/CDB_CONSTITUTION.md` ← Systemverfassung (höchste Instanz)
-11. `knowledge/governance/CDB_GOVERNANCE.md` ← Rollen/Zonen/Change-Control
-12. `knowledge/governance/CDB_AGENT_POLICY.md` ← Agenten-Zonen + Write-Gates
-13. `ISSUE_AND_BRANCH_LIFECYCLE.md` ← Issue/Branch/PR Abschlussregeln
-14. `knowledge/governance/CDB_TRUST_SCORE_POLICY.md` ← Trust/Score System (bindend)
-15. `knowledge/governance/TRUST_SCORE_CONFIG.yaml` ← Score-Konfiguration (maschinenlesbar)
-16. `knowledge/governance/policy_cards/` ← Policy-DSL (maschinenlesbar)
-17. `knowledge/agent_trust/decision_event.schema.yaml` ← Decision-Event Schema (maschinenlesbar)
+9. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_POLICY_STACK_MINI.md` ← Canon-Stack (Lesereihenfolge)
+10. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_CONSTITUTION.md` ← Systemverfassung (höchste Instanz)
+11. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_GOVERNANCE.md` ← Rollen/Zonen/Change-Control
+12. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_AGENT_POLICY.md` ← Agenten-Zonen + Write-Gates
+13. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\ISSUE_AND_BRANCH_LIFECYCLE.md` ← Issue/Branch/PR Abschlussregeln
+14. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\CDB_TRUST_SCORE_POLICY.md` ← Trust/Score System (bindend)
+15. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\TRUST_SCORE_CONFIG.yaml` ← Score-Konfiguration (maschinenlesbar)
+16. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\policy_cards\` ← Policy-DSL (maschinenlesbar)
+17. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\agent_trust\decision_event.schema.yaml` ← Decision-Event Schema (maschinenlesbar)
 
 ### Decision Hub:
-18. `knowledge/CDB_KNOWLEDGE_HUB.md` ← Entscheidungs-Hub
+18. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\CDB_KNOWLEDGE_HUB.md` ← Entscheidungs-Hub
 
 ### Optionale Dateien:
-19. `knowledge/SHARED.WORKING.MEMORY.md` _(Non-Canonical / Agent-Writable)_
-20. `knowledge/governance/NEXUS.MEMORY.yaml` (falls vorhanden)
+19. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\SHARED.WORKING.MEMORY.md` _(Non-Canonical / Agent-Writable)_
+20. `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\NEXUS.MEMORY.yaml` (falls vorhanden)
 
-Hinweis zu `knowledge/SHARED.WORKING.MEMORY.md`:
+Hinweis zu `D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\SHARED.WORKING.MEMORY.md`:
 - Zweck: operatives Whiteboard zur Synchronisation (nicht bindend)
 - Output: verwertbare **Signals** + **Promotion Queue** für Hub/Issues/PRs
 - Regel: Was stabil/bindend ist → **promoten**, nicht hier „wahr“ machen
@@ -349,6 +352,23 @@ Bei Konflikt → **STOP & Rückfrage**
 
 ---
 
+## CI Exception Signal (verbindlich)
+
+Signal:
+- GREEN +  EXCEPTION ≠ DONE
+- Bedeutung: Pipeline lief mit STUB/Guardrails (z. B. fehlende Secrets). Keine echte E2E-Validierung.
+
+Pflichtverhalten für Agenten:
+1) EXCEPTION immer explizit benennen.
+2) Ergebnis als „WARN – Follow-up required“ behandeln.
+3) Auf protected/nightly: Issue-Referenz prüfen (Auto-Issue).
+4) Erst GREEN ohne EXCEPTION gilt als realer E2E-PASS.
+
+Maschinenflag:
+- CDB_E2E_EXCEPTION=true
+
+---
+
 ## 6. Rollenmodell (Kurzreferenz)
 
 - **Claude**
@@ -435,7 +455,7 @@ Abweichungen bedeuten: **Arbeiten außerhalb des Systems**.
 Dieses Projekt unterliegt der **Issue & Branch Lifecycle Policy**.
 
 📄 **Referenzdokument (bindend):**
-`ISSUE_AND_BRANCH_LIFECYCLE.md`
+`D:\Dev\Workspaces\Repos\Claire_de_Binare_Docs\knowledge\governance\ISSUE_AND_BRANCH_LIFECYCLE.md`
 
 ### Kernaussagen (nicht verhandelbar)
 

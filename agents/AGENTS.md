@@ -237,6 +237,21 @@ Hinweis zu `knowledge/SHARED.WORKING.MEMORY.md`:
 
 ---
 
+### Requirements Inventory Report (Canonical Reference)
+
+Das Dokument `REQUIREMENTS_INVENTORY_REPORT.md` im Working Repository
+(`Claire_de_Binare`) stellt die **kanonische Gesamtinventarisierung**
+aller Governance-, Contract-, Policy- und Gate-relevanten Anforderungen
+des CDB-Systems dar.
+
+Es dient Agenten als **verbindlicher Orientierungs- und Abgleichpunkt**
+für Determinismus, Change-Impact-Analysen und Governance-Konformität.
+
+Referenz:
+- Working Repo: `Claire_de_Binare/REQUIREMENTS_INVENTORY_REPORT.md`
+
+---
+
 ## 4. Zonen & Rechte
 
 ### Docs / Workspace

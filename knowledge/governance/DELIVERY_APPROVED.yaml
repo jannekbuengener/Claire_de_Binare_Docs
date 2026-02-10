@@ -16,8 +16,8 @@ description: >
 
 delivery:
   approved: true
-  approved_by: ""
-  approved_at: ""
+  approved_by: "Jannek"
+  approved_at: "2026-01-05T11:09:57Z"  # derived from commit 2d2e282a
 
 rules:
   - No agent may set approved=true
